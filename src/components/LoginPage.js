@@ -1,12 +1,23 @@
-//TODO: 
-//1. create a component with the name LoginPage 
-//2. Inside the return() statement, add a div with the className="landingPage"
-//3. Inside the div, add a <h1> tag that displays Login Page
-//4. Inside the div create form with the className="formContainer"
-//5. Add two <input> fields, one fore email, and another for password
-//  * both should be of type text, className="inputField"
-//
-// Nice! you set up the initial login page.
-// Next steps: add a handleSubmit() function for backend connection (error handeling)
-// For now, this ticket is complete!
-// If you think there is something missing, feel free to add more!
+import React from 'react'
+import { useState } from 'react'
+function LoginPage(){
+    return(
+   
+    <div className='landingPage'>
+     
+     <h1>Login Page</h1>
+     <form className="formContainer">
+      <label>Email</label>
+      <input className="inputField" type="text" name="email"  placeholder="Enter your email"></input> 
+      <label>Password</label>
+      <input className="inputField" type="text" name="password" label="password" placeholder="Enter your password"></input>
+     </form>
+     <button type="submit" >Submit</button>
+
+    </div>
+    )
+}
+
+
+
+export default LoginPage

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAllData } from './util/index';
+import LoginPage from './components/LoginPage';
 
 const URL = 'http://localhost:8000/api/v1/';
 
@@ -23,6 +24,7 @@ const [message, setMessage] = useState('');
   return (
     <>
       <h1>{message}</h1>
+      <LoginPage/>
     </>
   );
 }
