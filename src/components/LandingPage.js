@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./LandingPage.css";
 function LandingPage() {
 
     const [search, setSearch] = useState("")
@@ -12,21 +13,25 @@ function LandingPage() {
               </div>
               
               <div className="navigation">
-                  <ul>
+                  <ul className="menu">
                       <li><a href="">Home</a></li>
                       <li><a href="">Topics</a></li>
                       <li><a href="">Solutions</a></li>
                   </ul>
               </div>
 
-              <input type="search"
+              <div>
+                  <input type="search"
                      value={search}
                      placeholder="Search"
                      onChange={(e) => setSearch(e.target.value)}/>
-              
-              <button><a href="">Log In</a></button>
-              <button><a href="">Sign In</a></button>
+
+                  <button><a href="">Log In</a></button>
+                  <button><a href="">Sign In</a></button>
+              </div>
+
           </div>
+
           <div className="banner">
               <img src="" alt=""/>
           </div>
