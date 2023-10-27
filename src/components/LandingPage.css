@@ -1,0 +1,18 @@
+
+.topBar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-content: baseline;
+    align-items: center;
+}
+
+.navigation ul, .logo{
+    display: flex;
+    flex-direction: row;
+}
+
+.menu {
+    gap: 20px;
+    list-style: none;
+}
