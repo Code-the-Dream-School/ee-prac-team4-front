@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAllData } from './util/index';
-import LandingPage from "./components/LandingPage";
+import Home from "./components/Home";
 
 const URL = 'http://localhost:8000/api/v1/';
 
@@ -24,7 +24,7 @@ const [message, setMessage] = useState('');
   return (
     <>
       {/*<h1>{message}</h1>*/}
-      <LandingPage />
+      <Home />
     </>
   );
 }

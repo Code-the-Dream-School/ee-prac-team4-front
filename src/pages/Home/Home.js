@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./LandingPage.css";
-function LandingPage() {
+import "./Home.css";
+function Home() {
 
     const [search, setSearch] = useState("")
 
@@ -47,4 +47,4 @@ function LandingPage() {
     );
 }
 
-export default LandingPage;
+export default Home;
