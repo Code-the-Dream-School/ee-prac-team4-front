@@ -1,25 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { getAllData } from './util/index';
-import Home from "./components/Home";
+import React from 'react';
+import Home from "./pages/home/Home";
 
-const URL = 'http://localhost:8000/api/v1/';
 
 function App() {
 
-const [message, setMessage] = useState(''); 
-
-  useEffect(() => {
-
-    (async () => {
-      const myData = await getAllData(URL)
-      setMessage(myData.data);
-    })();
-      
-    return () => {
-      console.log('unmounting');
-    }
-
-  }, []);
 
   return (
     <>
