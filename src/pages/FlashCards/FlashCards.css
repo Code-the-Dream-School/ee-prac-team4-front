@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.tag-list {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.flashcard-container {
+    display: flex;
+    gap: 15px;
+}
+
+.flashCard {
+    border: 1px solid grey;
+}
