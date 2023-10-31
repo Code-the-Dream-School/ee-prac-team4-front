@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAllData } from './util/index';
-import LoginPage from './components/LoginPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 const URL = 'http://localhost:8000/api/v1/';
 
