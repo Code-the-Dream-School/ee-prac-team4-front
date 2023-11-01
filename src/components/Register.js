@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-function Register() {
+function Register({ onRegisterSuccess }) {
   const [newEmail, setNewEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [error, setError] = useState(null);
@@ -34,6 +35,7 @@ function Register() {
        * 3. data.hasEmail - prompts  "email already exists"
        */
 
+      onRegisterSuccess();
       return data;
     } catch (error) {
       console.error('Error during registration:', error);
@@ -75,5 +77,9 @@ function Register() {
     </div>
   );
 }
+
+Register.propTypes = {
+  onRegisterSuccess: PropTypes.func.isRequired
+};
 
 export default Register;
