@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 // note: not used, but could be used with GET with params
 const getData = async (url, params) => {
