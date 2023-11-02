@@ -1,28 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { getAllData } from './util/index';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
-
-const URL = 'http://localhost:8000/api/v1/';
+import Register from './components/Register';
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    (async () => {
-      const myData = await getAllData(URL);
-      setMessage(myData.data);
-    })();
-
-    return () => {
-      console.log('unmounting');
-    };
-  }, []);
-
   return (
-    <>
-      {/*<h1>{message}</h1>*/}
-      <LandingPage />
-    </>
+    <BrowserRouter basename='/'>
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/register' element={<Register />} />
+        {/* uncomment when Login.js is ready
+        <Route path='/login' element={} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 

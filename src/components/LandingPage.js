@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './LandingPage.css';
 function LandingPage() {
   const [search, setSearch] = useState('');
@@ -24,19 +25,16 @@ function LandingPage() {
             </li>
           </ul>
         </div>
-
         <div>
           <input type='search' value={search} placeholder='Search' onChange={(e) => setSearch(e.target.value)} />
-
-          <button>
-            <a href=''>Log In</a>
-          </button>
-          <button>
-            <a href=''>Sign In</a>
-          </button>
+          <Link to=''>
+            <button>Sign In</button>
+          </Link>
+          <Link to='/register'>
+            <button>Register</button>
+          </Link>
         </div>
       </div>
-
       <div className='banner'>
         <img src='' alt='' />
       </div>
