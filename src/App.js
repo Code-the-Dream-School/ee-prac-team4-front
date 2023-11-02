@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { getAllData } from './util/index';
+import React, { useState, useEffect } from "react";
+import { getAllData } from "./util/index";
 import LandingPage from "./components/LandingPage";
+import Dashaboard from "./pages/dashboard/Dashboard";
 
-const URL = 'http://localhost:8000/api/v1/';
+const URL = "http://localhost:8000/api/v1/";
 
 function App() {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     (async () => {
@@ -14,7 +15,7 @@ function App() {
     })();
 
     return () => {
-      console.log('unmounting');
+      console.log("unmounting");
     };
   }, []);
 
@@ -22,6 +23,7 @@ function App() {
     <>
       {/*<h1>{message}</h1>*/}
       <LandingPage />
+      <Dashaboard />
     </>
   );
 }
