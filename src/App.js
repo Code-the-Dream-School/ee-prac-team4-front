@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getAllData } from './util/index';
 import LandingPage from "./components/LandingPage";
+import LoginPage from './pages/login/LoginPage.js';
 
 const URL = 'http://localhost:8000/api/v1/';
 
@@ -22,6 +23,7 @@ function App() {
     <>
       {/*<h1>{message}</h1>*/}
       <LandingPage />
+      <LoginPage/>
     </>
   );
 }
