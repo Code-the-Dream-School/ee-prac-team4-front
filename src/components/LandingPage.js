@@ -1,44 +1,49 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './LandingPage.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./LandingPage.css";
 function LandingPage() {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
   return (
     <>
-      <div className='topBar'>
-        <div className='logo'>
-          <img src='' alt='logo' />
+      <div className="topBar">
+        <div className="logo">
+          <img src="" alt="logo" />
           <p>Flashcards</p>
         </div>
 
-        <div className='navigation'>
-          <ul className='menu'>
+        <div className="navigation">
+          <ul className="menu">
             <li>
-              <a href=''>Home</a>
+              <a href="">Home</a>
             </li>
             <li>
-              <a href=''>Topics</a>
+              <a href="">Topics</a>
             </li>
             <li>
-              <a href=''>Solutions</a>
+              <a href="">Solutions</a>
             </li>
           </ul>
         </div>
         <div>
-          <input type='search' value={search} placeholder='Search' onChange={(e) => setSearch(e.target.value)} />
-          <Link to=''>
+          <input
+            type="search"
+            value={search}
+            placeholder="Search"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <Link to="/login">
             <button>Sign In</button>
           </Link>
-          <Link to='/register'>
+          <Link to="/register">
             <button>Register</button>
           </Link>
         </div>
       </div>
-      <div className='banner'>
-        <img src='' alt='' />
+      <div className="banner">
+        <img src="" alt="" />
       </div>
-      <div className='content'>
+      <div className="content">
         <div>
           <h2>Flashcards</h2>
         </div>
@@ -49,7 +54,7 @@ function LandingPage() {
           <h2>Quiz</h2>
         </div>
       </div>
-      <div className='footer'></div>
+      <div className="footer"></div>
     </>
   );
 }
