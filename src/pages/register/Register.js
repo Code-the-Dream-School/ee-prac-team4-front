@@ -49,7 +49,8 @@ function Register() {
         onSubmit={(e) => handleRegistration(e)}
         className="registerContainer"
       >
-        <div>
+        <label>
+          Email
           <input
             type="email"
             placeholder="janedoe@gmail.com"
@@ -59,11 +60,12 @@ function Register() {
             autoComplete="off"
             required
           />
-        </div>
+        </label>
 
-        <div>
+        <label>
+          username
           <input
-            type="username"
+            type="text"
             placeholder="username"
             value={newUsername}
             onChange={(e) => setNewUsername(e.target.value)}
@@ -71,9 +73,10 @@ function Register() {
             autoComplete="off"
             required
           />
-        </div>
+        </label>
 
-        <div>
+        <label>
+          password
           <input
             type="password"
             placeholder="enter a password"
@@ -83,7 +86,7 @@ function Register() {
             autoComplete="off"
             required
           />
-        </div>
+        </label>
 
         <button type="submit" className="submitButton">
           submit
