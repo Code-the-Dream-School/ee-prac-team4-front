@@ -1,0 +1,28 @@
+body{
+
+    display:flex;
+    justify-content: center;
+}
+h1{
+    padding-bottom:0.4em;
+}
+.loginPage{
+
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.formContainer{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.inputField{
+
+    padding: 0.5em;
+    margin: 0.5em;
+}
