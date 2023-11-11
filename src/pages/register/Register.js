@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 function Register() {
+  const [newFirstName, setNewFirstName] = useState("");
+  const [newLastName, setNewLastName] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newUsername, setNewUsername] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -17,6 +19,8 @@ function Register() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
+            firstName: newFirstName,
+            lastName: newLastName,
             username: newUsername,
             password: newPassword,
             email: newEmail,
@@ -49,6 +53,32 @@ function Register() {
         onSubmit={(e) => handleRegistration(e)}
         className="registerContainer"
       >
+        <label>
+          First Name
+          <input 
+            type="text"
+            placeholder="Jane"
+            value={newFirstName}
+            onChange={(e) => setNewFirstName(e.target.value)}
+            className="inputField"
+            autoComplete="off"
+            required
+          />
+        </label>
+
+        <label>
+          Last Name
+          <input 
+            type="text"
+            placeholder="Doe"
+            value={newLastName}
+            onChange={(e) => setNewLastName(e.target.value)}
+            className="inputField"
+            autoComplete="off"
+            required
+          />
+        </label>
+
         <label>
           Email
           <input
