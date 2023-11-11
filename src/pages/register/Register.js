@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Register.css";
 
 function Register() {
   const [newEmail, setNewEmail] = useState("");
@@ -50,7 +51,7 @@ function Register() {
         className="registerContainer"
       >
         <label>
-          Email
+          email
           <input
             type="email"
             placeholder="janedoe@gmail.com"
