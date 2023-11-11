@@ -1,0 +1,8 @@
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "insertPragma": false,
+  "proseWrap": "preserve",
+  "requirePragma": false,
+  "semi": true
+}
