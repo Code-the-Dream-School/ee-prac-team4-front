@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import Navbar from "../../components/Navbar.js";
 
 function LoginPage() {
+  const [userLogin, setUserLogin] = useState(false);
+
   function handleSubmit() {
-    console.log("Hello world!");
+    setUserLogin(true);
+    console.log("User logged in!");
   }
+
   return (
-    <div className="landingPage">
+    <div className="dashboard">
+      <Navbar isLoggedIn={userLogin} handleLogin={handleSubmit} />
       <h1>Login Page</h1>
       <form className="formContainer">
         <label htmlFor="email">Email</label>
@@ -33,4 +39,3 @@ function LoginPage() {
 }
 
 export default LoginPage;
-

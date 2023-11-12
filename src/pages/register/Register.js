@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import Navbar from "../../components/Navbar";
 
-function Register() {
+function Register({ handleLogin }) {
   const [newEmail, setNewEmail] = useState("");
   const [newUsername, setNewUsername] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -34,6 +35,8 @@ function Register() {
       window.alert(`Welcome, ${data.username}`);
       setError(null);
 
+      handleLogin();
+
       return data;
     } catch (error) {
       console.error("Error during registration:", error);
@@ -43,6 +46,7 @@ function Register() {
 
   return (
     <div className="registerPage">
+      <Navbar />
       <h1>Register</h1>
 
       <form
