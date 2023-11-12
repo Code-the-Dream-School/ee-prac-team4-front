@@ -48,7 +48,9 @@ function LandingPage() {
           <h2>Flashcards</h2>
         </div>
         <div>
+          <Link to="/resources">
           <h2>Resources</h2>
+          </Link>
         </div>
         <div>
           <h2>Quiz</h2>
