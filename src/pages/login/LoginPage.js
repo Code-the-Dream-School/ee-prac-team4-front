@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar.js";
+import Navbar from "../navbar/Navbar.js";
 
 function LoginPage() {
   const [userLogin, setUserLogin] = useState(false);

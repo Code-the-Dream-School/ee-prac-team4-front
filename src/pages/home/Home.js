@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import "./Dashboard.css";
-import Navbar from "./Navbar";
-
-function Dashboard() {
+import "./Home.css";
+import Navbar from "../navbar/Navbar";
+function Home() {
   return (
     <>
       <Navbar />
@@ -25,4 +24,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Home;
