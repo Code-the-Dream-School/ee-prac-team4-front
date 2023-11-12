@@ -9,7 +9,6 @@
 
 .navigation ul, .logo{
     display: flex;
-    flex-direction: row;
 }
 
 .menu {
