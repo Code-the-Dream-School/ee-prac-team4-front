@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./Flashcard.css";
 
-const FlashCard = ({ question, answer }) => {
+const Flashcard = ({ question, answer }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [showHint, setShowHint] = useState(false);
 
-  var mockData = {
+  let mockData = {
     question: "What is our project group number?",
     answer: "4",
     hint: "The group number is a single-digit number",
@@ -48,4 +48,4 @@ const FlashCard = ({ question, answer }) => {
   );
 };
 
-export default FlashCard;
+export default Flashcard;
