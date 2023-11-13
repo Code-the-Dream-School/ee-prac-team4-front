@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -24,13 +24,12 @@ function LoginPage() {
 
       const data = await response.json();
 
-      if(data.token) {
+      if (data.token) {
         navigate("/");
       }
       if (data.error || data.status !== 200) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-
     } catch (error) {
       console.error("Error during login:", error);
       setError("Error during login. Please try again.");
