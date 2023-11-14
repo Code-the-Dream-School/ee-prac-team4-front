@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-function Navbar({ isLoggedIn }) {
+function Navbar({ isLoggedIn, username }) {
   const [search, setSearch] = useState("");
 
   return (
@@ -44,7 +44,11 @@ function Navbar({ isLoggedIn }) {
             <button>Register</button>
           </Link>
         </div>
-      ) : null}
+      ) : (
+        {
+          /*username to be passed as props upon successful login and persist on navbar*/
+        }`${username}`
+      )}
     </header>
   );
 }

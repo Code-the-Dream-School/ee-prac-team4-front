@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../navbar/Navbar.js";
 
-function Register({ handleLogin }) {
+function Register({ isLoggedIn }) {
   const [newEmail, setNewEmail] = useState("");
   const [newUsername, setNewUsername] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -35,7 +35,7 @@ function Register({ handleLogin }) {
       window.alert(`Welcome, ${data.username}`);
       setError(null);
 
-      handleLogin();
+      isLoggedIn();
 
       return data;
     } catch (error) {
