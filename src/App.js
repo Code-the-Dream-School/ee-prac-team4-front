@@ -12,7 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/login" element={<FlashCards />} />
+        <Route path="/flashcards" element={<FlashCards />} />
       </Routes>
     </BrowserRouter>
   );

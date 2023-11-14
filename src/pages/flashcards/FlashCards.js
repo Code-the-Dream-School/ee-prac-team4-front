@@ -1,5 +1,5 @@
 import React from "react";
-import "./Flashcards.css";
+import "./FlashCards.css";
 function FlashCards() {
   const handleFlashCard = () => {
     // add new card functionality
