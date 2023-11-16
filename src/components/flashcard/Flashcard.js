@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Flashcard.css";
 
-const Flashcard = ({ question, answer }) => {
+const Flashcard = ({ currentCard }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [showHint, setShowHint] = useState(false);
 
@@ -22,7 +22,6 @@ const Flashcard = ({ question, answer }) => {
 
   return (
     <div className="card">
-      {/* <div className={`card-inner ${isFlipped ? "flipped" : ""}`}> */}
       {!isFlipped ? (
         <div className="card-front">
           <h3>
@@ -43,7 +42,6 @@ const Flashcard = ({ question, answer }) => {
           <button onClick={() => console.log("Learned")}>Yeah! I got it</button>
         </div>
       )}
-      {/* </div> */}
     </div>
   );
 };

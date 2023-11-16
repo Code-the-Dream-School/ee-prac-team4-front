@@ -3,7 +3,7 @@
   height: auto;
   border: 2px solid #3498db;
   border-radius: 8px;
-  perspective: 1000px;
+  box-shadow: 5px 15px 15px 5px lightgray;
 }
 
 .card-front,
