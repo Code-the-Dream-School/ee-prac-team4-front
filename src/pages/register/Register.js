@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../navbar/Navbar.js";
+import "./Register.css";
 
 function Register({ isLoggedIn }) {
   const [newEmail, setNewEmail] = useState("");
@@ -54,10 +55,9 @@ function Register({ isLoggedIn }) {
         className="registerContainer"
       >
         <label>
-          Email
+          email
           <input
             type="email"
-            placeholder="janedoe@gmail.com"
             value={newEmail}
             onChange={(e) => setNewEmail(e.target.value)}
             className="inputField"
@@ -70,7 +70,6 @@ function Register({ isLoggedIn }) {
           username
           <input
             type="text"
-            placeholder="username"
             value={newUsername}
             onChange={(e) => setNewUsername(e.target.value)}
             className="inputField"
