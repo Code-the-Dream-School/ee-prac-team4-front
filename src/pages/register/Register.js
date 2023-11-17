@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Register.css";
 
 function Register() {
   const [newFirstName, setNewFirstName] = useState("");
@@ -90,7 +91,7 @@ function Register() {
         </label>
 
         <label>
-          username
+          Username
           <input
             type="text"
             value={newUsername}
@@ -102,7 +103,7 @@ function Register() {
         </label>
 
         <label>
-          password
+          Password
           <input
             type="password"
             placeholder="enter a password"
