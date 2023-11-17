@@ -30,7 +30,7 @@ function Register() {
 
       const data = await response.json();
 
-      if (data.error | (data.status !== 200)) {
+      if (data.error || (data.status !== 200)) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
@@ -81,7 +81,6 @@ function Register() {
           Email
           <input
             type="email"
-            placeholder="janedoe@gmail.com"
             value={newEmail}
             onChange={(e) => setNewEmail(e.target.value)}
             className="inputField"
@@ -94,7 +93,6 @@ function Register() {
           username
           <input
             type="text"
-            placeholder="username"
             value={newUsername}
             onChange={(e) => setNewUsername(e.target.value)}
             className="inputField"
