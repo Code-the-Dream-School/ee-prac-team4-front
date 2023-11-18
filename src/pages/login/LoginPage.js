@@ -1,5 +1,6 @@
 import React from "react";
 import "./LoginPage.css";
+
 function LoginPage() {
   function handleSubmit() {
     console.log("Hello world!");
@@ -14,7 +15,6 @@ function LoginPage() {
           type="email"
           name="email"
           id="email"
-          
         ></input>
         <label htmlFor="password">Password</label>
         <input
@@ -22,12 +22,13 @@ function LoginPage() {
           type="password"
           name="password"
           id="password"
-          
         ></input>
       </form>
+
       <button type="submit" onClick={handleSubmit}>
         Submit
       </button>
+
       <p>
         <a href="./register">Not registered? Click here.</a>
       </p>
@@ -36,4 +37,3 @@ function LoginPage() {
 }
 
 export default LoginPage;
-
