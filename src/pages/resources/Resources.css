@@ -1,6 +1,5 @@
-.resourcePage{
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.resourcePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
