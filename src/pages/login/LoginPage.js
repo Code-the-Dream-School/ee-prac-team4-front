@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./LoginPage.css";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -37,7 +38,7 @@ function LoginPage() {
   }
 
   return (
-    <div className="landingPage">
+    <div className="loginPage">
       <h1>Login Page</h1>
       <form className="formContainer" onSubmit={(e) => handleSubmit(e)}>
         <label htmlFor="email">Email</label>
@@ -48,7 +49,7 @@ function LoginPage() {
           type="email"
           name="email"
           id="email"
-          placeholder="Enter your email"
+        
           required
         ></input>
         <label htmlFor="password">Password</label>
@@ -59,8 +60,7 @@ function LoginPage() {
           type="password"
           name="password"
           id="password"
-          placeholder="Enter your password"
-          required
+        required
         ></input>
 
         <button type="submit">Submit</button>
