@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Navbar from "../navbar/Navbar.js";
 import "./Register.css";
 
-function Register({ isLoggedIn }) {
+function Register() {
   const [newEmail, setNewEmail] = useState("");
   const [newUsername, setNewUsername] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -36,8 +35,6 @@ function Register({ isLoggedIn }) {
       window.alert(`Welcome, ${data.username}`);
       setError(null);
 
-      isLoggedIn();
-
       return data;
     } catch (error) {
       console.error("Error during registration:", error);
@@ -46,58 +43,59 @@ function Register({ isLoggedIn }) {
   }
 
   return (
-    <div className="registerPage">
-      <Navbar />
-      <h1>Register</h1>
+    <>
+      <div className="registerPage">
+        <h1>Register</h1>
 
-      <form
-        onSubmit={(e) => handleRegistration(e)}
-        className="registerContainer"
-      >
-        <label>
-          email
-          <input
-            type="email"
-            value={newEmail}
-            onChange={(e) => setNewEmail(e.target.value)}
-            className="inputField"
-            autoComplete="off"
-            required
-          />
-        </label>
+        <form
+          onSubmit={(e) => handleRegistration(e)}
+          className="registerContainer"
+        >
+          <label>
+            email
+            <input
+              type="email"
+              value={newEmail}
+              onChange={(e) => setNewEmail(e.target.value)}
+              className="inputField"
+              autoComplete="off"
+              required
+            />
+          </label>
 
-        <label>
-          username
-          <input
-            type="text"
-            value={newUsername}
-            onChange={(e) => setNewUsername(e.target.value)}
-            className="inputField"
-            autoComplete="off"
-            required
-          />
-        </label>
+          <label>
+            username
+            <input
+              type="text"
+              value={newUsername}
+              onChange={(e) => setNewUsername(e.target.value)}
+              className="inputField"
+              autoComplete="off"
+              required
+            />
+          </label>
 
-        <label>
-          password
-          <input
-            type="password"
-            placeholder="enter a password"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-            className="inputField"
-            autoComplete="off"
-            required
-          />
-        </label>
+          <label>
+            password
+            <input
+              type="password"
+              placeholder="enter a password"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              className="inputField"
+              autoComplete="off"
+              required
+            />
+          </label>
 
-        <button type="submit" className="submitButton">
-          submit
-        </button>
+          <button type="submit" className="submitButton">
+            submit
+          </button>
 
-        {error && <div style={{ color: "red" }}>{error}</div>}
-      </form>
-    </div>
+          {error && <div style={{ color: "red" }}>{error}</div>}
+        </form>
+      </div>
+    </>
   );
 }
 

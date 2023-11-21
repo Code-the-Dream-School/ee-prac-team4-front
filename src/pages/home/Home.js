@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Home.css";
-import Navbar from "../navbar/Navbar";
 function Home() {
   return (
     <>
-      <Navbar />
       <div className="banner">
         <img src="" alt="" />
       </div>

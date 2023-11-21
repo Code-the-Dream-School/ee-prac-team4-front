@@ -7,7 +7,7 @@
 
 .searchBar {
   width: 10%;
-  padding-right: 25px;
+  padding-right: 20rem;
 }
 
 .navigation {
@@ -15,14 +15,8 @@
   padding-left: 25rem;
 }
 
-.loginButtons {
-  width: 20%;
-}
-
 .navigation ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   justify-content: center;
 }
@@ -31,7 +25,7 @@
   margin-right: 10px;
 }
 
-.loginButtons {
+.authButtons {
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }

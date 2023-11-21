@@ -4,13 +4,18 @@ import "./Navbar.css";
 
 function Navbar({ isLoggedIn, username }) {
   const [search, setSearch] = useState("");
+  const [logout, setLogout] = useState(false);
+
+  const handleLogout = () => {
+    setLogout(true);
+    console.log("User is logged out");
+  };
 
   return (
     <header className="navbarContainer">
       <div className="logo">
         <img src="" alt="logo" />
       </div>
-
       <div className="navigation">
         <ul className="menu">
           <li>
@@ -24,7 +29,6 @@ function Navbar({ isLoggedIn, username }) {
           </li>
         </ul>
       </div>
-
       <div className="searchBar">
         <input
           type="search"
@@ -33,21 +37,28 @@ function Navbar({ isLoggedIn, username }) {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-
-      {/* Only show login/sign up buttons if user is not logged in */}
       {!isLoggedIn ? (
-        <div className="loginButtons">
+        <div className="authButtons">
           <Link to="/login">
-            <button>Sign In</button>
+            <button className="logInButton">Login</button>
           </Link>
           <Link to="/register">
-            <button>Register</button>
+            <button className="registerButton">Register</button>
           </Link>
         </div>
       ) : (
-        {
-          /*username to be passed as props upon successful login and persist on navbar*/
-        }`${username}`
+        <div className="loginItems">
+          <p className="username">{username}</p>
+          <Link to="/">
+            <button
+              className="logoutButton"
+              value={logout}
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          </Link>
+        </div>
       )}
     </header>
   );
