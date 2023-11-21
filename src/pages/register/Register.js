@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Register.css";
 
 function Register() {
+  const [newFirstName, setNewFirstName] = useState("");
+  const [newLastName, setNewLastName] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [newUsername, setNewUsername] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -18,6 +20,8 @@ function Register() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
+            firstName: newFirstName,
+            lastName: newLastName,
             username: newUsername,
             password: newPassword,
             email: newEmail,
@@ -27,7 +31,7 @@ function Register() {
 
       const data = await response.json();
 
-      if (data.error | (data.status !== 200)) {
+      if (data.error || (data.status !== 200)) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
@@ -51,7 +55,31 @@ function Register() {
         className="registerContainer"
       >
         <label>
-          email
+          First Name
+          <input 
+            type="text"
+            value={newFirstName}
+            onChange={(e) => setNewFirstName(e.target.value)}
+            className="inputField"
+            autoComplete="off"
+            required
+          />
+        </label>
+
+        <label>
+          Last Name
+          <input 
+            type="text"
+            value={newLastName}
+            onChange={(e) => setNewLastName(e.target.value)}
+            className="inputField"
+            autoComplete="off"
+            required
+          />
+        </label>
+
+        <label>
+          Email
           <input
             type="email"
             value={newEmail}
@@ -63,7 +91,7 @@ function Register() {
         </label>
 
         <label>
-          username
+          Username
           <input
             type="text"
             value={newUsername}
@@ -75,7 +103,7 @@ function Register() {
         </label>
 
         <label>
-          password
+          Password
           <input
             type="password"
             placeholder="enter a password"
