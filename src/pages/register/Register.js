@@ -13,7 +13,7 @@ function Register() {
     e.preventDefault();
     try {
       const response = await fetch(
-        `https://localhost:8000/api/v1/auth/register`,
+        `http://localhost:8000/api/v1/user/register`,
         {
           method: "POST",
           headers: {
@@ -31,7 +31,7 @@ function Register() {
 
       const data = await response.json();
 
-      if (data.error || (data.status !== 200)) {
+      if (data.error || data.status !== 200) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
@@ -56,7 +56,7 @@ function Register() {
       >
         <label>
           First Name
-          <input 
+          <input
             type="text"
             value={newFirstName}
             onChange={(e) => setNewFirstName(e.target.value)}
@@ -68,7 +68,7 @@ function Register() {
 
         <label>
           Last Name
-          <input 
+          <input
             type="text"
             value={newLastName}
             onChange={(e) => setNewLastName(e.target.value)}
