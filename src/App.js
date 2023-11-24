@@ -4,6 +4,7 @@ import Register from "./pages/register/Register";
 import LoginPage from "./pages/login/LoginPage";
 import Home from "./pages/home/Home";
 import Resources from "./pages/resources/Resources";
+import FlashCards from "./pages/flashcards/FlashCards";
 import DeckCreation from "./pages/deck/Deck";
 import FlashCardForm from "./pages/deck/FlashcardForm";
 
@@ -17,6 +18,8 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/createDeck" element={<DeckCreation />} />
         <Route path="/createCard" element={<FlashCardForm />} />
+        <Route path="/resources" element={<Resources/>}/>
+        <Route path="/flashcards" element={<FlashCards />} />
       </Routes>
     </BrowserRouter>
   );
