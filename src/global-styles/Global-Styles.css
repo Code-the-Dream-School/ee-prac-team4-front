@@ -1,0 +1,45 @@
+:root {
+  /* global font and background color in index.html */
+  font-family: Inter, sans-serif;
+  color: #ffffff;
+
+  /* text size */
+  --h1-text-size: 43px;
+  --h2-text-size: 32px;
+  --h3-text-size: 24px;
+  --p-text-size: 16px;
+
+  /* text color variations */
+  --subheading-text-color: #a2a2a2;
+  --link-text-color: #728095;
+
+  /* background colors */
+  --primary-background: #161616;
+  --secondary-background: #1c1c1c;
+
+  /***** button variations *****/
+  /* primary button */
+  --primary-button-background: #052926;
+  --primary-button-border: #006d5b;
+  --primary-button-text: #25d0ab;
+
+  /* secondary button */
+  --secondary-button-background: #071d2a;
+  --secondary-button-border: #005d85;
+  --secondary-button-text: #6ae1ff;
+
+  /* highlight button */
+  --highlight-button-background: #221527;
+  --highlight-button-border: #9d5bd2;
+  --highlight-button-text: #bf7af0;
+
+  /* caution button */
+  --caution-button-background: #2a1410;
+  --caution-button-border: #7f2315;
+  --caution-button-text: #ff6445;
+
+  /***** topic variations *****/
+  --primary-topic-background: #221a00;
+  --primary-topic-border: #594a05;
+  --primary-topic-text: #fff45e;
+}

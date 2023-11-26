@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../../components/button/Button.js";
 import "./LoginPage.css";
 
 function LoginPage() {
@@ -49,7 +50,6 @@ function LoginPage() {
           type="email"
           name="email"
           id="email"
-        
           required
         ></input>
         <label htmlFor="password">Password</label>
@@ -60,10 +60,12 @@ function LoginPage() {
           type="password"
           name="password"
           id="password"
-        required
+          required
         ></input>
 
-        <button type="submit">Submit</button>
+        <Button className="submit-button" type="submit">
+          Submit
+        </Button>
         {error && <div style={{ color: "red" }}>{error}</div>}
       </form>
     </div>

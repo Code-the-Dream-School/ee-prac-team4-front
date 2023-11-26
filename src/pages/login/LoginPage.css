@@ -1,3 +1,4 @@
+@import "../../global-styles/Global-Styles.css";
 body {
   display: flex;
   justify-content: center;
@@ -23,4 +24,11 @@ h1 {
 .inputField {
   padding: 0.5em;
   margin: 0.5em;
+}
+
+.submit-button {
+  padding-top: 10px;
+  background-color: var(--primary-button-background);
+  border-color: var(--primary-button-border);
+  color: var(--primary-button-text);
 }

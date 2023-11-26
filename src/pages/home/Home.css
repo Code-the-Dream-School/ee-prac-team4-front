@@ -1,17 +1,17 @@
-
 .topBar {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-content: baseline;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-content: baseline;
+  align-items: center;
 }
 
-.navigation ul, .logo{
-    display: flex;
+.navigation ul,
+.logo {
+  display: flex;
 }
 
 .menu {
-    gap: 20px;
-    list-style: none;
+  gap: 20px;
+  list-style: none;
 }
