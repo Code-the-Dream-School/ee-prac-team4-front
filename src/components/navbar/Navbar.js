@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../App";
 import "./Navbar.css";
 
-function Navbar({ isLoggedIn, username }) {
+function Navbar() {
   const [search, setSearch] = useState("");
-  const [logout, setLogout] = useState(false);
 
-  const handleLogout = () => {
-    setLogout(true);
-    console.log("User is logged out");
-  };
+  const { isLoggedIn, userData, handleLogout } = useContext(AuthContext);
 
   return (
     <header className="navbarContainer">
@@ -48,13 +45,9 @@ function Navbar({ isLoggedIn, username }) {
         </div>
       ) : (
         <div className="loginItems">
-          <p className="username">{username}</p>
+          <p className="username">{userData.email}</p>
           <Link to="/">
-            <button
-              className="logoutButton"
-              value={logout}
-              onClick={handleLogout}
-            >
+            <button className="logoutButton" onClick={handleLogout}>
               Logout
             </button>
           </Link>

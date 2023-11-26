@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "../../App";
 import "./Register.css";
 
 function Register() {
@@ -8,6 +9,7 @@ function Register() {
   const [newUsername, setNewUsername] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [error, setError] = useState(null);
+  const { handleLogin } = useContext(AuthContext);
 
   async function handleRegistration(e) {
     e.preventDefault();
@@ -31,10 +33,11 @@ function Register() {
 
       const data = await response.json();
 
-      if (data.error || (data.status !== 200)) {
+      if (data.error) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
+      handleLogin(data);
       //TODO: Logic for successful registration goes below here
       window.alert(`Welcome, ${data.username}`);
       setError(null);
@@ -47,16 +50,16 @@ function Register() {
   }
 
   return (
-    <>
-      <div className="registerPage">
-        <h1>Register</h1>
+    <div className="registerPage">
+      <h1>Register</h1>
+
       <form
         onSubmit={(e) => handleRegistration(e)}
         className="registerContainer"
       >
         <label>
           First Name
-          <input 
+          <input
             type="text"
             value={newFirstName}
             onChange={(e) => setNewFirstName(e.target.value)}
@@ -68,7 +71,7 @@ function Register() {
 
         <label>
           Last Name
-          <input 
+          <input
             type="text"
             value={newLastName}
             onChange={(e) => setNewLastName(e.target.value)}
@@ -114,14 +117,14 @@ function Register() {
             required
           />
         </label>
-          <button type="submit" className="submitButton">
-            submit
-          </button>
 
-          {error && <div style={{ color: "red" }}>{error}</div>}
-        </form>
-      </div>
-    </>
+        <button type="submit" className="submitButton">
+          submit
+        </button>
+
+        {error && <div style={{ color: "red" }}>{error}</div>}
+      </form>
+    </div>
   );
 }
 
