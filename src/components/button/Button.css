@@ -1,7 +1,6 @@
 @import "../../global-styles/Global-Styles.css";
 #button {
   padding: 7px 14px;
-  border: 2px solid;
   border-radius: 5px;
   font-size: var(--p-text-size);
   text-transform: uppercase;

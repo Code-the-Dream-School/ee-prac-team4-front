@@ -19,6 +19,8 @@ h1 {
   flex-direction: column;
   align-items: center;
   margin-bottom: 0.5em;
+  border: solid 1px var(--primary-border-color);
+  border-radius: var(--primary-border-radius);
 }
 
 .inputField {
@@ -27,8 +29,11 @@ h1 {
 }
 
 .submit-button {
-  padding-top: 10px;
   background-color: var(--primary-button-background);
-  border-color: var(--primary-button-border);
+  border: solid var(--primary-button-border);
   color: var(--primary-button-text);
+}
+
+.submit-button:hover {
+  border: solid var(--primary-button-hover);
 }
