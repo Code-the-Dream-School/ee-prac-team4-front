@@ -5,7 +5,7 @@ import LoginPage from "./pages/login/LoginPage";
 import Home from "./pages/home/Home";
 import Resources from "./pages/resources/Resources";
 import FlashCards from "./pages/flashcards/FlashCards";
-import "./global-styles/Global-Styles.css";
+import "./App.css";
 
 function App() {
   return (
