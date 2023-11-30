@@ -29,14 +29,12 @@ function LoginPage() {
 
       const data = await response.json();
 
-      if (data.token) {
+      if (data.status === 200 && !data.error) {
+        handleLogin(userData);
         navigate("/");
-      }
-      if (data.error) {
+      } else {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-
-      handleLogin(userData);
     } catch (error) {
       console.error("Error during login:", error);
       setError("Error during login. Please try again.");
