@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../App";
 import "./Register.css";
 
@@ -9,13 +10,15 @@ function Register() {
   const [newUsername, setNewUsername] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
   const { handleLogin } = useContext(AuthContext);
 
   async function handleRegistration(e) {
     e.preventDefault();
     try {
       const response = await fetch(
-        `https://localhost:8000/api/v1/auth/register`,
+        `http://localhost:8000/api/v1/user/register`,
         {
           method: "POST",
           headers: {
@@ -27,25 +30,24 @@ function Register() {
             username: newUsername,
             password: newPassword,
             email: newEmail,
+            role: "Student",
           }),
         },
       );
 
       const data = await response.json();
+      console.log("Response from server:", data);
 
-      if (data.error) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+      if (response.ok && !response.error) {
+        handleLogin(data);
+        navigate("/");
+        return data;
+      } else {
+        throw new Error(`Login failed: ${data.message}`);
       }
-
-      handleLogin(data);
-      //TODO: Logic for successful registration goes below here
-      window.alert(`Welcome, ${data.username}`);
-      setError(null);
-
-      return data;
     } catch (error) {
-      console.error("Error during registration:", error);
-      setError("Error during registration. Please try again.");
+      console.error("Error during login:", error);
+      setError("Error during login. Please try again.");
     }
   }
 

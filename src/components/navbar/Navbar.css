@@ -1,31 +1,31 @@
+.left-flex-item {
+  display: flex;
+  justify-content: start;
+  gap: 2px;
+}
+
+.right-flex-item {
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+}
+
 .navbarContainer {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
 
-.searchBar {
-  width: 10%;
-  padding-right: 20rem;
-}
-
-.navigation {
-  width: 60%;
-  padding-left: 25rem;
-}
-
-.navigation ul {
-  list-style: none;
+.menu {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: auto;
 }
 
-.navigation li {
-  margin-right: 10px;
-}
-
-.authButtons {
+.loginItems {
   display: flex;
-  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }

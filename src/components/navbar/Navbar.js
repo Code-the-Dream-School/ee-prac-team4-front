@@ -4,8 +4,6 @@ import { AuthContext } from "../../App";
 import "./Navbar.css";
 
 function Navbar() {
-  const [search, setSearch] = useState("");
-
   const { isLoggedIn, userData, handleLogout } = useContext(AuthContext);
 
   return (
@@ -19,20 +17,9 @@ function Navbar() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-          <li>
-            <Link to="/solutions">Solutions</Link>
+            <Link to="/resources">Resources</Link>
           </li>
         </ul>
-      </div>
-      <div className="searchBar">
-        <input
-          type="search"
-          value={search}
-          placeholder="Search"
-          onChange={(e) => setSearch(e.target.value)}
-        />
       </div>
       {!isLoggedIn ? (
         <div className="authButtons">
@@ -46,6 +33,7 @@ function Navbar() {
       ) : (
         <div className="loginItems">
           <p className="username">{userData.email}</p>
+          {/*change to {userData.user.username}*/}
           <Link to="/">
             <button className="logoutButton" onClick={handleLogout}>
               Logout

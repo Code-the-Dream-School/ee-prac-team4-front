@@ -6,6 +6,7 @@ import Home from "./pages/home/Home";
 import Resources from "./pages/resources/Resources";
 import FlashCards from "./pages/flashcards/FlashCards";
 import Navbar from "./components/navbar/Navbar.js";
+import "./App.css";
 
 export const AuthContext = createContext();
 

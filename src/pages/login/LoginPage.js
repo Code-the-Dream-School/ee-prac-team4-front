@@ -29,18 +29,18 @@ function LoginPage() {
 
       const data = await response.json();
 
-      if (data.status === 200 && !data.error) {
+      if (response.ok && !response.error) {
         handleLogin(userData);
         navigate("/");
+        return data;
       } else {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+        throw new Error(`Login failed: ${data.message}`);
       }
     } catch (error) {
       console.error("Error during login:", error);
       setError("Error during login. Please try again.");
     }
   }
-
   return (
     <div className="loginPage">
       <h1>Login Page</h1>
