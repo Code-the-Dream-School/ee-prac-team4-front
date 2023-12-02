@@ -3,12 +3,15 @@
 import React from "react";
 import "./Button.css";
 
-function Button({ children, className, onClick }) {
+function Button({ buttonText, type, className, clickHandler }) {
   return (
     <>
-      <button className={`${className}`} onClick={onClick} id="button">
-        {children}
-      </button>
+      <Button
+        buttonText={buttonText}
+        className={className}
+        clickHandler={clickHandler}
+        type={type}
+      />
     </>
   );
 }
