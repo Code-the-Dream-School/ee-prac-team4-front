@@ -5,14 +5,14 @@ import "./Button.css";
 
 function Button({ buttonText, type, className, clickHandler }) {
   return (
-    <>
-      <Button
-        buttonText={buttonText}
-        className={className}
-        clickHandler={clickHandler}
-        type={type}
-      />
-    </>
+    <button
+      id="button"
+      className={className}
+      onClick={clickHandler}
+      type={type}
+    >
+      {buttonText}
+    </button>
   );
 }
 
