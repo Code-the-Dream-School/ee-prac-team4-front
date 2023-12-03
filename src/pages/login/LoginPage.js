@@ -63,9 +63,7 @@ function LoginPage() {
           required
         ></input>
 
-        <Button className="submit-button" type="submit">
-          Submit
-        </Button>
+        <Button className="submit-button" type="submit" buttonText="Submit" />
         {error && <div style={{ color: "red" }}>{error}</div>}
       </form>
     </div>
