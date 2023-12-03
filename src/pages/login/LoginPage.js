@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../App";
+import Button from "../../components/button/Button.js";
 import "./LoginPage.css";
 
 function LoginPage() {
@@ -66,7 +67,7 @@ function LoginPage() {
           required
         ></input>
 
-        <button type="submit">Submit</button>
+        <Button className="submit-button" type="submit" buttonText="Submit" />
         {error && <div style={{ color: "red" }}>{error}</div>}
       </form>
     </div>
