@@ -31,7 +31,7 @@ function LoginPage() {
       const data = await response.json();
 
       if (response.ok && !response.error) {
-        handleLogin(userData);
+        handleLogin(data);
         navigate("/");
       } else {
         throw new Error(`Login failed: ${data.message}`);
