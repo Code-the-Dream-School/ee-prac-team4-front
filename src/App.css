@@ -1,4 +1,6 @@
-:root {
+#root {
+  width: 100%;
+  height: 100vh;
   /* global font and background color */
   font-family: Inter, sans-serif;
   color: #ffffff;
@@ -54,4 +56,10 @@
   --secondary-topic-background: #071d2a;
   --secondary-topic-border: #005d85;
   --secondary-topic-text: #6ae1ff;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
 }

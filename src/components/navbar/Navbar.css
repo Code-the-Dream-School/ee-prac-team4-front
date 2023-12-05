@@ -1,0 +1,31 @@
+.left-flex-item {
+  display: flex;
+  justify-content: start;
+  gap: 2px;
+}
+
+.right-flex-item {
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+}
+
+.navbarContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  padding: auto;
+}
+
+.loginItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
