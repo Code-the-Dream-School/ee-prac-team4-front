@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../App";
 import "./Navbar.css";
@@ -33,7 +33,7 @@ function Navbar() {
       ) : (
         <div className="loginItems">
           {/* update when registration route returns full user data */}
-          <p className="username">{userData.user?.username || userData.email}</p>
+          <p className="username">{userData.user?.username}</p>
           <Link to="/">
             <button className="logoutButton" onClick={handleLogout}>
               Logout
