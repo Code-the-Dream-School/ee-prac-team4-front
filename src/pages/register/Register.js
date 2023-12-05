@@ -41,7 +41,6 @@ function Register() {
       if (response.ok && !response.error) {
         handleLogin(data);
         navigate("/");
-        return data;
       } else {
         throw new Error(`Login failed: ${data.message}`);
       }

@@ -32,8 +32,8 @@ function Navbar() {
         </div>
       ) : (
         <div className="loginItems">
-          <p className="username">{userData.email}</p>
-          {/*change to {userData.user.username}*/}
+          {/* update when registration route returns full user data */}
+          <p className="username">{userData.user?.username || userData.email}</p>
           <Link to="/">
             <button className="logoutButton" onClick={handleLogout}>
               Logout

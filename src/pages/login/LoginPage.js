@@ -33,7 +33,6 @@ function LoginPage() {
       if (response.ok && !response.error) {
         handleLogin(userData);
         navigate("/");
-        return data;
       } else {
         throw new Error(`Login failed: ${data.message}`);
       }
