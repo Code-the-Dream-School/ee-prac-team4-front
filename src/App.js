@@ -1,16 +1,57 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { createContext, useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import Register from "./pages/register/Register";
 import LoginPage from "./pages/login/LoginPage";
 import Home from "./pages/home/Home";
 import Resources from "./pages/resources/Resources";
 import FlashCards from "./pages/flashcards/FlashCards";
+import Navbar from "./components/navbar/Navbar.js";
+import "./App.css";
+
+export const AuthContext = createContext();
+
+function AuthProvider({ children }) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userData, setUserData] = useState({});
+
+  const handleLogin = (userData) => {
+    setIsLoggedIn(true);
+    setUserData(userData);
+    console.log("HandleLogin", userData);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUserData({});
+  };
+
+  useEffect(() => {
+    console.log("isLoggedIn:", isLoggedIn);
+  }, [isLoggedIn]);
+
+  return (
+    <AuthContext.Provider
+      value={{ isLoggedIn, handleLogin, handleLogout, userData }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+}
 import Deck from "./pages/deck/Deck";
 import FlashCardForm from "./pages/deck/FlashcardForm";
 
 function App() {
   return (
-    <BrowserRouter>
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
+  );
+}
+
+function AppContent() {
+  return (
+    <>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
@@ -18,10 +59,9 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/create-deck" element={<Deck />} />
         <Route path="/create-card" element={<FlashCardForm />} />
-        <Route path="/resources" element={<Resources/>}/>
-        <Route path="/flashcards" element={<FlashCards />} />
+        <Route path="/resources" element={<Resources />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 

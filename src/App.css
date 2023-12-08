@@ -1,0 +1,65 @@
+#root {
+  width: 100%;
+  height: 100vh;
+  /* global font and background color */
+  font-family: Inter, sans-serif;
+  color: #ffffff;
+
+  /* Typography */
+  --h1-text-size: 43px;
+  --h2-text-size: 32px;
+  --h3-text-size: 24px;
+  --p-text-size: 16px;
+
+  /* Text Colors */
+  --subheading-text-color: #a2a2a2;
+  --link-text-color: #728095;
+
+  /* Background Colors */
+  --primary-background: #161616;
+  --secondary-background: #1c1c1c;
+
+  /*card variations*/
+  --primary-border-color: #a1aebf;
+  --primary-border-radius: 4px;
+
+  /*text boxes*/
+  --primary-input-background: #0f0f0f;
+  --primary-input-radius: 12px;
+
+  /* Button Variations */
+  --primary-button-background: #052926;
+  --primary-button-border: #00564a;
+  --primary-button-text: #25d0ab;
+  --primary-button-hover: #006d5b;
+
+  --secondary-button-background: #071d2a;
+  --secondary-button-border: #064b6b;
+  --secondary-button-text: #6ae1ff;
+  --secondary-button-hover: #005d85;
+
+  --highlight-button-background: #221527;
+  --highlight-button-border: #7938b2;
+  --highlight-button-text: #bf7af0;
+  --highlight-button-hover: #9d5bd2;
+
+  --caution-button-background: #2a1410;
+  --caution-button-border: #822025;
+  --caution-button-text: #f2555a;
+  --caution-button-hover: #aa2429;
+
+  /* Topic Variations */
+  --primary-topic-background: #221a00;
+  --primary-topic-border: #594a05;
+  --primary-topic-text: #fff45e;
+
+  --secondary-topic-background: #071d2a;
+  --secondary-topic-border: #005d85;
+  --secondary-topic-text: #6ae1ff;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+}
