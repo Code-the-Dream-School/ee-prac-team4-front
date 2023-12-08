@@ -9,19 +9,19 @@ const DECK_DATA = {
   topic: "",
   subtopic: "",
 };
-function DeckCreation() {
+function Deck() {
   const [deck, setDeckData] = useState(DECK_DATA);
   let navigate = useNavigate();
 
   const redirect = (id) => {
     //TODO: send redirect to new route
     console.log(id);
-    navigate("/createCard");
+    navigate("/create-card");
   };
 
   return (
-    <DeckForm deckData={deck} handleDeck={setDeckData} onSaveDeck={redirect} />
+    <DeckForm deck={deck} setDeckData={setDeckData} onSaveDeck={redirect} />
   );
 }
 
-export default DeckCreation;
+export default Deck;

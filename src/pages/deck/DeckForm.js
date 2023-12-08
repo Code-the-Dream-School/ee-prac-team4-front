@@ -2,12 +2,38 @@ import React from "react";
 import ALL_TOPICS from "./../../constant";
 import "./Deck.css";
 
-function DeckForm({ deckData, handleDeck, onSaveDeck }) {
-  const handleSaveDeck = () => {
-    //TODO: back logic here
-    console.log("deckData", deckData);
+function DeckForm({ deck, setDeckData, onSaveDeck }) {
+
+
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRjMWUzMTczNGExMjg4NTJmMWY3OGQiLCJpYXQiOjE3MDE1NDM0ODIsImV4cCI6MTcwMTYyOTg4Mn0.n98iQmGFSe1ChRgAXnluW5b5iuPzM7lu6qxhKDqVBP8"
+    async function handleSaveDeck (e) {
+          e.preventDefault();
+          try {
+              const response = await fetch(`http://localhost:8000/api/v1/deck`, {
+                  method: "POST",
+                  headers: {
+                      "Content-Type": "application/json",
+                      "Authorization": `Bearer ${token}`
+                  },
+                  body: JSON.stringify(deck),
+              });
+
+              const data = await response.json();
+                console.log(data)
+              if (data) {
+                  // navigate("/");
+              }
+              if (data.error || data.status !== 200) {
+                  throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+          } catch (error) {
+              console.error("Error during login:", error);
+          }
+
+
+      console.log("deckData", deck);
     //TODO: send deck data and id from db
-    onSaveDeck(deckData);
+    onSaveDeck(deck);
   };
 
   return (
@@ -18,8 +44,8 @@ function DeckForm({ deckData, handleDeck, onSaveDeck }) {
           type="text"
           name="title"
           placeholder="Deck Name"
-          value={deckData.title}
-          onChange={(e) => handleDeck({ ...deckData, title: e.target.value })}
+          value={deck.title}
+          onChange={(e) => setDeckData({ ...deck, title: e.target.value })}
         />
       </label>
 
@@ -29,14 +55,14 @@ function DeckForm({ deckData, handleDeck, onSaveDeck }) {
           name="topic"
           id="mainTopic"
           onChange={(e) =>
-            handleDeck({
-              ...deckData,
+              setDeckData({
+              ...deck,
               topic: e.target.value,
               subtopic: ALL_TOPICS[e.target.value][0],
             })
           }
         >
-          {deckData.topic ? null : <option value="">ChooseOn</option>}
+          {deck.topic ? null : <option value="">ChooseOn</option>}
           {Object.keys(ALL_TOPICS).map((topic, idx) => {
             return (
               <option key={idx} value={topic}>
@@ -47,17 +73,17 @@ function DeckForm({ deckData, handleDeck, onSaveDeck }) {
         </select>
       </label>
 
-      {deckData.topic ? (
+      {deck.topic ? (
         <label htmlFor="subTopic">
           Sub Topic
           <select
             name="subTopic"
             id="subTopic"
             onChange={(e) =>
-              handleDeck({ ...deckData, subtopic: e.target.value })
+                setDeckData({ ...deck, subtopic: e.target.value })
             }
           >
-            {ALL_TOPICS[deckData.topic].map((subtopic, idx) => {
+            {ALL_TOPICS[deck.topic].map((subtopic, idx) => {
               return (
                 <option key={idx} value={subtopic}>
                   {subtopic}
@@ -72,9 +98,9 @@ function DeckForm({ deckData, handleDeck, onSaveDeck }) {
         Private
         <input
           type="checkbox"
-          checked={deckData.isPublic}
+          checked={deck.isPublic}
           onChange={(e) =>
-            handleDeck({ ...deckData, isPublic: !deckData.isPublic })
+              setDeckData({ ...deck, isPublic: !deck.isPublic })
           }
         />
       </label>

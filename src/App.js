@@ -5,7 +5,7 @@ import LoginPage from "./pages/login/LoginPage";
 import Home from "./pages/home/Home";
 import Resources from "./pages/resources/Resources";
 import FlashCards from "./pages/flashcards/FlashCards";
-import DeckCreation from "./pages/deck/Deck";
+import Deck from "./pages/deck/Deck";
 import FlashCardForm from "./pages/deck/FlashcardForm";
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/resources" element={<Resources />} />
-        <Route path="/createDeck" element={<DeckCreation />} />
-        <Route path="/createCard" element={<FlashCardForm />} />
+        <Route path="/create-deck" element={<Deck />} />
+        <Route path="/create-card" element={<FlashCardForm />} />
         <Route path="/resources" element={<Resources/>}/>
         <Route path="/flashcards" element={<FlashCards />} />
       </Routes>
