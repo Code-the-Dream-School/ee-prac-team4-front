@@ -1,3 +1,7 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 #root {
   width: 100%;
   height: 100vh;
@@ -16,11 +20,11 @@
   --link-text-color: #728095;
 
   /* Background Colors */
-  --primary-background: #161616;
+  --primary-background: #292929;
   --secondary-background: #1c1c1c;
 
   /*card variations*/
-  --primary-border-color: #a1aebf;
+  --primary-border-color: #444;
   --primary-border-radius: 4px;
 
   /*text boxes*/
@@ -28,7 +32,7 @@
   --primary-input-radius: 12px;
 
   /* Button Variations */
-  --primary-button-background: #052926;
+  --primary-button-background: #555;
   --primary-button-border: #00564a;
   --primary-button-text: #25d0ab;
   --primary-button-hover: #006d5b;
