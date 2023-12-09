@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Home.css";
 import DeckCard from "../../components/deckCard/DeckCard";
 function Home() {
