@@ -49,7 +49,7 @@ function LoginPage() {
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className={`inputField inputFieldEmail`}
+          className={`inputField inputFieldEmail`} // different classnames for different svg for each field
           type="email"
           name="email"
           id="email"
