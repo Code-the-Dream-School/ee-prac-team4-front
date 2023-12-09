@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../App";
 import "./Navbar.css";
+// import logo from '../../../images/logo';
 
 function Navbar() {
   const { isLoggedIn, userData, handleLogout } = useContext(AuthContext);
