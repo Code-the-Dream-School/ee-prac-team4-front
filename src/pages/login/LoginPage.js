@@ -25,7 +25,7 @@ function LoginPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include",  // added this line
+        credentials: "include",  
         body: JSON.stringify(userData),
       });
 
