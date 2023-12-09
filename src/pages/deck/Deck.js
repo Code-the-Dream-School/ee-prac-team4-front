@@ -8,7 +8,7 @@ const DECK_DATA = {
   isPublic: false,
   topic: "",
   subtopic: "",
-  flashcards: []
+  flashcards: [],
 };
 function Deck() {
   const [deck, setDeckData] = useState(DECK_DATA);
@@ -21,7 +21,7 @@ function Deck() {
   };
 
   return (
-    <DeckForm deck={deck} setDeckData={setDeckData} onSaveDeck={redirect}  />
+    <DeckForm deck={deck} setDeckData={setDeckData} onSaveDeck={redirect} />
   );
 }
 
