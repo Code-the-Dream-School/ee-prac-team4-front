@@ -70,8 +70,7 @@ function LoginPage() {
         {error && <div style={{ color: "red" }}>{error}</div>}
 
         <p className="link-to-sign-up">
-          Don't have an account yet?{' '}
-          Create one <Link to="/register" className="link-to-sign-up-page"> here</Link>.<br/><br/>
+          Don't have an account?<Link to="/register" className="link-to-sign-up-page"> Sign Up</Link><br/><br/>
         </p>
       </form>
     </div>
