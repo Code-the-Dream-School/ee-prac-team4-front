@@ -10,6 +10,7 @@
 .formContainer {
   width: 300px;
   padding: 20px;
+  padding-bottom: 0px;
   border: 1px solid var(--primary-border-color);
   background-color: var(--primary-background); 
   border-radius: 8px;
@@ -58,6 +59,7 @@ label {
   padding-bottom: 10px;
   padding-top: 10px;
   font-size: 16px;
+  font-style: italic;
 }
 
 .link-to-sign-up-page {
