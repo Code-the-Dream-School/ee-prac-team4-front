@@ -71,7 +71,7 @@ function LoginPage() {
 
         <p className="link-to-sign-up">
           Don't have an account yet?{' '}
-          Create one <Link to="/sign-up" className="link-to-sign-up-page"> here</Link>.<br/><br/>
+          Create one <Link to="/register" className="link-to-sign-up-page"> here</Link>.<br/><br/>
         </p>
       </form>
     </div>
