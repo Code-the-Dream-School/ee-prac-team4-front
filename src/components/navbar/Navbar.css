@@ -1,12 +1,12 @@
 .left-flex-item {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 2px;
 }
 
 .right-flex-item {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 5px;
 }
 
@@ -16,6 +16,7 @@
   justify-content: space-between;
   align-items: center;
   height: 50px;
+  border-bottom: 1px solid #fff;
 }
 
 .menu {
