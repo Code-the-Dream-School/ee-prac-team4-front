@@ -15,6 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 50px;
 }
 
 .menu {
@@ -28,4 +29,46 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+}
+
+.logo {
+  width: 160px;
+}
+
+.createAccount {
+  max-width: 70px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.log-out-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+  color: #fff;
+  font-size: 14px;
+}
+
+.log-out-button svg {
+  fill: #fff;
+  height: 25px; 
+  width: 25px;
+}
+
+.username {
+  font-size: 16px; 
+  color: #fff; 
+  margin-right: 10px; 
+}
+
+.menu .resources {
+  width: 120px;
+  height: 60px;
+}
+
+.menu .resources:hover {
+  transform: scale(1.1);
 }
