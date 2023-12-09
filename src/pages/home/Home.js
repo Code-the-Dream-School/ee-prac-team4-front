@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import Flashcard from "../../components/flashcard/Flashcard";
 function Home() {
   return (
     <>

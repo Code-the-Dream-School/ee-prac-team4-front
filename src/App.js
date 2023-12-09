@@ -7,7 +7,8 @@ import Resources from "./pages/resources/Resources";
 import FlashCards from "./pages/flashcards/FlashCards";
 import Navbar from "./components/navbar/Navbar.js";
 import "./App.css";
-
+import Deck from "./pages/deck/Deck";
+import FlashCardForm from "./pages/deck/FlashcardForm";
 export const AuthContext = createContext();
 
 function AuthProvider({ children }) {
@@ -37,8 +38,7 @@ function AuthProvider({ children }) {
     </AuthContext.Provider>
   );
 }
-import Deck from "./pages/deck/Deck";
-import FlashCardForm from "./pages/deck/FlashcardForm";
+
 
 function App() {
   return (

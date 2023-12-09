@@ -1,7 +1,53 @@
 .deck,
 .cardContainer {
-  width: 600px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid var(--primary-border-color);
+  color: var(--subheading-text-color);
+  border-radius: var(--primary-input-radius);
+}
+
+.deckInput {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  text-transform: uppercase;
+}
+input,
+select {
+  font-size: 14px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--primary-border-color);
+  background: var(--primary-input-background);
+  border-radius: var(--primary-input-radius);
+  color: var(--subheading-text-color);
+}
+
+.checkBox {
+  display: inline;
+}
+
+.checkBox input {
+  margin-left: 19px;
+}
+.button {
+  font-weight: bold;
+  width: 120px;
+  padding: 16px;
+  background: var(--secondary-button-background);
+  border: 2px solid var(--secondary-button-border);
+  border-radius: 5px;
+  color: var(--secondary-button-text);
+}
+
+.button:hover {
+  background: var(--secondary-button-hover);
 }

@@ -3,42 +3,38 @@ import ALL_TOPICS from "./../../constant";
 import "./Deck.css";
 
 function DeckForm({ deck, setDeckData, onSaveDeck }) {
+  async function handleSaveDeck(e) {
+    e.preventDefault();
+    try {
+      const response = await fetch(`http://localhost:8000/api/v1/deck`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(deck),
+        credentials: "include",
+      });
 
+      const data = await response.json();
+      console.log(data);
+      if (data) {
+        // navigate("/");
+      }
+      if (data.error || data.status !== 200) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
 
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTRjMWUzMTczNGExMjg4NTJmMWY3OGQiLCJpYXQiOjE3MDE1NDM0ODIsImV4cCI6MTcwMTYyOTg4Mn0.n98iQmGFSe1ChRgAXnluW5b5iuPzM7lu6qxhKDqVBP8"
-    async function handleSaveDeck (e) {
-          e.preventDefault();
-          try {
-              const response = await fetch(`http://localhost:8000/api/v1/deck`, {
-                  method: "POST",
-                  headers: {
-                      "Content-Type": "application/json",
-                      "Authorization": `Bearer ${token}`
-                  },
-                  body: JSON.stringify(deck),
-              });
-
-              const data = await response.json();
-                console.log(data)
-              if (data) {
-                  // navigate("/");
-              }
-              if (data.error || data.status !== 200) {
-                  throw new Error(`HTTP error! Status: ${response.status}`);
-              }
-          } catch (error) {
-              console.error("Error during login:", error);
-          }
-
-
-      console.log("deckData", deck);
+    console.log("deckData", deck);
     //TODO: send deck data and id from db
     onSaveDeck(deck);
-  };
+  }
 
   return (
     <div className="deck">
-      <label htmlFor="title">
+      <label className="deckInput" htmlFor="title">
         Deck Name
         <input
           type="text"
@@ -49,13 +45,13 @@ function DeckForm({ deck, setDeckData, onSaveDeck }) {
         />
       </label>
 
-      <label htmlFor="topic">
+      <label htmlFor="topic" className="deckInput">
         Topic
         <select
           name="topic"
           id="mainTopic"
           onChange={(e) =>
-              setDeckData({
+            setDeckData({
               ...deck,
               topic: e.target.value,
               subtopic: ALL_TOPICS[e.target.value][0],
@@ -74,14 +70,12 @@ function DeckForm({ deck, setDeckData, onSaveDeck }) {
       </label>
 
       {deck.topic ? (
-        <label htmlFor="subTopic">
+        <label htmlFor="subTopic" className="deckInput">
           Sub Topic
           <select
             name="subTopic"
             id="subTopic"
-            onChange={(e) =>
-                setDeckData({ ...deck, subtopic: e.target.value })
-            }
+            onChange={(e) => setDeckData({ ...deck, subtopic: e.target.value })}
           >
             {ALL_TOPICS[deck.topic].map((subtopic, idx) => {
               return (
@@ -94,18 +88,18 @@ function DeckForm({ deck, setDeckData, onSaveDeck }) {
         </label>
       ) : null}
 
-      <label htmlFor="">
+      <label htmlFor="" className="checkBox">
         Private
         <input
           type="checkbox"
           checked={deck.isPublic}
-          onChange={(e) =>
-              setDeckData({ ...deck, isPublic: !deck.isPublic })
-          }
+          onChange={(e) => setDeckData({ ...deck, isPublic: !deck.isPublic })}
         />
       </label>
 
-      <button onClick={handleSaveDeck}>Create</button>
+      <button className="button" onClick={handleSaveDeck}>
+        Create
+      </button>
     </div>
   );
 }

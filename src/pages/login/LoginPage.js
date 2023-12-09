@@ -29,10 +29,9 @@ function LoginPage() {
       });
 
       const data = await response.json();
-
       if (response.ok && !response.error) {
         handleLogin(data);
-        navigate("/");
+        navigate("/create-deck");
       } else {
         throw new Error(`Login failed: ${data.message}`);
       }
