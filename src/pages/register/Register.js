@@ -24,6 +24,7 @@ function Register() {
           headers: {
             "Content-Type": "application/json",
           },
+          credentials: "include", // added this line
           body: JSON.stringify({
             firstName: newFirstName,
             lastName: newLastName,
