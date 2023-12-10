@@ -54,7 +54,7 @@ function Register() {
 
   return (
     <div className="registerPage">
-      <h1>Register Here</h1>
+      <h1>Register</h1>
 
       <form
         onSubmit={(e) => handleRegistration(e)}
@@ -121,7 +121,7 @@ function Register() {
           />
         </label>
 
-        <Button type="submit" className="submitButton" buttonText="register" />
+        <Button type="submit" className="submit-button-register" buttonText="register" />
 
         {error && <div style={{ color: "red" }}>{error}</div>}
 

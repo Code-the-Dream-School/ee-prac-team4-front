@@ -31,16 +31,17 @@
   color: #ddd; 
 }
 
-.submitButton {
-  background-color: var(--primary-button-background); 
-  color: #ddd; 
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
+.submit-button-register {
+  font-weight: bold;
+  width: 120px;
+  padding: 16px;
+  background: var(--secondary-button-background);
+  border: 2px solid var(--secondary-button-border);
+  border-radius: 5px;
+  color: var(--secondary-button-text);
 }
 
-.submitButton:hover {
+.submit-button-register:hover {
   background-color: #777; 
 }
 
@@ -50,6 +51,7 @@
   padding-bottom: 10px;
   padding-top: 10px;
   font-size: 16px;
+  font-style: italic;
 }
 
 .link-to-register-page {
