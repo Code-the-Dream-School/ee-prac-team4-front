@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../App";
 import Button from "../../components/button/Button.js";
 import "./LoginPage.css";
@@ -44,13 +44,13 @@ function LoginPage() {
   }
   return (
     <div className="loginPage">
-      <h1>Login Page</h1>
-      <form className="formContainer" onSubmit={(e) => handleSubmit(e)}>
-        <label htmlFor="email">Email</label>
+      <h1>Login</h1>
+      <form className="loginContainer" onSubmit={(e) => handleSubmit(e)}>
+        <label htmlFor="email" className="inputLabel">Email</label>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="inputField"
+          className={`inputField inputFieldEmail`} // different classnames for different svg for each field
           type="email"
           name="email"
           id="email"
@@ -60,15 +60,19 @@ function LoginPage() {
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="inputField"
+          className={`inputField inputFieldPassword`}
           type="password"
           name="password"
           id="password"
           required
         ></input>
 
-        <Button className="submit-button" type="submit" buttonText="Submit" />
-        {error && <div style={{ color: "red" }}>{error}</div>}
+        <Button className="submit-button" type="submit" buttonText="Sign In" />
+        {error && <div className="error-message">{error}</div>}
+
+        <p className="link-to-sign-up">
+          Don't have an account?<Link to="/register" className="link-to-sign-up-page"> Sign Up</Link><br/><br/>
+        </p>
       </form>
     </div>
   );
