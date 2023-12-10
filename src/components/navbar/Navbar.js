@@ -28,6 +28,9 @@ function Navbar() {
       {!isLoggedIn ? (
         <div className="authButtons">
           <Link to="/login">
+            <Button className="log-in-button" type="submit" buttonText="Log-in" />
+          </Link>
+          <Link to="/login">
             <Button className="sign-up-button" type="submit" buttonText="Sign-up" />
           </Link>
         </div>

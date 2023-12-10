@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px; 
+  height: 70px; 
   background-color: #000; 
   color: #fff; 
 }
@@ -43,6 +43,7 @@
 
 .logo {
   width: 120px; 
+  margin-left: 10px;
 }
 
 .createAccount {
@@ -68,7 +69,7 @@
   width: 20px; 
 }
 
-.sign-up-button {
+.authButtons button {
   font-weight: bold;
   width: 100px;
   padding: 16px;
@@ -77,6 +78,16 @@
   border-radius: 5px;
   color: var(--secondary-button-text);
   margin: 10px;
+}
+
+.log-in-button {
+  background: var(--primary-button-background);
+  color: var(--primary-button-text);
+}
+
+.sign-up-button {
+  background: var(--secondary-button-background);
+  color: var(--secondary-button-text);
 }
 
 .username {
