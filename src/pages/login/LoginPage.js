@@ -67,7 +67,7 @@ function LoginPage() {
         ></input>
 
         <Button className="submit-button" type="submit" buttonText="Sign In" />
-        {error && <div style={{ color: "red" }}>{error}</div>}
+        {error && <div className="error-message">! {error}</div>}
 
         <p className="link-to-sign-up">
           Don't have an account?<Link to="/register" className="link-to-sign-up-page"> Sign Up</Link><br/><br/>
