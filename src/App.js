@@ -58,7 +58,7 @@ function AppContent() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/create-deck" element={<Deck />} />
-        <Route path="/create-card" element={<FlashCardForm />} />
+        <Route path="/create-card/:id" element={<FlashCardForm />} />
         <Route path="/resources" element={<Resources />} />
       </Routes>
     </>

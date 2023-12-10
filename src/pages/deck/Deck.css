@@ -1,10 +1,8 @@
-.deck,
-.cardContainer {
+/* Common styles */
+.cardContainer,
+.flashcard,
+.deck {
   width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: center;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid var(--primary-border-color);
@@ -12,14 +10,30 @@
   border-radius: var(--primary-input-radius);
 }
 
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.flashcard {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .deckInput {
   display: flex;
   flex-direction: column;
 }
 
+/* Input and select styles */
 label {
   text-transform: uppercase;
 }
+
 input,
 select {
   font-size: 14px;
@@ -31,6 +45,7 @@ select {
   color: var(--subheading-text-color);
 }
 
+/* Checkbox styles */
 .checkBox {
   display: inline;
 }
@@ -38,16 +53,48 @@ select {
 .checkBox input {
   margin-left: 19px;
 }
-.button {
+
+/* Button styles */
+.create-deck-button,
+.button-delete {
   font-weight: bold;
   width: 120px;
   padding: 16px;
-  background: var(--secondary-button-background);
-  border: 2px solid var(--secondary-button-border);
   border-radius: 5px;
   color: var(--secondary-button-text);
 }
 
+.button,
+.create-deck-button {
+  background: var(--secondary-button-background);
+  border: 2px solid var(--secondary-button-border);
+}
+
+.button-delete {
+  background: var(--caution-button-background);
+  border: var(--caution-button-border);
+  color: var(--caution-button-hover);
+}
+
+/* Button hover effect */
 .button:hover {
   background: var(--secondary-button-hover);
+}
+
+/* Flashcard answer styles */
+.flashcard-answer {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Flashcard list styles */
+.flashcard-list {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.flashcard-option {
+  display: flex;
 }

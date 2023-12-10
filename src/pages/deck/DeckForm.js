@@ -16,20 +16,14 @@ function DeckForm({ deck, setDeckData, onSaveDeck }) {
       });
 
       const data = await response.json();
-      console.log(data);
       if (data) {
-        // navigate("/");
-      }
-      if (data.error || data.status !== 200) {
+        onSaveDeck(data.deck._id);
+      } else {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
     } catch (error) {
-      console.error("Error during login:", error);
+      console.error("Error ", error);
     }
-
-    console.log("deckData", deck);
-    //TODO: send deck data and id from db
-    onSaveDeck(deck);
   }
 
   return (
@@ -96,7 +90,7 @@ function DeckForm({ deck, setDeckData, onSaveDeck }) {
           onChange={(e) => setDeckData({ ...deck, isPublic: !deck.isPublic })}
         />
       </label>
-
+      {/*<Button className="create-deck-button" type="submit" buttonText="Create" onClick={handleSaveDeck}/>*/}
       <button className="button" onClick={handleSaveDeck}>
         Create
       </button>

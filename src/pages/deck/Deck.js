@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import DeckForm from "./DeckForm";
-import { useNavigate } from "react-router-dom";
+import { createSearchParams, useNavigate, useParams } from "react-router-dom";
 
 const DECK_DATA = {
-  id: 1,
-  title: "",
+  // title: "",
   isPublic: false,
   topic: "",
   subtopic: "",
@@ -13,11 +12,9 @@ const DECK_DATA = {
 function Deck() {
   const [deck, setDeckData] = useState(DECK_DATA);
   let navigate = useNavigate();
-
+  let params = useParams();
   const redirect = (id) => {
-    //TODO: send redirect to new route
-    console.log(id);
-    navigate("/create-card");
+    navigate(`/create-card/${id}`);
   };
 
   return (
