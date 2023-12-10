@@ -44,6 +44,7 @@ function LoginPage() {
   }
   return (
     <div className="loginPage">
+      <h1>Login</h1>
       <form className="loginContainer" onSubmit={(e) => handleSubmit(e)}>
         <label htmlFor="email" className="inputLabel">Email</label>
         <input
