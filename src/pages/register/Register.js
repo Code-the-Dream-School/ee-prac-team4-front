@@ -115,7 +115,7 @@ function Register() {
             placeholder="*************"
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
-            className={`inputField inputFieldPassword`}
+            className={`inputField input-field-password`}
             autoComplete="off"
             required
           />
@@ -123,7 +123,7 @@ function Register() {
 
         <Button type="submit" className="submit-button-register" buttonText="register" />
 
-        {error && <div style={{ color: "red" }}>{error}</div>}
+        {error && <div className="errorMessage">{error}</div>}
 
         <p className="link-to-register">
           Already have an account?{' '}
