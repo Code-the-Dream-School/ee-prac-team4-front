@@ -114,3 +114,13 @@ h1 {
   margin-top: 15px;
   font-style: italic;
 }
+
+@media (max-width: 320px) {
+  .inputField {
+    width: calc(100% - 12px);
+  }
+
+  .loginContainer {
+    width: calc(100% - 12px);
+  }
+}
