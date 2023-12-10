@@ -37,12 +37,13 @@ label {
 }
 
 .submit-button {
-  background-color: var(--primary-button-background); 
-  color: #ddd; 
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
+  font-weight: bold;
+  width: 120px;
+  padding: 16px;
+  background: var(--secondary-button-background);
+  border: 2px solid var(--secondary-button-border);
+  border-radius: 5px;
+  color: var(--secondary-button-text);
 }
 
 .submit-button:hover {
