@@ -89,3 +89,12 @@
   font-style: italic;
 }
 
+@media (max-width: 320px) {
+  .inputField {
+    width: calc(100% - 12px);
+  }
+
+  .registerContainer {
+    width: calc(100% - 12px);
+  }
+}
