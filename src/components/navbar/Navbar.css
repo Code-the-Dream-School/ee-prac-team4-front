@@ -1,28 +1,37 @@
-.left-flex-item {
-  display: flex;
-  justify-content: flex-start;
-  gap: 2px;
-}
-
-.right-flex-item {
-  display: flex;
-  justify-content: flex-end;
-  gap: 5px;
-}
-
 .navbarContainer {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
-  border-bottom: 1px solid #fff;
+  height: 50px; 
+  background-color: #000; 
+  color: #fff; 
+}
+
+.navbar-button {
+  font-size: 20px;
+  font-weight:800;
 }
 
 .menu {
   display: flex;
   justify-content: space-between;
-  padding: auto;
+  padding: 0;
+}
+
+.menu a {
+  color: #fff; 
+  text-decoration: none; 
+  padding: 10px 15px; 
+}
+
+.menu a:hover {
+  background-color: #333; 
+}
+
+.menu .resources:hover,
+.menu .about:hover {
+  transform: scale(1.1);
 }
 
 .loginItems {
@@ -33,12 +42,12 @@
 }
 
 .logo {
-  width: 160px;
+  width: 120px; 
 }
 
 .createAccount {
   max-width: 70px;
-  padding: 10px;
+  padding: 8px; 
   cursor: pointer;
 }
 
@@ -48,28 +57,35 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 5px; 
+  gap: 5px;
   color: #fff;
   font-size: 14px;
 }
 
 .log-out-button svg {
   fill: #fff;
-  height: 25px; 
-  width: 25px;
+  height: 20px; 
+  width: 20px; 
+}
+
+.sign-up-button {
+  font-weight: bold;
+  width: 100px;
+  padding: 16px;
+  background: var(--secondary-button-background);
+  border: 2px solid var(--secondary-button-border);
+  border-radius: 5px;
+  color: var(--secondary-button-text);
+  margin: 10px;
 }
 
 .username {
-  font-size: 16px; 
-  color: #fff; 
-  margin-right: 10px; 
+  font-size: 14px; 
+  color: #fff;
+  margin-right: 8px; 
 }
 
-.menu .resources {
-  width: 120px;
-  height: 60px;
-}
-
-.menu .resources:hover {
-  transform: scale(1.1);
+.menu .resources,
+.menu .about {
+  font-size: 14px;
 }

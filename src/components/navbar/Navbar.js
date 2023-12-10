@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../App";
 import "./Navbar.css";
 import logo from './logo.png';
-import CreateAccount from './createAccount.png';
-import Resources from './resources.png';
+import Button from "../../components/button/Button.js";
 
 function Navbar() {
   const { isLoggedIn, userData, handleLogout } = useContext(AuthContext);
@@ -19,14 +18,17 @@ function Navbar() {
       <div className="navigation">
         <ul className="menu">
           <li>
-            <Link to="/resources"><img src={Resources} alt="resources" title="Resources" className="resources" /></Link>
+            <Link to="/resources" className="navbar-button">Resources</Link>
+          </li>
+          <li>
+            <Link to="/" className="navbar-button">About</Link>
           </li>
         </ul>
       </div>
       {!isLoggedIn ? (
         <div className="authButtons">
           <Link to="/login">
-            <img className='createAccount' src={CreateAccount} alt="Sign-up" title="Sign-up" />
+            <Button className="sign-up-button" type="submit" buttonText="Sign-up" />
           </Link>
         </div>
       ) : (
