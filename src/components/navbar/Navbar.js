@@ -11,6 +11,10 @@ function Navbar({ openRigthNav, setIsOpenRightNav }) {
   const [isHovered, setIsHovered] = useState(false);
   const [checkbox, checkCheckbox] = useState(false);
 
+  // const handleSidebarToggle = (isOpen) => {
+  //   checkCheckbox(isOpen);
+  // };
+
   return (
     <div className="nav">
       <div className="logo">
