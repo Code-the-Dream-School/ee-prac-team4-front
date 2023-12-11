@@ -246,7 +246,6 @@
 
 @media (max-width: 600px) {
   .right-nav-ul {
-    padding-top: 50px;
     padding-left: 5px;
     justify-content: center; 
     min-width: none;
@@ -282,12 +281,6 @@
     opacity: 1;
   }
 
-  .aside {
-    padding-top: 50px;
-    padding-left: 5px;
-    min-width: none;
-  }
-
   .authButtons {
     display: flex;
     flex-direction: column;
@@ -304,15 +297,18 @@
     flex-direction: column;
     font-family: sans-serif;
     margin-left:0px;
-    margin-right: 30px;
+    margin-right: 42px;
     text-align: left;
     width: 100%;
-    gap: 40px;
     background-color: gray;   
   }
 
   .first-group {
-    padding-bottom: 20px;
+    gap: 15px;
+  }
+
+  .first-group a {
+    padding-top: 15px;
   }
 
   .second-group {
@@ -329,17 +325,7 @@
 
   .first-group li,
   .second-group li,
-  .buttons li,
   .authButtons button,
-  .first-group a,
-  .second-group a,
-  .buttons a,
-  .buttons,
-  .authButtons button a,
-  .log-in-button a,
-  .sign-up-button a,
-  .login-button a,
-  .log-out-button a,
   .navbar-button a
    {
     cursor: pointer;
@@ -348,18 +334,14 @@
     width: auto;
     border: none;
     margin-left: 0px;
-    padding: 15px;
     color: #fff;
-    border-radius: none !important;
     font-size: 20px !important;
     text-transform:capitalize !important;
-    font-weight: 800 !important;
-    font-style:normal !important;
-    padding: 0px 5px !important; 
-    transition: background-color 0.3s;
-    background-color: #333;
     padding: 7px 14px !important;
-  border-radius: 5px !important;
+    border-radius: 0px !important;
+    height: 55px;
+    width: 100%;
+    text-align: center;
   }
 
   .log-in-button:hover,
@@ -391,9 +373,7 @@
   .buttons {
     display: flex;
     flex-direction: column;
-    padding-right: 50px;
-    width: 100%;
-    margin-top: 300px;
+    margin-top: 350px;
   }
 
   .menu {
@@ -418,12 +398,6 @@
   }
 
   .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .dropdown-content a {
-    color: #fff;
-    text-decoration: none;
     display: block;
   }
 }
