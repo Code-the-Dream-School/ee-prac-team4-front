@@ -90,10 +90,11 @@ function DeckForm({ deck, setDeckData, onSaveDeck }) {
           onChange={(e) => setDeckData({ ...deck, isPublic: !deck.isPublic })}
         />
       </label>
-      {/*<Button className="create-deck-button" type="submit" buttonText="Create" onClick={handleSaveDeck}/>*/}
-      <button className="button" onClick={handleSaveDeck}>
-        Create
-      </button>
+      <div>
+        <button className="create-deck-button" onClick={handleSaveDeck}>
+          Create
+        </button>
+      </div>
     </div>
   );
 }
