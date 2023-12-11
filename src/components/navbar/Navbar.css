@@ -1,11 +1,155 @@
-.navbarContainer {
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--foreground);
+    border-radius: 9999px;
+    border: 0.5px solid wheat;
+    transform-origin: left center;
+    transition: opacity var(--animation-timing), 
+        width var(--animation-timing), 
+        rotate var(--animation-timing), 
+        translate var(--animation-timing), 
+        background-color var(--animation-timing);
+}
+
+.hamburger-menu:has(input:checked) {
+    --foreground: white;
+    --background: #333;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+    border: 1px solid var(--background);
+    box-shadow: 0 0 0 1px var(--foreground);
+}
+
+.hamburger-menu {
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+    position: absolute;
+    top: var(--hamburger-margin);
+    right: var(--hamburger-margin);
+    z-index: 25;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+    translate: 0;
+}
+
+.hamburger-menu:has(input:checked)::before {
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+}
+
+.dropdown {
+  display: none; 
+}
+
+.nav {
+  top: 0;
+  position: fixed;
+  z-index: 2;
   width: 100%;
+  height: 65px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px; 
-  background-color: #000; 
-  color: #fff; 
+  background-color: var(--primary-background);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.right-nav-ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.authButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.first-group { 
+  margin-left: auto;
+}
+
+.first-group li {
+  display: inline;
+}
+
+.second-group {
+  margin-left: auto;
+}
+
+.right-nav-ul li {
+  margin-right: 10px;
+}
+
+.right-nav-ul li:last-child {
+  margin-right: 0; 
+}
+
+.right-nav-ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.right-nav-ul li a:hover {
+  background-color: #333;
+}
+
+.menu {
+  display: flex; 
+  align-items: center;
 }
 
 .navbar-button {
@@ -22,7 +166,10 @@
 .menu a {
   color: #fff; 
   text-decoration: none; 
-  padding: 10px 15px; 
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  transition: background-color 0.3s;
 }
 
 .menu a:hover {
@@ -34,22 +181,9 @@
   transform: scale(1.1);
 }
 
-.loginItems {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-
 .logo {
-  width: 120px; 
-  margin-left: 10px;
-}
-
-.createAccount {
-  max-width: 70px;
-  padding: 8px; 
-  cursor: pointer;
+  width: 160px; 
+  margin-left: 5px;
 }
 
 .log-out-button {
@@ -73,21 +207,29 @@
   font-weight: bold;
   width: 100px;
   padding: 16px;
-  background: var(--secondary-button-background);
   border: 2px solid var(--secondary-button-border);
   border-radius: 5px;
-  color: var(--secondary-button-text);
   margin: 10px;
 }
 
 .log-in-button {
   background: var(--primary-button-background);
   color: var(--primary-button-text);
+  cursor: pointer;
+}
+
+.log-in-button:hover {
+  background: var(--primary-button-hover);
 }
 
 .sign-up-button {
-  background: var(--secondary-button-background);
-  color: var(--secondary-button-text);
+  background: var(--highlight-button-background);
+  color: var(--highlight-button-text);
+  cursor: pointer;
+}
+
+.sign-up-button:hover {
+  background: var(--highlight-button-hover);
 }
 
 .username {
@@ -99,4 +241,189 @@
 .menu .resources,
 .menu .about {
   font-size: 14px;
+}
+
+
+@media (max-width: 600px) {
+  .right-nav-ul {
+    padding-top: 50px;
+    padding-left: 5px;
+    justify-content: center; 
+    min-width: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+  .sidebar {
+    display: flex;
+    align-items: center;
+    transform: translateX(100%); 
+    padding: 0.5rem 1rem;
+    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 2rem);
+    min-width: 15rem;
+    top: 0;
+    background-color: gray;
+    transition: 350ms ease-in-out;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    top: 0;
+  }
+
+  .sidebar.open .buttons {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .aside {
+    padding-top: 50px;
+    padding-left: 5px;
+    min-width: none;
+  }
+
+  .authButtons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .first-group, .second-group { 
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    margin-left:0px;
+    margin-right: 30px;
+    text-align: left;
+    width: 100%;
+    gap: 40px;
+    background-color: gray;   
+  }
+
+  .first-group {
+    padding-bottom: 20px;
+  }
+
+  .second-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+  }
+
+  .second-group li {
+    cursor: pointer;
+    margin-top: 1rem; 
+    width: 100%; 
+  }
+
+  .first-group li,
+  .second-group li,
+  .buttons li,
+  .authButtons button,
+  .first-group a,
+  .second-group a,
+  .buttons a,
+  .buttons,
+  .authButtons button a,
+  .log-in-button a,
+  .sign-up-button a,
+  .login-button a,
+  .log-out-button a,
+  .navbar-button a
+   {
+    cursor: pointer;
+    margin-top: 1rem;
+    background-color: transparent;
+    width: auto;
+    border: none;
+    margin-left: 0px;
+    padding: 15px;
+    color: #fff;
+    border-radius: none !important;
+    font-size: 20px !important;
+    text-transform:capitalize !important;
+    font-weight: 800 !important;
+    font-style:normal !important;
+    padding: 0px 5px !important; 
+    transition: background-color 0.3s;
+    background-color: #333;
+    padding: 7px 14px !important;
+  border-radius: 5px !important;
+  }
+
+  .log-in-button:hover,
+  .sign-up-button:hover,
+  .navbar-button:hover,
+  .login-button:hover,
+  .log-out-button:hover {
+    background: #004080; }
+
+  .log-in-button:hover {
+    background: none;
+  }
+  
+  .sign-up-button:hover {
+    background: none;
+  }
+
+  .navbar-button {
+    margin-top: 0; 
+    width: 100%;
+    min-width: auto; 
+  }
+
+  .authButtons {
+    min-width: auto; 
+    margin-top: 0; 
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+    width: 100%;
+    margin-top: 300px;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .menu a {
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fff; 
+  }
+
+  .menu a:last-child {
+    border-bottom: none; 
+  }
+
+  .log-out-button {
+    margin-top: 10px;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
 }
