@@ -34,16 +34,16 @@ function Home() {
     <>
       <div className="content">
         <div className="my-decks">
-            <div className="my-decks-top">
-        <h2 className="h2-deck-card" >My Decks</h2>
-        <p className="p-new-deck">new deck</p>
+          <div className="my-decks-top">
+            <h2 className="h2-deck-card">My Decks</h2>
+            <p className="p-new-deck">new deck</p>
+          </div>
+          <div className="decks-container">
+            {data.map((elem, idx) => (
+              <DeckCard deck={elem} key={idx} />
+            ))}
+          </div>
         </div>
-        <div className="decks-container">
-          {data.map((elem, idx) => (
-            <DeckCard deck={elem} key={idx} />
-          ))}
-        </div>
-      </div>
       </div>
     </>
   );
