@@ -176,6 +176,10 @@
   background-color: #333; 
 }
 
+.second-group a:hover {
+  background-color: #333; 
+}
+
 .menu .resources:hover,
 .menu .about:hover {
   transform: scale(1.1);
@@ -286,6 +290,12 @@
     flex-direction: column;
   }
 
+  /* here I want these 2 buttons to be colored the same as the sign-up-button */
+.navbar-button:hover {
+  width: 100%;
+  background: var(--highlight-button-hover);
+}
+
   .dropdown {
     flex-direction: column;
     align-items: center;
@@ -344,21 +354,6 @@
     text-align: center;
   }
 
-  .log-in-button:hover,
-  .sign-up-button:hover,
-  .navbar-button:hover,
-  .login-button:hover,
-  .log-out-button:hover {
-    background: #004080; }
-
-  .log-in-button:hover {
-    background: none;
-  }
-  
-  .sign-up-button:hover {
-    background: none;
-  }
-
   .navbar-button {
     margin-top: 0; 
     width: 100%;
@@ -399,5 +394,23 @@
 
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+
+  .right-nav-ul:hover .navbar-button,
+  .right-nav-ul:hover .log-in-button,
+  .right-nav-ul:hover .sign-up-button,
+  .right-nav-ul:hover .login-button,
+  .right-nav-ul:hover .log-out-button 
+  {
+    background: var(--highlight-button-hover);
+  }
+
+  .right-nav-ul .navbar-button,
+  .right-nav-ul .log-in-button,
+  .right-nav-ul .sign-up-button,
+  .right-nav-ul .login-button,
+  .right-nav-ul .log-out-button 
+  {
+    background: var(--highlight-button-hover);
   }
 }
