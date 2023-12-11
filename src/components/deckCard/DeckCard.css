@@ -1,1 +1,41 @@
+.p-deck-card {
+    font-size: var(--p-text-size);
+    color: var(--secondary-topic-text);
+    text-transform: uppercase;
+    display: inline-block; 
+    padding:5px;  
+    border: solid;
+    border-color: var( --secondary-topic-border);
+    border-radius: 5px;
+
+}
+.h3-deck-card{
+
+    font-size: var(--h3-text-size);
+
+}
+
+.terms-deck-card{
+
+    color:#A1AEBF;
+}
+
+
+.deck-card{
+
+    border: 1px solid var(--primary-border-color);
+    border-radius: 4px;
+    padding:2px 20px;    
+    width: 40%; /* Each item takes 50% of the container's width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    
+    margin-bottom: 20px;
+    margin-right:5px;
+  
+}
+@media (max-width: 1000px) {
+    .deck-card {
+      width: 100%; 
+    }
+  }
 
