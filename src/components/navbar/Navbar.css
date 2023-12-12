@@ -6,7 +6,6 @@
     height: var(--bar-height);
     background-color: var(--foreground);
     border-radius: 9999px;
-    border: 0.5px solid wheat;
     transform-origin: left center;
     transition: opacity var(--animation-timing), 
         width var(--animation-timing), 
@@ -16,8 +15,8 @@
 }
 
 .hamburger-menu:has(input:checked) {
-    --foreground: white;
-    --background: #333;
+    --foreground: var(--highlight-button-border);
+    --background: var(--primary-button-background);
 }
 
 .hamburger-menu:has(input:focus-visible)::before,
@@ -154,7 +153,7 @@
 
 .navbar-button {
   font-size: 20px;
-  font-weight:800;
+  font-weight: 800;
 }
 
 .menu {
@@ -254,9 +253,10 @@
   }
 
   .right-nav-ul {
-    padding-left: 5px;
+    display: flex;
     justify-content: center; 
-    min-width: none;
+    width: 300px;
+    left: 0;
   }
 
   .hamburger-menu {
@@ -271,17 +271,16 @@
     display: flex;
     align-items: center;
     transform: translateX(100%); 
-    padding: 0.5rem 1rem;
     padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 2rem);
-    min-width: 15rem;
     top: 0;
+    right: 0;
     transition: 350ms ease-in-out;
-    margin-top: 50px;
   }
 
   .sidebar.open {
     transform: translateX(0);
     top: 0;
+    right: 0;
   }
 
   .sidebar.open .buttons {
@@ -292,13 +291,6 @@
   .authButtons {
     display: flex;
     flex-direction: column;
-    gap: 0px;
-
-  }
-
-  .navbar-button:hover {
-    width: 100%;
-    background: var(--highlight-button-hover);
   }
 
   .dropdown {
@@ -311,31 +303,15 @@
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
-    margin-left:10px;
     margin-right: 0px;
-    text-align: left;
+    text-align: center;
+    padding-right: 40px;
     width: 100%;
   }
 
-  .first-group {
-    gap: 15px;
-    margin-bottom: 13px;
-  }
-
-  .first-group a {
-    padding-top: 15px;
-  }
-
-  .second-group {
-    display: flex;
-    flex-direction: column;
-    width: 100%; 
-  }
-
-  .second-group li {
-    cursor: pointer;
-    margin-top: 1rem; 
-    width: 100%; 
+  .first-group li a,
+  .second-group li a {
+    padding:0px;
   }
 
   .first-group li,
@@ -356,18 +332,25 @@
     border-radius: 0px !important;
     height: 55px;
     width: 100%;
-    text-align: center;
+  }
+
+  .authButtons button {
+    margin-bottom: 0px;
+  }
+
+  .log-in-button a,
+  .log-out-button button {
+    margin-bottom: 20px;
+  }
+
+  .authButtons {
+    gap: 0px;
   }
 
   .navbar-button {
     margin-top: 0; 
     width: 100%;
     min-width: auto; 
-  }
-
-  .authButtons {
-    min-width: auto; 
-    margin-top: 0; 
   }
 
   .buttons {
@@ -378,8 +361,6 @@
 
   .menu {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
     width: 100%;
   }
 
@@ -408,23 +389,21 @@
   .right-nav-ul .log-out-button,
   .right-nav-ul .navbar-button li,
   .right-nav-ul li {
-    background: var(--highlight-button-hover);
+    background: linear-gradient(to right, #7938b2 0%,rgba(255,255,255,0) 69%);
     width: 100%;
     height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: left;
   }
   
   .right-nav-ul .log-in-button,
   .right-nav-ul .sign-up-button,
   .right-nav-ul .login-button,
   .right-nav-ul .log-out-button {
-    line-height: 1; /* Adjust the line height as needed */
+    line-height: 1; 
   }
   
   .right-nav-ul .navbar-button li {
-    padding-top: 20px; /* Adjust the padding as needed */
+    padding-top: 20px; 
   }
   
   .right-nav-ul li a:hover {
@@ -443,24 +422,53 @@
   .right-nav-ul .sign-up-button:hover,
   .right-nav-ul .log-out-button:hover
   {
-    background: var(--highlight-button-background);
+    background: linear-gradient(to right, rgb(64, 11, 52) 0%,rgba(255,255,255,0) 69%);
   }
 
   .authButtons a {
     text-decoration: none;
   }
 
-  .second-group {
-    margin-top: 20px;
-  }
-
   .logo {
     margin-left: 0px;
     width: 120px;
   }
+
+  .loginItems button.log-out-button {
+    margin-top: 16px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .right-nav-ul .buttons .first-group li {
+    background-color: red;
+    padding-top: 20px;
+    height: 80px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    list-style: none !important;
+  }
+
+  .right-nav-ul .buttons .first-group a,
+  .right-nav-ul .buttons .first-group li a
+  {
+    text-decoration: none;
+  }
+
+
+.right-nav-ul .buttons .first-group li a {
+  text-decoration: none !important;
+  color: inherit;
 }
 
-@media (max-width: 320px) {
+}
+
+@media (max-width: 315px) {
+
   .sidebar {
     padding-right: 100px;
   }
