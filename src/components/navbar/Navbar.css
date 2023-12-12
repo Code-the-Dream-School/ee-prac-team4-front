@@ -436,14 +436,14 @@
 
   .loginItems button.log-out-button {
     margin-top: 16px;
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .right-nav-ul .buttons .first-group li {
-    background-color: red;
+    /* background-color: red; */
     padding-top: 20px;
     height: 80px; 
     display: flex;
