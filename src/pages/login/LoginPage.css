@@ -28,7 +28,7 @@ h1 {
   transform: translateY(-50%);
   background-color: transparent;
   border: none;
-  width: 52px;
+  width: 42px;
   cursor: pointer;
   z-index: 1;
 }

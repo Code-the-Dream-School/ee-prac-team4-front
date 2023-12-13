@@ -30,12 +30,14 @@
   border: none;
   cursor: pointer;
   margin-left: 20px;
-  padding-top: 0px;
+  position: relative;
 }
 
 .got-it-button svg {
   width: 30px;
   height: 30px;
+  position: absolute;
+  top: -20px;
 }
 
 .got-it-button > svg > path {
@@ -60,6 +62,7 @@
   border: 2px solid var(--highlight-button-border);
   border-radius: 5px;
   color: var(--highlight-button-text);
+  margin-top: 20px;
 }
 
 .keep-button:hover {
