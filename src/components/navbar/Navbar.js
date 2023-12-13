@@ -32,27 +32,15 @@ function Navbar({ openRigthNav, setIsOpenRightNav }) {
   };
 
   const handleXButtonClick = () => {
-    // this closes the sidebar when X button is clicked
     checkCheckbox(false);
   };
 
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     // If the sidebar is open and a click occurs outside the sidebar, close it
-  //     if (checkbox && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-  //       checkCheckbox(false);
-  //     }
-  //   };
-  
-  //   document.addEventListener("click", handleClickOutside);
-  
-  //   return () => {
-  //     document.removeEventListener("click", handleClickOutside);
-  //   };
-  // }, [checkbox]);
+  const handleNavbarClick = () => {
+    checkCheckbox(!checkbox);
+  };
 
   return (
-    <div className="nav">
+    <div className={`nav ${checkbox ? 'open' : ''}`} onClick={handleNavbarClick}>
       <div className="logo">
         <Link to="/">
           <img 
@@ -66,7 +54,7 @@ function Navbar({ openRigthNav, setIsOpenRightNav }) {
         </Link>
       </div>
 
-      <label className="hamburger-menu" >
+      <label className="hamburger-menu">
         <input 
           type='checkbox' 
           id='hamburger-checkbox' 
@@ -80,6 +68,10 @@ function Navbar({ openRigthNav, setIsOpenRightNav }) {
         className={`sidebar ${checkbox ? 'open' : ''}`}
         ref={sidebarRef}
       >
+        <div className="top-bar">
+          <button onClick={handleXButtonClick} style={{ display: 'none' }}>X</button>
+          <div onClick={handleXButtonClick} className="clickable-div"></div>
+        </div>
         <ul className="right-nav-ul">
           <div className="buttons">
             <div className="first-group">

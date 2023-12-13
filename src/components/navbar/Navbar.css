@@ -272,6 +272,7 @@
 
 
 @media (max-width: 800px) {
+  
   .username {
     display: none;
   }
@@ -289,6 +290,7 @@
     right: 0;
     margin-top: 10px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
   .sidebar {
@@ -341,6 +343,10 @@
   .first-group a li,
   .second-group li a {
     padding:0px;
+  }
+
+  .first-group {
+    gap: 15px;
   }
 
   .first-group li,
