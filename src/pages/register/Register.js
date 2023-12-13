@@ -54,7 +54,7 @@ function Register() {
 
   return (
     <div className="registerPage">
-      <h1>Register Here</h1>
+      <h1>Register</h1>
 
       <form
         onSubmit={(e) => handleRegistration(e)}
@@ -115,15 +115,15 @@ function Register() {
             placeholder="*************"
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
-            className={`inputField inputFieldPassword`}
+            className={`inputField input-field-password`}
             autoComplete="off"
             required
           />
         </label>
 
-        <Button type="submit" className="submitButton" buttonText="register" />
+        <Button type="submit" className="submit-button-register" buttonText="register" />
 
-        {error && <div style={{ color: "red" }}>{error}</div>}
+        {error && <div className="errorMessage">{error}</div>}
 
         <p className="link-to-register">
           Already have an account?{' '}

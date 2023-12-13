@@ -102,6 +102,13 @@
   width: 100%;
 }
 
+.loginItems {
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .buttons {
   display: flex;
   align-items: center;
@@ -115,11 +122,41 @@
 }
 
 .first-group { 
-  margin-left: auto;
+  display: flex; 
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
 }
 
-.first-group li {
-  display: inline;
+.first-group .navbar-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.first-group .navbar-button li {
+  margin: 0;
+  padding: 10px;
+}
+
+.second-group .authButtons a button {
+  font-size: 14px !important;
+}
+
+.right-nav-ul a li {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  transition: background-color 0.3s;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.right-nav-ul a li:hover {
+  background-color: #333;
 }
 
 .second-group {
@@ -132,18 +169,6 @@
 
 .right-nav-ul li:last-child {
   margin-right: 0; 
-}
-
-.right-nav-ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px;
-  transition: background-color 0.3s;
-}
-
-.right-nav-ul li a:hover {
-  background-color: #333;
 }
 
 .menu {
@@ -197,13 +222,12 @@
   align-items: center;
   gap: 5px;
   color: #fff;
-  font-size: 14px;
 }
 
 .log-out-button svg {
   fill: #fff;
-  height: 20px; 
-  width: 20px; 
+  height: 30px; 
+  width: 30px; 
 }
 
 .authButtons button {
@@ -247,14 +271,14 @@
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .username {
     display: none;
   }
 
   .right-nav-ul {
     display: flex;
-    justify-content: center; 
+    justify-content: right; 
     width: 300px;
     left: 0;
   }
@@ -269,7 +293,7 @@
 
   .sidebar {
     display: flex;
-    align-items: center;
+    align-items: right;
     transform: translateX(100%); 
     padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 2rem);
     top: 0;
@@ -281,6 +305,7 @@
     transform: translateX(0);
     top: 0;
     right: 0;
+    width: 40%;
   }
 
   .sidebar.open .buttons {
@@ -293,9 +318,13 @@
     flex-direction: column;
   }
 
+  .second-group .authButtons a button {
+    font-size: 30px !important;
+  }  
+
   .dropdown {
     flex-direction: column;
-    align-items: center;
+    align-items: right;
     height: auto;
   }
 
@@ -309,7 +338,7 @@
     width: 100%;
   }
 
-  .first-group li a,
+  .first-group a li,
   .second-group li a {
     padding:0px;
   }
@@ -325,8 +354,8 @@
     width: auto;
     border: none;
     margin-left: 0px;
-    color: #fff;
-    font-size: 20px !important;
+    color: #ededed;
+    font-size: 30px !important;
     text-transform:capitalize !important;
     padding: 7px 14px !important;
     border-radius: 0px !important;
@@ -367,7 +396,7 @@
   .menu a {
     width: 100%;
     box-sizing: border-box;
-    border-bottom: 1px solid #fff; 
+    border-bottom: 1px solid #ededed; 
   }
 
   .menu a:last-child {
@@ -389,9 +418,10 @@
   .right-nav-ul .log-out-button,
   .right-nav-ul .navbar-button li,
   .right-nav-ul li {
-    background: linear-gradient(to right, #7938b2 0%,rgba(255,255,255,0) 69%);
+    background: linear-gradient(to right, #7938b2 25%,rgba(255,255,255,0) 95%);
     width: 100%;
     height: 80px;
+    color: #ededed;
     align-items: left;
   }
   
@@ -423,6 +453,7 @@
   .right-nav-ul .log-out-button:hover
   {
     background: linear-gradient(to right, rgb(64, 11, 52) 0%,rgba(255,255,255,0) 69%);
+    color: var(--highlight-button-hover);
   }
 
   .authButtons a {
@@ -434,16 +465,20 @@
     width: 120px;
   }
 
+  .loginItems {
+    margin-top: 10px;
+  }
+
   .loginItems button.log-out-button {
     margin-top: 16px;
-    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: center;
+    background: none;
+    margin-top: 0px;
   }
 
   .right-nav-ul .buttons .first-group li {
-    /* background-color: red; */
     padding-top: 20px;
     height: 80px; 
     display: flex;

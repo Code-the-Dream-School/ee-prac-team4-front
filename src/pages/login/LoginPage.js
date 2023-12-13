@@ -25,7 +25,7 @@ function LoginPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include",  // added this line
+        credentials: "include",  
         body: JSON.stringify(userData),
       });
 
@@ -44,12 +44,13 @@ function LoginPage() {
   }
   return (
     <div className="loginPage">
-      <form className="formContainer" onSubmit={(e) => handleSubmit(e)}>
+      <h1>Login</h1>
+      <form className="loginContainer" onSubmit={(e) => handleSubmit(e)}>
         <label htmlFor="email" className="inputLabel">Email</label>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className={`inputField inputFieldEmail`}
+          className={`inputField inputFieldEmail`} // different classnames for different svg for each field
           type="email"
           name="email"
           id="email"
@@ -67,11 +68,10 @@ function LoginPage() {
         ></input>
 
         <Button className="submit-button" type="submit" buttonText="Sign In" />
-        {error && <div style={{ color: "red" }}>{error}</div>}
+        {error && <div className="error-message">{error}</div>}
 
         <p className="link-to-sign-up">
-          Don't have an account yet?{' '}
-          Create one <Link to="/register" className="link-to-sign-up-page"> here</Link>.<br/><br/>
+          Don't have an account?<Link to="/register" className="link-to-sign-up-page"> Sign Up</Link><br/><br/>
         </p>
       </form>
     </div>

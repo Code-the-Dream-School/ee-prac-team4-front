@@ -7,8 +7,8 @@
   height: 100vh;
   /* global font and background color */
   font-family: Inter, sans-serif;
-  color: #ffffff;
-  --bar-width: 50px;
+  color: #ededed;
+  --bar-width: 60px;
   --bar-height: 6px;
   --hamburger-gap: 6px;
   --foreground: #7938b2;
@@ -26,10 +26,12 @@
   /* Text Colors */
   --subheading-text-color: #a2a2a2;
   --link-text-color: #728095;
+  --hint-text-color: #a0a0a0;
 
   /* Background Colors */
   --primary-background: #161616;
   --secondary-background: #1c1c1c;
+  --hint-background: #2e2e2e;
 
   /*card variations*/
   --primary-border-color: #a1aebf;
@@ -54,6 +56,16 @@
   --highlight-button-border: #7938b2;
   --highlight-button-text: #bf7af0;
   --highlight-button-hover: #9d5bd2;
+
+  --amber-button-background: #271700;
+  --amber-button-border: #693f05;
+  --amber-button-text: #f1a10d;
+  --amber-button-hover: #824e00;
+
+  --green-button-background: #181d08;
+  --green-button-border: #415215;
+  --green-button-text: #87be22;
+  --green-button-hover: #536716;
 
   --caution-button-background: #2a1410;
   --caution-button-border: #822025;

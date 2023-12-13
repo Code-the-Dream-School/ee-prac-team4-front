@@ -7,11 +7,12 @@
   background-color: var(--secondary-background);
 }
 
-.formContainer {
-  width: 300px;
+.loginContainer {
+  width: 320px;
   padding: 20px;
+  padding-bottom: 0px;
   border: 1px solid var(--primary-border-color);
-  background-color: var(--primary-background); 
+  background-color: var(--secondary-background); 
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
@@ -20,8 +21,9 @@ h1 {
   color: #ddd; 
 }
 
-label {
+.loginContainer label {
   color: #bbb; 
+  font-size: 18px;
 }
 
 .inputField {
@@ -35,17 +37,22 @@ label {
   color: #ddd; 
 }
 
+.loginContainer input {
+  margin-top: 10px; /* Adjust the value as needed */
+}
+
 .submit-button {
-  background-color: var(--primary-button-background); 
-  color: #ddd; 
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
+  font-weight: bold;
+  width: 120px;
+  padding: 16px;
+  background: var(--secondary-button-background);
+  border: 2px solid var(--secondary-button-border);
+  border-radius: 5px;
+  color: var(--secondary-button-text);
 }
 
 .submit-button:hover {
-  background-color: #777; 
+  background-color: var(--secondary-button-hover); 
 }
 
 .errorMessage {
@@ -58,6 +65,7 @@ label {
   padding-bottom: 10px;
   padding-top: 10px;
   font-size: 16px;
+  font-style: italic;
 }
 
 .link-to-sign-up-page {
@@ -67,6 +75,7 @@ label {
   padding-top: 10px;
   font-size: 16px;
   text-decoration: none; 
+  font-style: italic;
 }
 
 .link-to-sign-up-page:hover {
@@ -80,7 +89,7 @@ label {
 .inputField {
   width: 100%;
   margin-bottom: 10px;
-  padding: 8px 8px 8px 40px; 
+  padding: 12px 12px 12px 30px; 
   box-sizing: border-box;
   border: 1px solid #555;
   border-radius: 4px;
@@ -89,6 +98,7 @@ label {
   background-size: 16px 16px;
   background-position: 8px center;
   background-repeat: no-repeat;
+  font-size: 16px;
 }
 
 .inputFieldEmail {
@@ -96,5 +106,22 @@ label {
 }
 
 .inputFieldPassword {
+  margin-bottom: 25px;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>');
+}
+
+.error-message {
+  color: red;
+  margin-top: 15px;
+  font-style: italic;
+}
+
+@media (max-width: 320px) {
+  .inputField {
+    width: calc(100% - 12px);
+  }
+
+  .loginContainer {
+    width: calc(100% - 12px);
+  }
 }
