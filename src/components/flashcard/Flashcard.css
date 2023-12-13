@@ -25,49 +25,61 @@
   color:var(--highlight-button-text);
 }
 
-.got-it-button {
+/* both buttons up and down */
+.thumbs-up-down-buttons .success-button {
+  margin-right: 40px;
+}
+ 
+/* success button */
+.success-button {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  margin-left: 20px;
-  position: relative;
 }
 
-.got-it-button svg {
+.success-button svg {
   width: 30px;
   height: 30px;
-  position: absolute;
-  top: -20px;
 }
 
-.got-it-button > svg > path {
-  fill: white; /* Set the desired color for the SVG path */
-  transition: fill 0.3s ease; /* Add a transition for smooth color changes */
+.success-button > svg > path {
+  fill: white;
+  transition: fill 0.3s ease; 
 }
 
-.got-it-button:hover > svg > path {
-  fill: var( --green-button-hover); /* Set the desired hover color for the SVG path */
+.success-button:hover > svg > path {
+  fill: var( --green-button-hover); 
 }
 
-.got-it-button:focus > svg > path {
-  fill: var(--green-button-text); /* Set the desired focus color for the SVG path */
+.success-button:focus > svg > path {
+  fill: var(--green-button-text); 
 }
 
-/* keep it button */
-.keep-button {
-  font-weight: bold;
-  width: 90px;
-  padding: 10px;
-  background: var(--highlight-button-background);
-  border: 2px solid var(--highlight-button-border);
-  border-radius: 5px;
-  color: var(--highlight-button-text);
-  margin-top: 20px;
+/* failure button */
+.failure-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.keep-button:hover {
-  background: var(--highlight-button-border);
+.failure-button svg {
+  width: 30px;
+  height: 30px;
 }
+
+.failure-button > svg > path {
+  fill: white;
+  transition: fill 0.3s ease; 
+}
+
+.failure-button:hover > svg > path {
+  fill: var(--caution-button-border); 
+}
+
+.failure-button:focus > svg > path {
+  fill: red; 
+}
+
 
 .show-answer-button {
   font-weight: bold;
