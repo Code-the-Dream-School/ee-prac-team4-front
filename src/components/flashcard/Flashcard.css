@@ -14,23 +14,43 @@
 }
 
 .hint-button {
-  background-color: white;
-  color: var( --secondary-background);
-  border: 1px solid white;
+  font-weight: bold;
+  width: 120px;
+  padding: 16px;
+  background: var(--secondary-button-background);
+  border: 2px solid var(--secondary-button-border);
   border-radius: 5px;
-  padding: 5px 10px;
-  margin-bottom: 10px;
+  color: var(--secondary-button-text);
   cursor: pointer;
 }
 
+.hint-button:hover {
+  background-color: var(--secondary-button-hover); 
+}
+
+/* unused button example */
+.submit-button {
+  font-weight: bold;
+  width: 120px;
+  padding: 16px;
+  background: var(--secondary-button-background);
+  border: 2px solid var(--secondary-button-border);
+  border-radius: 5px;
+  color: var(--secondary-button-text);
+}
+
+.submit-button:hover {
+  background-color: var(--secondary-button-hover); 
+}
+/* ---- */
 .hint-text {
   font-style: italic;
   margin-top: 10px;
 }
 
 .card-front h3 img {
-  width: 40px;
-  height: 40px;
+  width: 15px;
+  height: 15px;
 }
 
 /* .card {

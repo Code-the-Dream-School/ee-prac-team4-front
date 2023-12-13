@@ -27,9 +27,10 @@ const Flashcard = ({ currentCard }) => {
       {!isFlipped ? (
         <div className="card-front">
           <h3>
-          <img className='hint' src={Hint} alt="Hint button" title="Hint" />
+          
             <button className="hint-button" onClick={handleHint}>
-              {showHint ? "Hide Hint" : "Show Hint"}
+            <img className='hint' src={Hint} alt="Hint button" />
+              {showHint ? " Hide Hint" : " Show Hint"}
             </button>
           </h3>
           {showHint && <p className="hint-text">{mockData.hint}</p>}

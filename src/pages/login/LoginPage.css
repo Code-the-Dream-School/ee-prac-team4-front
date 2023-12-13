@@ -21,6 +21,26 @@ h1 {
   color: #ddd; 
 }
 
+.show-pass-btn {
+  position: absolute;
+  right: 10px; 
+  top: 41%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  width: 52px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.show-pass-btn > span {
+  fill: gray;
+}
+
+.inputContainer {
+  position: relative;
+}
+
 .loginContainer label {
   color: #bbb; 
   font-size: 18px;
