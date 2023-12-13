@@ -1,4 +1,6 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -79,3 +81,4 @@ body {
   height: 100vh;
   margin: 0;
 }
+

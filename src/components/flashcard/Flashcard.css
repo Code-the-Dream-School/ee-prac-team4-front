@@ -1,25 +1,32 @@
 .card {
-  width: 300px;
-  height: auto;
-  border: 2px solid #3498db;
-  border-radius: 8px;
-  box-shadow: 5px 15px 15px 5px lightgray;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-front,
 .card-back {
-  padding: 20px;
+  position: relative;
+  width: 600px;
+  height: 100%;
   margin: auto;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.card-front {
-  background-color: #ecf0f1;
-  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: var(--secondary-background);
+  border: 1px solid;
+  border-radius: var(--primary-border-radius);
+  border-color: var(--primary-border-color);
+  font-size: var(--h3-text-size);
 }
 
 .card-back {
@@ -28,20 +35,44 @@
   text-align: center;
 }
 
-.hint-button {
-    background-color: rgb(90, 168, 90);
+.hint-section {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  color: var(--hint-text-color);
+  display: flex;
+  align-items: center;
 }
 
-button {
-  margin-top: 10px;
-  padding: 8px 16px;
+.hint-icon {
+  padding-bottom: 6px;
   cursor: pointer;
-  background-color: #3498db;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
 }
 
-button:hover {
-  background-color: #2980b9;
+.hint-icon-container {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.hint-text {
+  margin: 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  background-color: var(--hint-background);
+  font-size: var(--p-text-size);
+}
+
+.skip-button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.skip-button {
+  cursor: pointer;
 }

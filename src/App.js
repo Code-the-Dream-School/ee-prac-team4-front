@@ -6,6 +6,7 @@ import Home from "./pages/home/Home";
 import Resources from "./pages/resources/Resources";
 import FlashCards from "./pages/flashcards/FlashCards";
 import Navbar from "./components/navbar/Navbar.js";
+import Flashcard from "./components/flashcard/Flashcard.js";
 import "./App.css";
 
 export const AuthContext = createContext();
@@ -56,6 +57,7 @@ function AppContent() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/flashcards" element={<FlashCards />} />
+        <Route path="/flashcard" element={<Flashcard />} />
       </Routes>
     </>
   );
