@@ -50,10 +50,10 @@ function App() {
   );
 }
 
-function AppContent({ openRightNav, setOpenRightNav }) {
+function AppContent({ openRightNav }) {
   return (
     <>
-      <Navbar openRightNav={openRightNav} setOpenRightNav={setOpenRightNav}/>
+      <Navbar openRightNav={openRightNav}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />

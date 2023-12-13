@@ -6,7 +6,7 @@ import logo from './logo.png';
 import logoHovered from './logo2.png';
 import Button from "../../components/button/Button.js";
 
-function Navbar({ openRigthNav, setIsOpenRightNav }) {
+function Navbar({ openRigthNav }) {
   const { isLoggedIn, userData, handleLogout } = useContext(AuthContext);
   const [isHovered, setIsHovered] = useState(false);
   const [checkbox, checkCheckbox] = useState(false);
@@ -29,10 +29,6 @@ function Navbar({ openRigthNav, setIsOpenRightNav }) {
   const handleCheckboxClick = (event) => {
     event.stopPropagation(); 
     checkCheckbox(!checkbox);
-  };
-
-  const handleXButtonClick = () => {
-    checkCheckbox(false);
   };
 
   const handleNavbarClick = () => {
@@ -68,10 +64,6 @@ function Navbar({ openRigthNav, setIsOpenRightNav }) {
         className={`sidebar ${checkbox ? 'open' : ''}`}
         ref={sidebarRef}
       >
-        <div className="top-bar">
-          <button onClick={handleXButtonClick} style={{ display: 'none' }}>X</button>
-          <div onClick={handleXButtonClick} className="clickable-div"></div>
-        </div>
         <ul className="right-nav-ul">
           <div className="buttons">
             <div className="first-group">
