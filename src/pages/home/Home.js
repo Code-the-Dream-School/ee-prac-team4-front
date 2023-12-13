@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import Footer from "../../components/footer/Footer";
 function Home() {
   return (
     <>
@@ -17,7 +18,7 @@ function Home() {
           <h2>Quiz</h2>
         </div>
       </div>
-      <div className="footer"></div>
+        <Footer/>
     </>
   );
 }

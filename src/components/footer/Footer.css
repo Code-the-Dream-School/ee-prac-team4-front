@@ -1,0 +1,13 @@
+.footer {
+  width: 100%;
+  background: #ef9364;
+  position: absolute;
+  bottom: 0;
+  color: black;
+  padding: 0 20px;
+  display: flex;
+}
+
+.teamMembers {
+  margin-left: 30px;
+}
