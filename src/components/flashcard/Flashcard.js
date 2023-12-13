@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Flashcard.css";
+import Button from "../button/Button";
+import Hint from "./help-button.png";
 
 const Flashcard = ({ currentCard }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -25,6 +27,7 @@ const Flashcard = ({ currentCard }) => {
       {!isFlipped ? (
         <div className="card-front">
           <h3>
+          <img className='hint' src={Hint} alt="Hint button" title="Hint" />
             <button className="hint-button" onClick={handleHint}>
               {showHint ? "Hide Hint" : "Show Hint"}
             </button>

@@ -1,5 +1,7 @@
 import React from "react";
 import "./FlashCards.css";
+import Flashcard from "../../components/flashcard/Flashcard";
+
 function FlashCards() {
   const handleFlashCard = () => {
     // add new card functionality
@@ -28,7 +30,8 @@ function FlashCards() {
         </div>
 
         <div className="flashcard-container">
-          <div className="flashCard">content</div>
+          <Flashcard className="flashcard-component" />
+          {/* <div className="flashCard">content</div> */}
         </div>
       </div>
     </div>

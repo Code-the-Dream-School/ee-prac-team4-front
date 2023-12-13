@@ -1,4 +1,39 @@
 .card {
+  width: 600px; /* Adjust the width as needed */
+  background-color: var( --secondary-background);
+  color: white;
+  border: 1px solid white; /* Thin white border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Add padding for better spacing */
+  margin: 10px; /* Adjust margin as needed */
+}
+
+.card-front,
+.card-back {
+  /* You can add specific styles for the front and back of the card if needed */
+}
+
+.hint-button {
+  background-color: white;
+  color: var( --secondary-background);
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.hint-text {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.card-front h3 img {
+  width: 40px;
+  height: 40px;
+}
+
+/* .card {
   width: 300px;
   height: auto;
   border: 2px solid #3498db;
@@ -44,4 +79,4 @@ button {
 
 button:hover {
   background-color: #2980b9;
-}
+} */
