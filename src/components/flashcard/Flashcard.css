@@ -14,89 +14,82 @@
 }
 
 .hint-button {
-  font-weight: bold;
-  width: 120px;
-  padding: 16px;
-  background: var(--secondary-button-background);
-  border: 2px solid var(--secondary-button-border);
-  border-radius: 5px;
-  color: var(--secondary-button-text);
+  background-color: transparent;
+  border: none;
+  top: 0;
+  right: 0;
   cursor: pointer;
 }
 
-.hint-button:hover {
-  background-color: var(--secondary-button-hover); 
+.hint-text {
+  color:var(--highlight-button-text);
 }
 
-/* unused button example */
-.submit-button {
+.got-it-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+  padding-top: 0px;
+}
+
+.got-it-button svg {
+  width: 30px;
+  height: 30px;
+}
+
+.got-it-button > svg > path {
+  fill: white; /* Set the desired color for the SVG path */
+  transition: fill 0.3s ease; /* Add a transition for smooth color changes */
+}
+
+.got-it-button:hover > svg > path {
+  fill: var( --green-button-hover); /* Set the desired hover color for the SVG path */
+}
+
+.got-it-button:focus > svg > path {
+  fill: var(--green-button-text); /* Set the desired focus color for the SVG path */
+}
+
+/* keep it button */
+.keep-button {
   font-weight: bold;
-  width: 120px;
-  padding: 16px;
-  background: var(--secondary-button-background);
-  border: 2px solid var(--secondary-button-border);
+  width: 90px;
+  padding: 10px;
+  background: var(--highlight-button-background);
+  border: 2px solid var(--highlight-button-border);
   border-radius: 5px;
-  color: var(--secondary-button-text);
+  color: var(--highlight-button-text);
 }
 
-.submit-button:hover {
-  background-color: var(--secondary-button-hover); 
+.keep-button:hover {
+  background: var(--highlight-button-border);
 }
-/* ---- */
+
+.show-answer-button {
+  font-weight: bold;
+  width: 140px;
+  padding: 16px;
+  background: var(--highlight-button-background);
+  border: 2px solid var(--highlight-button-border);
+  border-radius: 5px;
+  color: var(--highlight-button-text);
+}
+
+.show-answer-button:hover {
+  background: var(--highlight-button-hover);
+}
+
 .hint-text {
   font-style: italic;
   margin-top: 10px;
 }
 
-.card-front h3 img {
-  width: 15px;
-  height: 15px;
+.hint-button svg {
+  width: 25px;
+  height: 25px;
+  margin-left: 500px;
+  margin-top: -90px;
+  fill: var(--highlight-button-text);
 }
 
-/* .card {
-  width: 300px;
-  height: auto;
-  border: 2px solid #3498db;
-  border-radius: 8px;
-  box-shadow: 5px 15px 15px 5px lightgray;
-}
-
-.card-front,
-.card-back {
-  padding: 20px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.card-front {
-  background-color: #ecf0f1;
-  border-radius: 6px;
-}
-
-.card-back {
-  border-radius: 6px;
-  padding: 20px;
-  text-align: center;
-}
-
-.hint-button {
-    background-color: rgb(90, 168, 90);
-}
-
-button {
-  margin-top: 10px;
-  padding: 8px 16px;
-  cursor: pointer;
-  background-color: #3498db;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-}
-
-button:hover {
-  background-color: #2980b9;
-} */
