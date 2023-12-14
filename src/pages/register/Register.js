@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../App";
+import Button from "../../components/button/Button.js";
 import "./Register.css";
 
 function Register() {
@@ -89,7 +90,7 @@ function Register() {
             type="email"
             value={newEmail}
             onChange={(e) => setNewEmail(e.target.value)}
-            className="inputField"
+            className={`inputField inputFieldEmail`}
             autoComplete="off"
             required
           />
@@ -111,20 +112,23 @@ function Register() {
           Password
           <input
             type="password"
-            placeholder="enter a password"
+            placeholder="*************"
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
-            className="inputField"
+            className={`inputField input-field-password`}
             autoComplete="off"
             required
           />
         </label>
 
-        <button type="submit" className="submitButton">
-          submit
-        </button>
+        <Button type="submit" className="submit-button-register" buttonText="register" />
 
-        {error && <div style={{ color: "red" }}>{error}</div>}
+        {error && <div className="errorMessage">{error}</div>}
+
+        <p className="link-to-register">
+          Already have an account?{' '}
+          <Link to="/login" className="link-to-register-page"> Sign In</Link><br/><br/>
+        </p>
       </form>
     </div>
   );
