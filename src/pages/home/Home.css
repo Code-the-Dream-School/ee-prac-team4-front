@@ -6,6 +6,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .my-decks {
@@ -21,14 +23,26 @@
   display: flex;
   width: 100%;
 }
-.p-new-deck {
-  font-size: var(--p-text-size);
+.new-deck-button {
   color: var(--secondary-topic-text);
   text-transform: uppercase;
-  display: inline-block;
-  padding: 5px;
   border: solid;
   border-color: var(--secondary-topic-border);
-  border-radius: 5px;
   margin-left: auto;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+.new-deck-button:hover {
+  background-color: #2980b9;
+  color: white;
+}
+
+.new-deck-button:active {
+  background-color: #1f618d;
+}
+@media (max-width: 750px) {
+  .decks-container {
+    justify-content: center;
+  }
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Home.css";
 import DeckCard from "../../components/deckCard/DeckCard";
+import Button from "../../components/button/Button";
 
 function Home() {
   const [search, setSearch] = useState("");
@@ -36,7 +37,7 @@ function Home() {
         <div className="my-decks">
           <div className="my-decks-top">
             <h2 className="h2-deck-card">My Decks</h2>
-            <p className="p-new-deck">new deck</p>
+            <Button buttonText="new deck" className="new-deck-button" />
           </div>
           <div className="decks-container">
             {data.map((elem, idx) => (
