@@ -25,7 +25,7 @@ function LoginPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include",  // added this line
+        credentials: "include", // added this line
         body: JSON.stringify(userData),
       });
 
@@ -46,7 +46,9 @@ function LoginPage() {
     <div className="loginPage">
       <h1>Login</h1>
       <form className="loginContainer" onSubmit={(e) => handleSubmit(e)}>
-        <label htmlFor="email" className="inputLabel">Email</label>
+        <label htmlFor="email" className="inputLabel">
+          Email
+        </label>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -71,7 +73,13 @@ function LoginPage() {
         {error && <div className="error-message">{error}</div>}
 
         <p className="link-to-sign-up">
-          Don't have an account?<Link to="/register" className="link-to-sign-up-page"> Sign Up</Link><br/><br/>
+          Don't have an account?
+          <Link to="/register" className="link-to-sign-up-page">
+            {" "}
+            Sign Up
+          </Link>
+          <br />
+          <br />
         </p>
       </form>
     </div>

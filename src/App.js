@@ -39,7 +39,6 @@ function AuthProvider({ children }) {
   );
 }
 
-
 function App() {
   return (
     <AuthProvider>
