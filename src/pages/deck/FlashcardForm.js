@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Deck.css";
-import { useParams } from "react-router-dom";
 import { Icon } from "react-icons-kit";
 import { ic_edit_outline } from "react-icons-kit/md/ic_edit_outline";
 import { ic_delete_outline } from "react-icons-kit/md/ic_delete_outline";
 
-import CreateFlashcardForm from "../../components/flashcrdCreation/FlashcardCretionForm";
+import CreateFlashcardForm from "../../components/flashcrdCreation/FlashcardCreationForm";
 import EditFlashCardForm from "../../components/flashcrdCreation/FlashCardEditForm";
 const FLASHCARD_FIELDS = {
   question: "",
@@ -14,9 +13,7 @@ const FLASHCARD_FIELDS = {
   hint: "",
 };
 
-function FlashCardForm() {
-  let params = useParams();
-  let deckId = params.id;
+function FlashCardForm({ deckId, deck }) {
   let [flashCard, setFlashCard] = useState({
     ...FLASHCARD_FIELDS,
     deck: deckId,
@@ -142,6 +139,7 @@ function FlashCardForm() {
       <CreateFlashcardForm
         flashCard={flashCard}
         setFlashCard={setFlashCard}
+        deck={deck}
         handleSaveCard={handleSaveCard}
       />
 

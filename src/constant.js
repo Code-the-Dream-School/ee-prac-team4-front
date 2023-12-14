@@ -1,5 +1,5 @@
 const ALL_TOPICS = {
-  react: [
+  React: [
     "ReactJS",
     "Components",
     "State",
@@ -14,7 +14,7 @@ const ALL_TOPICS = {
     "LifecycleMethods",
     "ConditionalRendering",
   ],
-  javascript: [
+  Javascript: [
     "JavaScript",
     "Variables",
     "DataTypes",
@@ -29,7 +29,7 @@ const ALL_TOPICS = {
     "ErrorHandling",
     "JSONHandling",
   ],
-  node: [
+  Node: [
     "NodeJS",
     "NPM",
     "Express",
@@ -47,7 +47,7 @@ const ALL_TOPICS = {
     "Real-time WebSockets",
     "Security Best Practices in Node",
   ],
-  css: [
+  CSS: [
     "CSS",
     "Selectors",
     "BoxModel",
@@ -62,7 +62,7 @@ const ALL_TOPICS = {
     "Preprocessors",
     "BEMMethodology",
   ],
-  git: [
+  GIT: [
     "Git",
     "Repository",
     "Commits",

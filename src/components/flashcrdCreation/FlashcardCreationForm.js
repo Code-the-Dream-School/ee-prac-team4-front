@@ -1,8 +1,23 @@
 import React from "react";
 
-function CreateFlashcardForm({ flashCard, setFlashCard, handleSaveCard }) {
+function CreateFlashcardForm({
+  flashCard,
+  setFlashCard,
+  deck,
+  handleSaveCard,
+}) {
   return (
     <div className="cardContainer">
+      <div className="deckInfo">
+        <h2>
+          <span className="deckLabel">Deck Title: </span>
+          {deck.title}
+        </h2>
+        <h3>
+          <span className="deckLabel">Topic: </span>
+          {deck.topic} -> {deck.subtopic}
+        </h3>
+      </div>
       <label htmlFor="" className="deckInput">
         Question
         <input
@@ -28,7 +43,7 @@ function CreateFlashcardForm({ flashCard, setFlashCard, handleSaveCard }) {
       </label>
 
       <label htmlFor="" className="deckInput">
-        Resources
+        Resource
         <input
           type="text"
           placeholder="Resources"

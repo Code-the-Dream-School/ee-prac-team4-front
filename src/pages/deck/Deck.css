@@ -115,3 +115,14 @@ select {
   margin-left: 15px;
   width: 250px;
 }
+
+.deckInfo {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.deckLabel {
+  margin-right: 20px;
+}
