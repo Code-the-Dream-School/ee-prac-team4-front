@@ -9,13 +9,21 @@ import Button from "../../components/button/Button.js";
 function Navbar({ openRigthNav }) {
   const { isLoggedIn, userData, handleLogout } = useContext(AuthContext);
   const [isHovered, setIsHovered] = useState(false);
-  const [checkbox, checkCheckbox] = useState(false);
+  const [checkbox, setCheckbox] = useState(false);
   const sidebarRef = useRef(null);
+
+  const handleCheckboxClick = (event) => {
+    event.stopPropagation();
+    setCheckbox(!checkbox);
+  };
+
+  const handleSidebarClick = () => {
+    setCheckbox(false);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-        checkCheckbox(false);
       }
     };
 
@@ -26,17 +34,8 @@ function Navbar({ openRigthNav }) {
     };
   }, []);
 
-  const handleCheckboxClick = (event) => {
-    event.stopPropagation(); 
-    checkCheckbox(!checkbox);
-  };
-
-  const handleNavbarClick = () => {
-    checkCheckbox(!checkbox);
-  };
-
   return (
-    <div className={`nav ${checkbox ? 'open' : ''}`} onClick={handleNavbarClick}>
+    <div className={`nav ${checkbox ? 'open' : ''}`}>
       <div className="logo">
         <Link to="/">
           <img 
@@ -63,20 +62,21 @@ function Navbar({ openRigthNav }) {
       <aside 
         className={`sidebar ${checkbox ? 'open' : ''}`}
         ref={sidebarRef}
+        onClick={handleSidebarClick}
       >
         <ul className="right-nav-ul">
           <div className="buttons">
             <div className="first-group">
-            <Link to="/resources" className="navbar-button" >
-              <li>
-                Resources
-              </li>
-            </Link>
-            <Link to="/" className="navbar-button">
-              <li>
-                About
-              </li>
-            </Link>
+              <Link to="/resources" className="navbar-button" >
+                <li>
+                  Resources
+                </li>
+              </Link>
+              <Link to="/" className="navbar-button">
+                <li>
+                  About
+                </li>
+              </Link>
             </div>
             
             <div className="second-group">
@@ -91,7 +91,6 @@ function Navbar({ openRigthNav }) {
                 </div>
               ) : (
                 <div className="loginItems">
-                  {/* update when registration route returns full user data */}
                   <p className="username">{userData.user?.username}</p>
                   <Link to="/login" onClick={() => { handleLogout() }} className="login-button">
                     <button className='log-out-button' title='Logout' onClick={() => console.log('Button 3 clicked')}>
