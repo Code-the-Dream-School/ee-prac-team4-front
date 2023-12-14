@@ -14,7 +14,8 @@ function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState({});
   const [decks, setDecks] = useState([]);
-
+  console.log("decks" , decks);
+console.log(isLoggedIn);
 
   const handleLogin = (userData) => {
     setIsLoggedIn(true);
@@ -31,16 +32,23 @@ function AuthProvider({ children }) {
       try {
         if (isLoggedIn) {
           const response = await fetch("http://localhost:8000/api/v1/deck", {
-            headers: {
-            credentials: 'true'
+          method: "GET" ,
+          headers: { "Content-Type": "application/json"
             },
+            credentials : 'include'
           });
           const userDecks = await response.json();
-          setDecks(userDecks);
+          console.log("user decks", userDecks);
+          const privateUserDecks = userDecks.decks.filter(deck => deck.isPublic === false )
+          setDecks([...decks, ...privateUserDecks]);
         } else {
-          const response = await fetch("http://localhost:8000/api/v1/decksAll");
+          const response = await fetch("http://localhost:8000/api/v1/decksAll", {
+          method: "GET" ,
+          headers: { "Content-Type": "application/json"
+            },
+          });
           const publicDecks = await response.json();
-          setDecks(publicDecks);
+          setDecks(publicDecks.decks);
         }
       } catch (error) {
         console.error("Error fetching decks:", error);
@@ -49,7 +57,7 @@ function AuthProvider({ children }) {
 
     // Invoke the fetchDecks function when the component mounts or when authentication status changes
     fetchDecks();
-  }, [isLoggedIn, userData]);
+  }, [isLoggedIn]);
 
   return (
     <AuthContext.Provider
@@ -84,5 +92,3 @@ function AppContent() {
 }
 
 export default App;
-
-
