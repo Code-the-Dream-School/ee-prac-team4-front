@@ -8,6 +8,14 @@
   /* global font and background color */
   font-family: Inter, sans-serif;
   color: #ededed;
+  --bar-width: 60px;
+  --bar-height: 6px;
+  --hamburger-gap: 6px;
+  --foreground: #7938b2;
+  --background: #bf7af0;
+  --hamburger-margin: 6px;
+  --animation-timing: 250ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 
   /* Typography */
   --h1-text-size: 43px;
