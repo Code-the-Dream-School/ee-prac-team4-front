@@ -89,6 +89,22 @@
   font-style: italic;
 }
 
+.show-pass-btn-register {
+  position: absolute;
+  right: 90px; 
+  top: 71%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  width: 42px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.show-pass-btn-register > span {
+  fill: gray;
+}
+
 @media (max-width: 320px) {
   .inputField {
     width: calc(100% - 12px);
