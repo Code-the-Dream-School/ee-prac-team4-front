@@ -100,8 +100,6 @@
   list-style: none;
   padding: 0;
   width: 100%;
-  /* background-color: red; */
-  margin-top: 50px;
 }
 
 .loginItems {
@@ -284,6 +282,7 @@
     justify-content: right; 
     width: 300px;
     left: 0;
+    margin-top: 50px;
   }
 
   .hamburger-menu {

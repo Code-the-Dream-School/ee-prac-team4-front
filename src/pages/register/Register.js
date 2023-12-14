@@ -117,19 +117,21 @@ function Register() {
           />
         </label>
 
-        <label>
-          Password
-          <input
-            type={passwordShown ? "text" : "password"}
-            placeholder="*************"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-            className={`inputField input-field-password`}
-            autoComplete="off"
-            required
-          />
-          <button type="button" onClick={togglePassword} className='show-pass-btn-register'>{passwordShown ? <span>{hidePass}</span> : <span>{showPass}</span>}</button> 
-        </label>
+        <div className="input-container-register">
+          <label>
+            Password
+            <input
+              type={passwordShown ? "text" : "password"}
+              placeholder="*************"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              className={`inputField input-field-password`}
+              autoComplete="off"
+              required
+            />
+            <button type="button" onClick={togglePassword} className='show-pass-btn-register'>{passwordShown ? <span>{hidePass}</span> : <span>{showPass}</span>}</button> 
+          </label>
+        </div>
 
         <Button type="submit" className="submit-button-register" buttonText="register" />
 

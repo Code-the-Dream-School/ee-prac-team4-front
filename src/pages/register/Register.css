@@ -89,10 +89,14 @@
   font-style: italic;
 }
 
+.input-container-register {
+  position: relative;
+}
+
 .show-pass-btn-register {
   position: absolute;
-  right: 90px; 
-  top: 71%;
+  right: 10px; 
+  top: 64%;
   transform: translateY(-50%);
   background-color: transparent;
   border: none;
