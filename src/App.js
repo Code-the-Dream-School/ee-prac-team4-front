@@ -40,17 +40,21 @@ function AuthProvider({ children }) {
 }
 
 function App() {
+  const [openRightNav, setOpenRightNav] = useState(false); 
   return (
     <AuthProvider>
-      <AppContent />
+      <AppContent 
+        openRightNav={openRightNav} 
+        setOpenRightNav={setOpenRightNav}  
+      />
     </AuthProvider>
   );
 }
 
-function AppContent() {
+function AppContent({ openRightNav }) {
   return (
     <>
-      <Navbar />
+      <Navbar openRightNav={openRightNav}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
