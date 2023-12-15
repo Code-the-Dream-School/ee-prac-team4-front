@@ -2,4 +2,118 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+.resources-container {
+  display: flex;
+  padding: 10px;
+  width: 90%;
+  justify-content: space-around;
+}
+.add-resource {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height:fit-content;
+  padding: 20px;
+  border: 1px solid var(--primary-border-color);
+  color: var(--subheading-text-color);
+  border-radius: var(--primary-input-radius);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+.add-resource h2 {
+  margin-bottom: 15px;
+}
+.resourceInput {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+label {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+input,
+select {
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--primary-border-color);
+  background: var(--primary-input-background);
+  border-radius: var(--primary-input-radius);
+  color: var(--subheading-text-color);
+}
+.button-add-resource {
+  color: var(--secondary-button-text);
+  background: var(--secondary-button-background);
+  border: 2px solid var(--secondary-button-border);
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.button-add-resource:hover {
+  background: var(--secondary-button-hover);
+  color: var(--secondary-button-text-hover);
+}
+.resources-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  padding: 20px;
+  /* border: 1px solid var(--primary-border-color); */
+  color: var(--subheading-text-color);
+  border-radius: var(--primary-input-radius);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.resources-list-topic {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  /* margin-bottom: 25px;
+  margin-left: 25px; */
+  border-radius: var(--primary-input-radius);
+  /* box-shadow: 0 0 5px var(--primary-topic-border); */
+}
+.resources-list-topic2 {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  margin: 25px;
+  /* margin-bottom: 25px;
+  margin-left: 25px; */
+  border-radius: var(--primary-input-radius);
+  box-shadow: 0 0 5px var(--secondary-topic-border);
+}
+.resources-list h2 {
+  margin-bottom: 15px;
+  margin-left: 15px;
+  padding-left: 0px;
+  font-size: 1.5em;
+  color: var(--heading-text-color);
+}
+.resources-list h3 {
+  margin-bottom: 10px;
+  margin-left: 10%;
+  font-size: 1.2em;
+  color: var(--subheading-text-color);
+}
+.resources-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.resources-list li {
+  margin-left: 17%;
+  margin-bottom: 5px;
+}
+.resources-list li a {
+  color: var(--link-text-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.resources-list li a:hover {
+  color: var(--link-text-hover-color);
 }
