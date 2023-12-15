@@ -6,6 +6,7 @@ import Home from "./pages/home/Home";
 import Resources from "./pages/resources/Resources";
 import FlashCards from "./pages/flashcards/FlashCards";
 import Navbar from "./components/navbar/Navbar.js";
+import About from "./pages/about/About.js";
 import "./App.css";
 
 export const AuthContext = createContext();
@@ -60,6 +61,7 @@ function AppContent({ openRightNav }) {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/flashcards" element={<FlashCards />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </>
   );

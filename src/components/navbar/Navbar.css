@@ -234,9 +234,17 @@
   font-weight: bold;
   width: 100px;
   padding: 16px;
-  border: 2px solid var(--secondary-button-border);
+  
   border-radius: 5px;
   margin: 10px;
+}
+
+.authButtons .sign-up-button {
+  border: 2px solid var(--highlight-button-border);
+}
+
+.authButtons .log-in-button {
+  border: 2px solid var(--secondary-button-border);
 }
 
 .log-in-button {
