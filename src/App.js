@@ -4,10 +4,9 @@ import Register from "./pages/register/Register";
 import LoginPage from "./pages/login/LoginPage";
 import Home from "./pages/home/Home";
 import Resources from "./pages/resources/Resources";
-import FlashCards from "./pages/flashcards/FlashCards";
 import Navbar from "./components/navbar/Navbar.js";
 import "./App.css";
-
+import Deck from "./pages/deck/Deck";
 export const AuthContext = createContext();
 
 function AuthProvider({ children }) {
@@ -89,7 +88,8 @@ function AppContent({ openRightNav }) {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/resources" element={<Resources />} />
-        <Route path="/flashcards" element={<FlashCards />} />
+        <Route path="/create-deck" element={<Deck />} />
+        <Route path="/resources" element={<Resources />} />
       </Routes>
     </>
   );

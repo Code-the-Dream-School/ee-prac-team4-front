@@ -1,27 +1,33 @@
 import React, { useState } from "react";
 import DeckForm from "./DeckForm";
-import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import FlashcardForm from "./FlashcardForm";
 
 const DECK_DATA = {
-  // id: 1,
   title: "",
   isPublic: false,
   topic: "",
   subtopic: "",
-  flashcards: []
+  flashcards: [],
 };
-function Deck() {
-  const [deck, setDeckData] = useState(DECK_DATA);
-  let navigate = useNavigate();
 
-  const redirect = (id) => {
-    //TODO: send redirect to new route
-    console.log(id);
-    navigate("/create-card");
+function Deck() {
+  const { id } = useParams();
+  const [deck, setDeckData] = useState(DECK_DATA);
+  const [hasDeckCheck, setHasDeckCheck] = useState(!!id); //convert to boolean if we have id
+  const [deckId, setDeckId] = useState(id);
+
+  const handleDeckId = (id) => {
+    if (id) {
+      setDeckId(id);
+      setHasDeckCheck(true);
+    }
   };
 
-  return (
-    <DeckForm deck={deck} setDeckData={setDeckData} onSaveDeck={redirect}  />
+  return !hasDeckCheck ? (
+    <DeckForm deck={deck} setDeckData={setDeckData} onSaveDeck={handleDeckId} />
+  ) : (
+    <FlashcardForm deckId={deckId} deck={deck} />
   );
 }
 
