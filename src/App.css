@@ -9,7 +9,15 @@
   height: 100vh;
   /* global font and background color */
   font-family: Inter, sans-serif;
-  color: #ffffff;
+  color: #ededed;
+  --bar-width: 60px;
+  --bar-height: 6px;
+  --hamburger-gap: 6px;
+  --foreground: #7938b2;
+  --background: #bf7af0;
+  --hamburger-margin: 6px;
+  --animation-timing: 250ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 
   /* Typography */
   --h1-text-size: 43px;
@@ -20,10 +28,12 @@
   /* Text Colors */
   --subheading-text-color: #a2a2a2;
   --link-text-color: #728095;
+  --hint-text-color: #a0a0a0;
 
   /* Background Colors */
   --primary-background: #161616;
   --secondary-background: #1c1c1c;
+  --hint-background: #2e2e2e;
 
   /*card variations*/
   --primary-border-color: #a1aebf;
