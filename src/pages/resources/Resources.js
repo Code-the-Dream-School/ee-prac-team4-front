@@ -66,6 +66,28 @@ function ResourceOrganizer() {
 
   const [resources, setResources] = useState([]);
   const [openModal, setOpenModal] = useState(false);
+   console.log("RESOURCES", resources)
+
+   const getResources = async () => {
+    try {
+      const response = await fetch(`http://localhost:8000/api/v1/resources`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+
+      const data = await response.json();
+      if (data) {
+        setResources(data.Resources);
+      } else {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+    } catch (error) {
+      console.error("Error ", error);
+    }
+  };
 
   async function handleSaveResource() {
     setOpenModal(false);
@@ -81,6 +103,14 @@ function ResourceOrganizer() {
 
       const data = await response.json();
       if (data) {
+        setFormData({
+          link: "",
+          title: "",
+          type: "",
+          topic: "",
+          subtopic: "",
+        })
+        getResources();
         console.log("Data -", data);
       } else {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -89,28 +119,7 @@ function ResourceOrganizer() {
       console.error("Error ", error);
     }
   }
-
   useEffect(() => {
-    const getResources = async () => {
-      try {
-        const response = await fetch(`http://localhost:8000/api/v1/resources`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-        });
-
-        const data = await response.json();
-        if (data) {
-          setResources(data.Resources);
-        } else {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-      } catch (error) {
-        console.error("Error ", error);
-      }
-    };
     getResources();
   }, []);
 
@@ -149,16 +158,16 @@ function ResourceOrganizer() {
                 <ul>
                   {resourcesByTopic[topic][subtopic].map((resource, idx3) => (
                     <li className="resources-subtopic" key={idx3}>
-                      <strong>{resource.title}</strong> -{resource.type}
-                      {/*<p>{resource.type}</p>*/}(
+                      {resource.type}:{" "}
+                     
                       <a
                         href={resource.link}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Link
+                         <strong>{resource.title}</strong>
                       </a>
-                      )
+                      
                     </li>
                   ))}
                 </ul>

@@ -13,7 +13,7 @@ export const AuthContext = createContext();
 function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState({});
-
+  
   const handleLogin = (userData) => {
     setIsLoggedIn(true);
     setUserData(userData);
@@ -27,7 +27,7 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     console.log("isLoggedIn:", isLoggedIn);
-  }, [isLoggedIn]);
+  });
 
   return (
     <AuthContext.Provider
