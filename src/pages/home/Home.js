@@ -1,18 +1,9 @@
 import React, { useState } from "react";
 import "./Home.css";
 import DeckCard from "../../components/deckCard/DeckCard";
-import {Link, useNavigate} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Home() {
-  const [search, setSearch] = useState("");
-
-  let navigate = useNavigate();
-  const routeChange = () =>{
-    console.log("test")
-    let path = `/create-deck`;
-    navigate(path);
-  }
-
   const data = [
     {
       title: "HTTP Errors",
@@ -45,7 +36,9 @@ function Home() {
         <div className="my-decks">
           <div className="my-decks-top">
             <h2 className="h2-deck-card">My Decks</h2>
-            <Link className="new-deck-button" to="/create-deck">New deck</Link>
+            <Link className="new-deck-button" to="/create-deck">
+              New deck
+            </Link>
           </div>
           <div className="decks-container">
             {data.map((elem, idx) => (
