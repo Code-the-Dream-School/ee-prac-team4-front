@@ -42,7 +42,7 @@ function LoginPage() {
 
       if (response.ok && !response.error) {
         handleLogin(data);
-        navigate("/create-deck");
+        navigate("/");
       } else {
         throw new Error(`Login failed: ${data.message}`);
       }
