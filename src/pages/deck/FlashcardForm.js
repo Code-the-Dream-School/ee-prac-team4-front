@@ -147,16 +147,18 @@ function FlashCardForm({ deckId, deck }) {
         <div className="flashcard-list">
           {cards.map((card, i) => {
             return editIds.indexOf(card._id) > -1 ? (
-              <EditFlashCardForm
-                card={card}
-                handleUpdate={handleUpdate}
-                handleCancelEdit={handleCancelEdit}
-              />
+              <div key={i}>
+                <EditFlashCardForm
+                  card={card}
+                  handleUpdate={handleUpdate}
+                  handleCancelEdit={handleCancelEdit}
+                />
+              </div>
             ) : (
               <div key={card._id} className="flashcard">
                 <div className="flashcard-answer">
-                  <h2>{card.question}</h2>
-                  <h2>{card.answer}</h2>
+                  <p>{card.question}</p>
+                  <p>{card.answer}</p>
                 </div>
                 <div className="flashcard-answer">
                   <p>{card.hint}</p>

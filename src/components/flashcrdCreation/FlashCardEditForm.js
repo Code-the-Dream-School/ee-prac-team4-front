@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Icon } from "react-icons-kit";
 import { floppyO } from "react-icons-kit/fa/floppyO";
 import { exit } from "react-icons-kit/icomoon/exit";
-import { cross } from "react-icons-kit/icomoon/cross";
 function EditFlashCardForm({ card, handleUpdate, handleCancelEdit }) {
   let [editCardValue, setEditCardValue] = useState(card);
 

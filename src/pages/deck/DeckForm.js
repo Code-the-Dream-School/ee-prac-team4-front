@@ -52,7 +52,7 @@ function DeckForm({ deck, setDeckData, onSaveDeck }) {
             })
           }
         >
-          {deck.topic ? null : <option value="">ChooseOn</option>}
+          {deck.topic ? null : <option value="">Choose One</option>}
           {Object.keys(ALL_TOPICS).map((topic, idx) => {
             return (
               <option key={idx} value={topic}>

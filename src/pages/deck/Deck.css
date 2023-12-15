@@ -2,7 +2,7 @@
 .cardContainer,
 .flashcard,
 .deck {
-  width: 500px;
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid var(--primary-border-color);
@@ -13,8 +13,10 @@
 .deck,
 .cardContainer {
   margin-top: 100px;
+  width: 500px;
 }
 .cardContainer {
+  width: 500px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -22,7 +24,7 @@
 }
 
 .flashcard {
-  width: 900px;
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -109,6 +111,10 @@ select {
   gap: 20px;
 }
 
+.flashcard-option div {
+  cursor: pointer;
+}
+
 .editInput {
   padding: none;
   margin-bottom: 5px;
@@ -125,4 +131,22 @@ select {
 
 .deckLabel {
   margin-right: 20px;
+}
+
+@media (max-width: 550px) {
+  .cardContainer {
+    width: 97%;
+  }
+  .deck {
+    width: 97%;
+  }
+  .flashcard {
+    width: 97%;
+  }
+}
+
+@media (max-width: 650px) {
+  .flashcard-answer input {
+    width: 95%;
+  }
 }

@@ -15,7 +15,7 @@ function CreateFlashcardForm({
         </h2>
         <h3>
           <span className="deckLabel">Topic: </span>
-          {deck.topic} -> {deck.subtopic}
+          {deck.topic} -&gt; {deck.subtopic}
         </h3>
       </div>
       <label htmlFor="" className="deckInput">
