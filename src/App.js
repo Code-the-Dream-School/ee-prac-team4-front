@@ -16,6 +16,27 @@ function AuthProvider({ children }) {
   console.log("decks", decks);
   console.log(isLoggedIn);
 
+  useEffect(() => {
+    async function fetchUserToken() {
+      const res = await fetch("http://localhost:8000/api/v1/user/usertoken", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+
+      const returnMessage = await res.json();
+      return returnMessage;
+    }
+
+    fetchUserToken().then((data) => {
+      if (data.token) {
+        setIsLoggedIn(true);
+      }
+    });
+  }, []);
+
   const handleLogin = (userData) => {
     setIsLoggedIn(true);
     setUserData(userData);
