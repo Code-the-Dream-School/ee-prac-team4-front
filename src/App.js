@@ -13,8 +13,8 @@ function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState({});
   const [decks, setDecks] = useState([]);
-  console.log("decks" , decks);
-console.log(isLoggedIn);
+  console.log("decks", decks);
+  console.log(isLoggedIn);
 
   const handleLogin = (userData) => {
     setIsLoggedIn(true);
@@ -31,21 +31,24 @@ console.log(isLoggedIn);
       try {
         if (isLoggedIn) {
           const response = await fetch("http://localhost:8000/api/v1/deck", {
-          method: "GET" ,
-          headers: { "Content-Type": "application/json"
-            },
-            credentials : 'include'
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
           });
           const userDecks = await response.json();
           console.log("user decks", userDecks);
-          const privateUserDecks = userDecks.decks.filter(deck => deck.isPublic === false )
+          const privateUserDecks = userDecks.decks.filter(
+            (deck) => deck.isPublic === false,
+          );
           setDecks([...decks, ...privateUserDecks]);
         } else {
-          const response = await fetch("http://localhost:8000/api/v1/decksAll", {
-          method: "GET" ,
-          headers: { "Content-Type": "application/json"
+          const response = await fetch(
+            "http://localhost:8000/api/v1/decksAll",
+            {
+              method: "GET",
+              headers: { "Content-Type": "application/json" },
             },
-          });
+          );
           const publicDecks = await response.json();
           setDecks(publicDecks.decks);
         }
@@ -68,12 +71,12 @@ console.log(isLoggedIn);
 }
 
 function App() {
-  const [openRightNav, setOpenRightNav] = useState(false); 
+  const [openRightNav, setOpenRightNav] = useState(false);
   return (
     <AuthProvider>
-      <AppContent 
-        openRightNav={openRightNav} 
-        setOpenRightNav={setOpenRightNav}  
+      <AppContent
+        openRightNav={openRightNav}
+        setOpenRightNav={setOpenRightNav}
       />
     </AuthProvider>
   );
@@ -82,7 +85,7 @@ function App() {
 function AppContent({ openRightNav }) {
   return (
     <>
-      <Navbar openRightNav={openRightNav}/>
+      <Navbar openRightNav={openRightNav} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
