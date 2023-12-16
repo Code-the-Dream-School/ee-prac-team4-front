@@ -1,7 +1,5 @@
 .about {
     color: #ededed;
-    margin: 30px;
-    margin-top: 80px;
     text-align: center;
     background-color: var(--secondary-background);
     padding: 10px;
@@ -13,15 +11,23 @@
     text-align: justify;
 }
 
+.members {
+    padding-left: 0px;
+}
+
+.members .students > div,
+.members .mentors > div {
+    padding-left: 0;
+}
+
 .members .students, 
 .members .mentors {
     display: grid;
     grid-column-gap: 4px;
     grid-row-gap: 3px;
-    padding-left: 0px;
+    padding: 10px;
     .participant-name {
         font-size: 1.2rem;
-        padding: 10px;
         font-weight: 600;
     }
     .profile-pic img {
@@ -137,7 +143,34 @@
     .members .mentors {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(1, 1fr);
+        .participant-name {
+            font-size: 1rem;
+        }
     }
+
+    .h2-about {
+        font-size: 1.2rem;
+    }
+
+    .about-text {
+        font-size: 0.8rem;
+    }
+
+    .text {
+        font-size: 0.8rem;
+    }
+
+    .button-swagger {
+        padding: 10px 22px;
+        font-size: 16px;
+        width: 250px;
+        margin-bottom: 10px;
+    }
+
+    .name-title {
+        margin-right: 5px;
+    }
+
 }
 
 @media (max-width: 320px) {
@@ -157,6 +190,10 @@
     .members .profile-pic img {
         max-height: 100px;
         text-align: left;
+    }
+
+    .members .profile-pic {
+        margin-bottom: 0px;
     }
 
     .about-title {
@@ -201,7 +238,5 @@
     .text {
         display: inline;
         width: 100%;
-        font-size: 1.2rem;
-        line-height: 1.4rem;
     }
 }
