@@ -66,9 +66,9 @@ function ResourceOrganizer() {
 
   const [resources, setResources] = useState([]);
   const [openModal, setOpenModal] = useState(false);
-   console.log("RESOURCES", resources)
+  console.log("RESOURCES", resources);
 
-   const getResources = async () => {
+  const getResources = async () => {
     try {
       const response = await fetch(`http://localhost:8000/api/v1/resources`, {
         method: "GET",
@@ -109,7 +109,7 @@ function ResourceOrganizer() {
           type: "",
           topic: "",
           subtopic: "",
-        })
+        });
         getResources();
         console.log("Data -", data);
       } else {
@@ -159,15 +159,13 @@ function ResourceOrganizer() {
                   {resourcesByTopic[topic][subtopic].map((resource, idx3) => (
                     <li className="resources-subtopic" key={idx3}>
                       {resource.type}:{" "}
-                     
                       <a
                         href={resource.link}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                         <strong>{resource.title}</strong>
+                        <strong>{resource.title}</strong>
                       </a>
-                      
                     </li>
                   ))}
                 </ul>

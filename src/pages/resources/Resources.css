@@ -13,6 +13,8 @@
   max-width: 1250px;
   padding: 0 20px;
   justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 .add-resource-btn {
   padding: 0;
@@ -141,7 +143,7 @@ select {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
   margin: 0 auto;
-  top: 15%;
+  top: 20px;
   background: var(--primary-background);
 }
 .add-resource h2 {
@@ -165,5 +167,14 @@ select {
 @media (max-width: 650px) {
   .resources-list {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .resources-title {
+    flex-direction: column;
+  }
+  .resources-title h1 {
+    margin-bottom: 0px;
   }
 }
