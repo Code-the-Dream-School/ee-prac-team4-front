@@ -31,6 +31,9 @@
   margin-left: auto;
   margin-bottom: 1rem;
   background-color: transparent;
+  text-decoration: none;
+  padding: 1rem;
+  font-weight: bold;
 }
 
 .new-deck-button:hover {
