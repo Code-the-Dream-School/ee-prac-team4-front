@@ -17,11 +17,14 @@ function AuthProvider({ children }) {
   console.log(isLoggedIn);
 
   const handleLogin = (userData) => {
+    const expiry = Date.now() + 24 * 60 * 60 * 1000;
+    localStorage.setItem("expiry", expiry);
     setIsLoggedIn(true);
     setUserData(userData);
   };
 
   const handleLogout = () => {
+    localStorage.removeItem("expiry");
     setIsLoggedIn(false);
     setUserData({});
   };
@@ -56,10 +59,17 @@ function AuthProvider({ children }) {
         console.error("Error fetching decks:", error);
       }
     };
-
     // Invoke the fetchDecks function when the component mounts or when authentication status changes
     fetchDecks();
   }, [isLoggedIn]);
+
+  useEffect(() => {
+    const now = Date.now();
+    const loginExpiry = localStorage.getItem("expiry");
+    loginExpiry && now < loginExpiry
+      ? setIsLoggedIn(true)
+      : setIsLoggedIn(false);
+  }, []);
 
   return (
     <AuthContext.Provider
