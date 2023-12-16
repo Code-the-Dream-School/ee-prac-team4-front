@@ -57,12 +57,9 @@ const About = () => {
                         </div>
                         <div className="card-content">
                             <ReadMore>
-                                Lorem ipsum dolor sit amet. Non consectetur accusamus rem architecto enim 
-                                est ipsum quis est fuga porro qui officia deserunt eos sint nostrum qui sunt optio. 
-                                Aut fugit maiores in sapiente dignissimos qui molestias molestiae et eius dolores vel consequatur 
-                                laboriosam est repellendus dolor. Ab atque doloribus et nemo sint hic cumque atque 33 commodi placeat et 
-                                voluptas voluptas hic voluptatibus minima et neque libero. 
-                                Et officiis laborum est quia eaque ea sequi sequi eum placeat voluptas est veritatis dolorem id quis odit.
+                                Based in the San Fransico Bay Area, Alejandro is a first-generation college student with a human-centered approach to the web. 
+                                He aims to empower underrepresented communities by helping businesses establish a robust online presence through personalized websites. 
+                                With a keen eye for design and a strong technical skillset, he is committed to bridging the digital divide.
                             </ReadMore>
                         </div>
                     </div>
@@ -81,12 +78,11 @@ const About = () => {
                         </div>
                         <div className="card-content">
                             <ReadMore>
-                                Lorem ipsum dolor sit amet. Non consectetur accusamus rem architecto enim 
-                                est ipsum quis est fuga porro qui officia deserunt eos sint nostrum qui sunt optio. 
-                                Aut fugit maiores in sapiente dignissimos qui molestias molestiae et eius dolores vel consequatur 
-                                laboriosam est repellendus dolor. Ab atque doloribus et nemo sint hic cumque atque 33 commodi placeat et 
-                                voluptas voluptas hic voluptatibus minima et neque libero. 
-                                Et officiis laborum est quia eaque ea sequi sequi eum placeat voluptas est veritatis dolorem id quis odit.
+                                Experienced front-end developer with over three years in web application development. 
+                                Returning to the job market after maternity leave, I bring a passion for creating outstanding user experiences. 
+                                Proven ability to handle multiple tasks, adapt quickly to new technologies, and collaborate effectively with teams to deliver top-notch results. 
+                                Skilled problem-solver known for translating complex ideas into simple, actionable solutions. 
+                                Dedicated to advancing in the field and delivering excellence in every project.
                             </ReadMore>
                         </div>
                     </div>
@@ -117,7 +113,7 @@ const About = () => {
                     <div className="profile-pic">
                         <div className="name-position-img">
                             <div className="name-title">
-                                <p className="participant-name">Alena Demidenko</p>
+                                <p className="participant-name">Elena Demidenko</p>
                                 <p className="job-title">Front-End</p>
                             </div>
                             <img
@@ -128,12 +124,9 @@ const About = () => {
                         </div>
                         <div className="card-content">
                             <ReadMore>
-                                Lorem ipsum dolor sit amet. Non consectetur accusamus rem architecto enim 
-                                est ipsum quis est fuga porro qui officia deserunt eos sint nostrum qui sunt optio. 
-                                Aut fugit maiores in sapiente dignissimos qui molestias molestiae et eius dolores vel consequatur 
-                                laboriosam est repellendus dolor. Ab atque doloribus et nemo sint hic cumque atque 33 commodi placeat et 
-                                voluptas voluptas hic voluptatibus minima et neque libero. 
-                                Et officiis laborum est quia eaque ea sequi sequi eum placeat voluptas est veritatis dolorem id quis odit.
+                                Elena is an experienced education professional from the Triangle area in NC, currently learning programming. 
+                                Her goal is to transition into an e-learning developer role and integrate her educational experience with technology, 
+                                creating innovative and captivating online learning experiences.  
                             </ReadMore>
                         </div>
                     </div>
