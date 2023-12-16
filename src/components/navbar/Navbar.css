@@ -217,31 +217,32 @@
 }
 
 .log-out-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: #fff;
+  background: var(--highlight-button-background);
+  color: var(--highlight-button-text);
+  border: 2px solid var(--highlight-button-border);
+  padding: 7px 14px;
+  border-radius: 5px;
+  font-size: var(--p-text-size);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: regular;
 }
 
-.log-out-button svg {
-  fill: #fff;
-  height: 30px; 
-  width: 30px; 
+.log-out-button:hover {
+  background: var(--highlight-button-hover);
 }
 
 .authButtons button {
   font-weight: bold;
   width: 100px;
   padding: 16px;
-  
   border-radius: 5px;
   margin: 10px;
 }
 
-.authButtons .sign-up-button {
+.authButtons .sign-up-button,
+.authButtons .log-out-button
+{
   border: 2px solid var(--highlight-button-border);
 }
 
@@ -259,13 +260,15 @@
   background: var(--primary-button-hover);
 }
 
-.sign-up-button {
+.sign-up-button, .log-out-button {
   background: var(--highlight-button-background);
   color: var(--highlight-button-text);
   cursor: pointer;
 }
 
-.sign-up-button:hover {
+.sign-up-button:hover,
+.log-out-button:hover
+{
   background: var(--highlight-button-hover);
 }
 
@@ -273,6 +276,8 @@
   font-size: 14px; 
   color: #fff;
   margin-right: 8px; 
+  width: fit-content;
+  white-space: nowrap;
 }
 
 .menu .resources,
@@ -293,6 +298,16 @@
     width: 300px;
     left: 0;
     margin-top: 50px;
+  }
+
+  .authButtons .sign-up-button,
+  .authButtons .log-out-button
+  {
+    border: none;
+  }
+
+  .authButtons .log-in-button {
+    border: none;
   }
 
   .hamburger-menu {
@@ -363,7 +378,8 @@
   .first-group li,
   .second-group li,
   .authButtons button,
-  .navbar-button a
+  .navbar-button a,
+  .log-out-button
    {
     cursor: pointer;
     margin-top: 1rem;
@@ -378,6 +394,10 @@
     border-radius: 0px !important;
     height: 55px;
     width: 100%;
+  }
+
+  .log-out-button.button {
+    text-decoration: none;
   }
 
   .authButtons button {
@@ -486,13 +506,17 @@
     margin-top: 10px;
   }
 
-  .loginItems button.log-out-button {
-    margin-top: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
+  .loginItems button.log-out-button {    
     margin-top: 0px;
+  }
+
+  .loginItems a .log-out-button,
+  .loginItems button.log-out-button,
+  .log-in-button button.log-out-button,
+  .second-group button.log-out-button
+
+  {
+    text-decoration: none;
   }
 
   .right-nav-ul .buttons .first-group li {

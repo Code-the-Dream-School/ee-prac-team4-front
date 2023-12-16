@@ -23,9 +23,25 @@ console.log(isLoggedIn);
     setUserData(userData);
   };
 
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setUserData({});
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/v1/logout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+
+      if (response.ok) {
+        setIsLoggedIn(false);
+        setUserData({});
+      } else {
+        console.error("Logout failed");
+      }
+    } catch (error) {
+      console.error("Error during logout:", error);
+    }
   };
 
   useEffect(() => {
