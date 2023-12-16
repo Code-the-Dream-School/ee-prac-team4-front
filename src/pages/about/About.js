@@ -170,12 +170,13 @@ const About = () => {
                         </div>
                         <div className="card-content">
                             <ReadMore>
-                                Lorem ipsum dolor sit amet. Non consectetur accusamus rem architecto enim 
-                                est ipsum quis est fuga porro qui officia deserunt eos sint nostrum qui sunt optio. 
-                                Aut fugit maiores in sapiente dignissimos qui molestias molestiae et eius dolores vel consequatur 
-                                laboriosam est repellendus dolor. Ab atque doloribus et nemo sint hic cumque atque 33 commodi placeat et 
-                                voluptas voluptas hic voluptatibus minima et neque libero. 
-                                Et officiis laborum est quia eaque ea sequi sequi eum placeat voluptas est veritatis dolorem id quis odit.
+                            A San Francisco Bay Area native, Jukari is a programming student acquiring skills as a full-stack 
+                            developer through access to organizations like Code The Dream. Working as full time tradesman as a member 
+                            of the Northern California Regional Carpenter's Union he is motivated to transition into the technology 
+                            space and acquire a new skillset as a web developer. Having gained certification from Code The Dream's Intro Course, 
+                            Node.js learning cohort and moving onto attain a React.js certificate he has made significant strides toward 
+                            his ultimate goal. He aims to use his skillset to impact his community and the world 
+                            in a positive fashion to integrate human values with technological innovation.
                             </ReadMore>
                         </div>
                     </div>
