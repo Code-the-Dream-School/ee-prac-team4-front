@@ -46,6 +46,7 @@
     margin: 0;
     outline: none;
     pointer-events: none;
+    border: none;
 }
 
 .hamburger-menu input:checked {
