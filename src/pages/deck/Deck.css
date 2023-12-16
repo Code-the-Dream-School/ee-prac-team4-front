@@ -1,0 +1,152 @@
+/* Common styles */
+.cardContainer,
+.flashcard,
+.deck {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid var(--primary-border-color);
+  color: var(--subheading-text-color);
+  border-radius: var(--primary-input-radius);
+}
+
+.deck,
+.cardContainer {
+  margin-top: 100px;
+  width: 500px;
+}
+.cardContainer {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.flashcard {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.deckInput {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input and select styles */
+label {
+  text-transform: uppercase;
+}
+
+input,
+select {
+  font-size: 14px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--primary-border-color);
+  background: var(--primary-input-background);
+  border-radius: var(--primary-input-radius);
+  color: var(--subheading-text-color);
+}
+
+/* Checkbox styles */
+.checkBox {
+  display: inline;
+}
+
+.checkBox input {
+  margin-left: 19px;
+}
+
+/* Button styles */
+.create-deck-button,
+.button-delete {
+  font-weight: bold;
+  width: 120px;
+  padding: 16px;
+  border-radius: 5px;
+  color: var(--secondary-button-text);
+}
+
+.button,
+.create-deck-button {
+  background: var(--secondary-button-background);
+  border: 2px solid var(--secondary-button-border);
+}
+
+.button-delete {
+  background: var(--caution-button-background);
+  border: var(--caution-button-border);
+  color: var(--caution-button-hover);
+}
+
+/* Button hover effect */
+.button:hover {
+  background: var(--secondary-button-hover);
+}
+
+/* Flashcard answer styles */
+.flashcard-answer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flashcard-answer h2 {
+  margin: 0;
+}
+
+/* Flashcard list styles */
+.flashcard-list {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.flashcard-option {
+  display: flex;
+  gap: 20px;
+}
+
+.flashcard-option div {
+  cursor: pointer;
+}
+
+.editInput {
+  padding: none;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  width: 250px;
+}
+
+.deckInfo {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.deckLabel {
+  margin-right: 20px;
+}
+
+@media (max-width: 550px) {
+  .cardContainer {
+    width: 97%;
+  }
+  .deck {
+    width: 97%;
+  }
+  .flashcard {
+    width: 97%;
+  }
+}
+
+@media (max-width: 650px) {
+  .flashcard-answer input {
+    width: 95%;
+  }
+}

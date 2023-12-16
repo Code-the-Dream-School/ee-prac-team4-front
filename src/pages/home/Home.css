@@ -1,4 +1,51 @@
-.menu {
-  gap: 20px;
-  list-style: none;
+.content {
+  width: 100%;
+}
+.decks-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.my-decks {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.my-decks-top {
+  display: flex;
+  width: 100%;
+}
+.new-deck-button {
+  color: var(--secondary-topic-text);
+  text-transform: uppercase;
+  border: solid;
+  border-color: var(--secondary-topic-border);
+  margin-left: auto;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.new-deck-button:hover {
+  background-color: #2980b9;
+  color: white;
+}
+
+.new-deck-button:active {
+  background-color: #1f618d;
+}
+@media (max-width: 750px) {
+  .decks-container {
+    justify-content: center;
+  }
 }
