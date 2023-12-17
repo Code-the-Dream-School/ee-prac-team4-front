@@ -13,36 +13,37 @@ const FLASHCARD_FIELDS = {
   hint: "",
 };
 
-function FlashCardForm({ deckId, deck }) {
+function FlashCardForm({ deckId, deck, cards, setCards }) {
   let [flashCard, setFlashCard] = useState({
     ...FLASHCARD_FIELDS,
     deck: deckId,
   });
-  let [cards, setCards] = useState([]);
+  // let [cards, setCards] = useState([]);
   let [editIds, setEditsCardIndexes] = useState([]);
 
-  useEffect(() => {
-    setFlashCard({ ...flashCard, deck: deckId });
-    async function fetchData(deckId) {
-      const response = await fetch(
-        `http://localhost:8000/api/v1/deck/${deckId}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-        },
-      );
-
-      const deckData = await response.json();
-      if (response.ok) {
-        setCards(deckData.deck.flashcards);
-      } else {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-    }
-  }, []);
+  // useEffect(() => {
+  //   console.log("deck FlashCardForm", deck);
+  //   setFlashCard({ ...flashCard, deck: deckId });
+  //   const fetchData = async (deckId) => {
+  //     const response = await fetch(
+  //       `http://localhost:8000/api/v1/deck/${deckId}`,
+  //       {
+  //         method: "GET",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         credentials: "include",
+  //       },
+  //     );
+  //     const deckData = await response.json();
+  //     if (response.ok) {
+  //       setCards(deckData.deck.flashcards);
+  //     } else {
+  //       throw new Error(`HTTP error! Status: ${response.status}`);
+  //     }
+  //   };
+  //   fetchData(deckId);
+  // }, []);
 
   async function handleSaveCard(e) {
     e.preventDefault();

@@ -1,26 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Home.css";
 import DeckCard from "../../components/deckCard/DeckCard";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../App";
 
 function Home() {
   const data = [
     {
+      _id: "657e3033c0547f91a09a0ede",
       title: "HTTP Errors",
       topic: "Intro",
       flashcards: [],
     },
     {
+      _id: "657e6c305a19d32e72de9f75",
       title: "Context",
       topic: "React",
       flashcards: [],
     },
     {
+      id: 3,
       title: "Intro to Arrays",
       topic: "React",
       flashcards: [],
     },
     {
+      id: 4,
       title: "Function Components",
       topic: "React",
       flashcards: [],

@@ -91,7 +91,7 @@ function AppContent({ openRightNav }) {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/resources" element={<Resources />} />
-        <Route path="/create-deck" element={<Deck />} />
+        <Route path="/create-deck/:id?" element={<Deck />} />
         <Route path="/resources" element={<Resources />} />
       </Routes>
     </>

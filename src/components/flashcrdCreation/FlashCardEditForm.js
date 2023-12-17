@@ -23,7 +23,6 @@ function EditFlashCardForm({ card, handleUpdate, handleCancelEdit }) {
     <div className="flashcard">
       <div className="flashcard-answer">
         <label htmlFor="" className="">
-          {" "}
           Question
           <input
             type="text"
@@ -37,8 +36,8 @@ function EditFlashCardForm({ card, handleUpdate, handleCancelEdit }) {
             }
           />
         </label>
+
         <label htmlFor="">
-          {" "}
           Answer
           <input
             type="text"
@@ -53,6 +52,7 @@ function EditFlashCardForm({ card, handleUpdate, handleCancelEdit }) {
           />
         </label>
       </div>
+
       <div className="flashcard-answer">
         <label htmlFor="">
           Hint
