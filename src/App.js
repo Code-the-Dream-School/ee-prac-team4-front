@@ -17,7 +17,9 @@ function AuthProvider({ children }) {
   console.log(isLoggedIn);
 
   const handleLogin = (userData) => {
-    const expiry = Date.now() + 24 * 60 * 60 * 1000;
+    // remove line 21 and adjust line 22 when userdata.expiresIn is fixed
+   const expiresIn = userData.expiresIn > 86400000 ? 86300000 : userData.expiresIn
+    const expiry = Date.now() + expiresIn;
     localStorage.setItem("expiry", expiry);
     setIsLoggedIn(true);
     setUserData(userData);
