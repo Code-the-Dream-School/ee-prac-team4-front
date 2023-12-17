@@ -1,6 +1,6 @@
 .card {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -14,7 +14,6 @@
   position: relative;
   width: 600px;
   height: 100%;
-  margin: auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -29,19 +28,24 @@
   font-size: var(--h3-text-size);
 }
 
-.card-back {
-  border-radius: 6px;
-  padding: 20px;
-  text-align: center;
-}
-
 .hint-section {
   position: absolute;
-  bottom: 8px;
+  bottom: 15px;
   left: 10px;
   color: var(--hint-text-color);
   display: flex;
   align-items: center;
+}
+
+.hint-text {
+  text-align: left;
+  max-width: 520px;
+  margin: 0;
+  padding: 3px 10px;
+  border-radius: 10px;
+  white-space: normal;
+  background-color: var(--hint-background);
+  font-size: var(--p-text-size);
 }
 
 .hint-icon {
@@ -54,17 +58,6 @@
   cursor: pointer;
 }
 
-.hint-text {
-  margin: 0;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  background-color: var(--hint-background);
-  font-size: var(--p-text-size);
-}
-
 .skip-button {
   margin-top: 20px;
   display: flex;
@@ -75,4 +68,12 @@
 
 .skip-button {
   cursor: pointer;
+}
+
+.thinRight {
+  padding-left: 10px;
+}
+
+.thinLeft {
+  padding-right: 10px;
 }

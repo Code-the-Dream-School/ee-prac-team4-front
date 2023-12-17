@@ -1,52 +1,27 @@
-import React, { useState } from "react";
-import "./Home.css";
+import React, { useContext } from "react";
 import DeckCard from "../../components/deckCard/DeckCard";
 import Button from "../../components/button/Button";
+import { AuthContext } from "../../App";
+import { Link } from "react-router-dom";
+import "./Home.css";
 
 function Home() {
-  const [search, setSearch] = useState("");
-  const data = [
-    {
-      title: "HTTP Errors",
-      topic: "Intro",
-      flashcards: [],
-    },
-    {
-      title: "Context",
-      topic: "React",
-      flashcards: [],
-    },
-    {
-      title: "Intro to Arrays",
-      topic: "React",
-      flashcards: [],
-    },
-    {
-      title: "Function Components",
-      topic: "React",
-      flashcards: [],
-    },
-
-    { title: "Logical Operators", topic: "React", flashcards: [] },
-    { title: "Controllers vs Routes", topic: "React", flashcards: [] },
-  ];
+  const { decks } = useContext(AuthContext);
 
   return (
-    <>
-      <div className="content">
-        <div className="my-decks">
-          <div className="my-decks-top">
-            <h2 className="h2-deck-card">My Decks</h2>
-            <Button buttonText="new deck" className="new-deck-button" />
-          </div>
-          <div className="decks-container">
-            {data.map((elem, idx) => (
-              <DeckCard deck={elem} key={idx} />
-            ))}
-          </div>
-        </div>
+    <div className="home-container">
+      <h2 className="deck-title">My Decks</h2>
+      <div className="button-container">
+        <Button buttonText="new deck" className="new-deck-button" />
       </div>
-    </>
+      <div className="decks-container">
+        {decks.map((deck, idx) => (
+          <Link key={idx} to={`flashcards/?id=${deck._id}`}>
+            <DeckCard deck={deck} />
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }
 

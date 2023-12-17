@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./DeckCard.css";
 
 const DeckCard = ({ deck }) => {
@@ -6,9 +5,9 @@ const DeckCard = ({ deck }) => {
 
   return (
     <div className="deck-card">
-      <h3 className="h3-deck-card">{title}</h3>
-      <p className="p-deck-card"> {topic}</p>
-      <p className="terms-deck-card"> {flashcards.length} terms</p>
+      <h3 className="card-title">{title}</h3>
+      <p className="card-topic"> {topic}</p>
+      <p className="card-term"> {flashcards.length} terms</p>
     </div>
   );
 };

@@ -8,20 +8,19 @@ const DECK_DATA = {
   isPublic: false,
   topic: "",
   subtopic: "",
-  flashcards: []
+  flashcards: [],
 };
+
 function Deck() {
   const [deck, setDeckData] = useState(DECK_DATA);
   let navigate = useNavigate();
 
   const redirect = (id) => {
-    //TODO: send redirect to new route
-    console.log(id);
     navigate("/create-card");
   };
 
   return (
-    <DeckForm deck={deck} setDeckData={setDeckData} onSaveDeck={redirect}  />
+    <DeckForm deck={deck} setDeckData={setDeckData} onSaveDeck={redirect} />
   );
 }
 

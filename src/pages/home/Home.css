@@ -1,34 +1,22 @@
-.content {
-  width: 100%;
-}
 .decks-container {
+  text-decoration: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  justify-content: space-evenly;
   margin: 0 auto;
 }
 
-.my-decks {
-  width: 80%;
-  margin: 0 auto;
+.button-container {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: 100vh;
+  flex-direction: row;
+  margin: 0;
+  justify-content: flex-start;
 }
 
-.my-decks-top {
-  display: flex;
-  width: 100%;
-}
 .new-deck-button {
   color: var(--secondary-topic-text);
   text-transform: uppercase;
   border: solid;
   border-color: var(--secondary-topic-border);
-  margin-left: auto;
   margin-bottom: 1rem;
   background-color: transparent;
 }
@@ -41,8 +29,12 @@
 .new-deck-button:active {
   background-color: #1f618d;
 }
+
 @media (max-width: 750px) {
   .decks-container {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 }

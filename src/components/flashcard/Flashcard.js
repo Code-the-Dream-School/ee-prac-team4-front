@@ -1,65 +1,61 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import ReactCardFlip from "react-card-flip";
 import { Icon } from "react-icons-kit";
 import { thinLeft } from "react-icons-kit/entypo/thinLeft";
 import { thinRight } from "react-icons-kit/entypo/thinRight";
 import { ic_lightbulb } from "react-icons-kit/md/ic_lightbulb";
+import { AuthContext } from "../../App";
 import "./Flashcard.css";
 
-const Flashcard = ({ currentCard }) => {
+const Flashcard = () => {
   const [cardIndex, setCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  const [flashcards, setFlashcards] = useState([]);
+  const { decks } = useContext(AuthContext);
+  const location = useLocation();
 
-  const mockData = [
-    {
-      question: "What is our project group number?",
-      answer: "4",
-      hint: "The group number is a single-digit number",
-      tags: ["code the dream", "practicum"],
-    },
-    {
-      question: "what is a GET request?",
-      answer: "it retrieves data, usually from a database",
-      hint: "PATCH updates data",
-      tags: ["Javascript", "API"],
-    },
-    {
-      question: "list three primitive data types",
-      answer: "boolean, integer, string ",
-      hint: "true, false",
-      tags: ["Javascript", "data types"],
-    },
-  ];
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const deckId = queryParams.get("id");
+    const selectedDeck = decks.find((deck) => deck._id === deckId);
 
-  const data = mockData[cardIndex];
+    if (selectedDeck) {
+      setFlashcards(selectedDeck.flashcards);
+      const storedCardIndex = localStorage.getItem("cardIndex");
+      if (storedCardIndex !== null) {
+        setCardIndex(parseInt(storedCardIndex, 10));
+      }
+    }
+  }, [location.search, decks]);
 
-  const handleNextCard = (event) => {
-    event.stopPropagation();
+  useEffect(() => {
+    localStorage.setItem("cardIndex", cardIndex.toString());
+  }, [cardIndex]);
+
+  const handleNextCard = () => {
     setIsFlipped(false);
     setShowHint(false);
-    setCardIndex((prevIndex) => (prevIndex + 1) % mockData.length);
+    setCardIndex((prevIndex) => (prevIndex + 1) % flashcards.length);
   };
 
-  const handlePreviousCard = (event) => {
-    event.stopPropagation();
+  const handlePreviousCard = () => {
     setIsFlipped(false);
     setShowHint(false);
     setCardIndex(
-      (prevIndex) => (prevIndex - 1 + mockData.length) % mockData.length,
+      (prevIndex) => (prevIndex - 1 + flashcards.length) % flashcards.length,
     );
   };
 
-  const handleHint = (event) => {
-    event.stopPropagation();
+  const handleHint = (e) => {
+    e.stopPropagation();
     setShowHint(!showHint);
   };
 
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
   };
-
-  const totalCards = mockData.length;
 
   return (
     <div className="card">
@@ -71,32 +67,35 @@ const Flashcard = ({ currentCard }) => {
         flipSpeedBackToFront={0.5}
       >
         <div className="card-front" key="front" onClick={handleFlip}>
-          <p>{data.question}</p>
+          <p>{flashcards[cardIndex]?.question}</p>
           <div className="hint-section">
-            <div className="hint-icon-container" onClick={handleHint}>
+            <div className="hint-icon-container" onClick={(e) => handleHint(e)}>
               <Icon icon={ic_lightbulb} size={24} className="hint-icon" />
             </div>
-            {showHint && <p className="hint-text">{data.hint}</p>}
+            {showHint && (
+              <p className="hint-text">{flashcards[cardIndex]?.hint}</p>
+            )}
           </div>
         </div>
         <div className="card-back" key="back" onClick={handleFlip}>
-          <p>{data.answer}</p>
+          <p>{flashcards[cardIndex]?.answer}</p>
         </div>
       </ReactCardFlip>
-
       <div className="skip-button">
         <Icon
+          className="thinLeft"
           icon={thinLeft}
           size={32}
-          onClick={(event) => handlePreviousCard(event)}
+          onClick={handlePreviousCard}
         />
         <div className="card-index">
-          {cardIndex + 1}/{totalCards}
+          {cardIndex + 1}/{flashcards.length}
         </div>
         <Icon
+          className="thinRight"
           icon={thinRight}
           size={32}
-          onClick={(event) => handleNextCard(event)}
+          onClick={handleNextCard}
         />
       </div>
     </div>

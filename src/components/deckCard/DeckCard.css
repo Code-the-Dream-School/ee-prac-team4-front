@@ -1,4 +1,11 @@
-.p-deck-card {
+.card-title {
+  color: #ededed;
+  font-size: 30px;
+  margin: 5px;
+  padding-bottom: 10px;
+}
+
+.card-topic {
   font-size: var(--p-text-size);
   color: var(--secondary-topic-text);
   text-transform: uppercase;
@@ -7,26 +14,24 @@
   border: solid;
   border-color: var(--secondary-topic-border);
   border-radius: 5px;
-  margin: 5px;
-}
-.h3-deck-card {
-  font-size: 20px;
+  background-color: var(--secondary-topic-background);
   margin: 5px;
 }
 
-.terms-deck-card {
-  color: #a1aebf;
+.card-term {
+  padding-top: 40px;
+  color: var(--link-text-color);
   margin: 5px;
 }
 
 .deck-card {
-  border: 1px solid var(--primary-border-color);
-  border-radius: 4px;
-  padding: 2px 20px;
-  /*width: 40%; */
-  width: 300px;
+  padding: 20px 20px 20px;
+  width: 400px;
+  height: 200px;
   box-sizing: border-box;
-
   margin-bottom: 20px;
   margin-right: 5px;
+  border: 1px solid var(--primary-border-color);
+  border-radius: 4px;
+  background-color: var(--secondary-background);
 }
