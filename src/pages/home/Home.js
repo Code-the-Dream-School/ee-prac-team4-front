@@ -12,7 +12,9 @@ function Home() {
     <div className="home-container">
       <h2 className="deck-title">My Decks</h2>
       <div className="button-container">
-        <Button buttonText="new deck" className="new-deck-button" />
+        <Link to="/create-deck">
+          <Button buttonText="new deck" className="new-deck-button" />
+        </Link>
       </div>
       <div className="decks-container">
         {decks.map((deck, idx) => (
