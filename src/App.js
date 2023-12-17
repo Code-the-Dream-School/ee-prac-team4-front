@@ -7,6 +7,7 @@ import Resources from "./pages/resources/Resources";
 import Navbar from "./components/navbar/Navbar.js";
 import "./App.css";
 import Deck from "./pages/deck/Deck";
+import Footer from "./components/footer/Footer";
 export const AuthContext = createContext();
 
 function AuthProvider({ children }) {
@@ -91,6 +92,7 @@ function AppContent({ openRightNav }) {
         <Route path="/create-deck" element={<Deck />} />
         <Route path="/resources" element={<Resources />} />
       </Routes>
+      <Footer/>
     </>
   );
 }

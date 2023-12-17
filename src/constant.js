@@ -7,7 +7,6 @@ const ALL_TOPICS = {
     "Hooks",
     "EventHandling",
     "Router",
-    "Styling",
     "Testing",
     "AppBuilding",
     "Forms",
