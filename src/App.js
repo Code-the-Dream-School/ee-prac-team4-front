@@ -15,10 +15,10 @@ function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState({});
   const [decks, setDecks] = useState([]);
+
   console.log("decks", decks);
   console.log(isLoggedIn);
-  console.log("decks", decks);
-  console.log(isLoggedIn);
+  console.log("USER DATA", userData)
 
   const handleLogin = (userData) => {
     // remove line 21 and adjust line 22 when userdata.expiresIn is fixed
