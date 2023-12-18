@@ -15,17 +15,17 @@ function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState({});
   const [decks, setDecks] = useState([]);
+
   console.log("decks", decks);
   console.log(isLoggedIn);
-  console.log("decks", decks);
-  console.log(isLoggedIn);
+  console.log("USER DATA", userData)
 
   const handleLogin = (userData) => {
     // remove line 21 and adjust line 22 when userdata.expiresIn is fixed
     const expiresIn =
       userData.expiresIn > 86400000 ? 86300000 : userData.expiresIn;
     const expiry = Date.now() + expiresIn;
-    localStorage.setItem("token", expiry);
+    localStorage.setItem("expiry", expiry);
     setIsLoggedIn(true);
     setUserData(userData);
   };
@@ -41,7 +41,7 @@ function AuthProvider({ children }) {
       });
 
       if (response.ok) {
-        localStorage.removeItem("token"); // replaced "expiry" with "token" as on the backend
+        localStorage.removeItem("expiry");
         setIsLoggedIn(false);
         setUserData({});
       } else {
@@ -84,7 +84,7 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     const now = Date.now();
-    const loginExpiry = localStorage.getItem("token"); // was "expiry" --> should be "token" as set on the backend
+    const loginExpiry = localStorage.getItem("expiry");
     loginExpiry && now < loginExpiry
       ? setIsLoggedIn(true)
       : setIsLoggedIn(false);

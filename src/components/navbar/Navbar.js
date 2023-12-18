@@ -97,7 +97,7 @@ function Navbar({ openRigthNav }) {
                 <div className="loginItems">
                   <p className="username">Hello, {userData.user?.username}!</p>
                   <Link
-                    to="/login"
+                    to="/"
                     onClick={() => {
                       handleLogout();
                     }}

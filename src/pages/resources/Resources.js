@@ -40,7 +40,7 @@ function ResourceOrganizer() {
   async function handleSaveResource() {
     setOpenModal(false);
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/unathresources`, {
+      const response = await fetch(`http://localhost:8000/api/v1/resources`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
