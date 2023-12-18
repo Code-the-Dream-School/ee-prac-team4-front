@@ -10,9 +10,9 @@ const DeckCard = ({ deck }) => {
   return (
     <div className="deck-card">
       <h3 className="h3-deck-card">{title}</h3>
-      {isLoggedIn && createdBy === userData._id ? (
+      {isLoggedIn && createdBy === userData.userId ? (
         <div className="deck-card-controllers">
-          <Link to={`/create-deck/${deck._id}`}>edit</Link>
+          <Link to={`/create-deck/${deck._id}`} style={{ color: "white"}}>edit</Link>
         </div>
       ) : null}
       <p className="p-deck-card"> {topic}</p>

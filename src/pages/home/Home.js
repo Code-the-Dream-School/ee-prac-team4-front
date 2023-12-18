@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
-  const { decks, userData, isLoggedIn } = useContext(AuthContext); // replace isLoggedIn
-  //const isLoggedIn = true; // delete this
+  const { decks, userData, isLoggedIn } = useContext(AuthContext); 
   
   const publicDecks = decks.filter((deck) => deck.createdBy !== userData.userId);
   const userDecks = decks.filter((deck) => deck.createdBy === userData.userId)
