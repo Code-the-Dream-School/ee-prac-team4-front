@@ -1,31 +1,26 @@
 .card {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin-top: 75px;
 }
 
 .card-front,
 .card-back {
-  position: relative;
+  border: 1px solid;
   width: 600px;
-  height: 100%;
+  height: 400px;
   padding: 20px;
+  border-radius: var(--primary-border-radius);
+  border-color: var(--primary-border-color);
+  font-size: var(--h3-text-size);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  box-sizing: border-box;
   background-color: var(--secondary-background);
-  border: 1px solid;
-  border-radius: var(--primary-border-radius);
-  border-color: var(--primary-border-color);
-  font-size: var(--h3-text-size);
 }
 
 .hint-section {
@@ -76,4 +71,11 @@
 
 .thinLeft {
   padding-right: 10px;
+}
+
+@media (max-width: 730px) {
+  .card, .card-front, .card-back {
+    width: 97%;
+    padding: 20px;
+  }
 }

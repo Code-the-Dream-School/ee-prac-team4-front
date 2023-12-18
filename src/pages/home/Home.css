@@ -1,17 +1,20 @@
-.decks-container {
-  text-decoration: none;
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0 auto;
+.home-container {
+  height: auto;
+  width: 100%;
 }
-
+.deck-title {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: end;
+}
 .button-container {
   display: flex;
   flex-direction: row;
   margin: 0;
   justify-content: flex-start;
 }
-
 .new-deck-button {
   color: var(--secondary-topic-text);
   text-transform: uppercase;
@@ -33,11 +36,26 @@
   background-color: #1f618d;
 }
 
-@media (max-width: 750px) {
+.decks-container {
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+.no-private-decks {
+  color: #a1aebf;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+@media (max-width: 630px) {
   .decks-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1000px) {
+  .deck-title {
+     width: 90%;
   }
 }
