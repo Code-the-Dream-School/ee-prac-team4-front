@@ -17,18 +17,15 @@ function AuthProvider({ children }) {
   const [userData, setUserData] = useState({});
   const [decks, setDecks] = useState([]);
 
-  console.log("decks APP", decks);
-  console.log(isLoggedIn);
-  console.log("USER DATA", userData);
-
-  const handleLogin = (userData) => {
+  const handleLogin = (userInfo) => {
     // remove line 21 and adjust line 22 when userdata.expiresIn is fixed
     const expiresIn =
-      userData.expiresIn > 86400000 ? 86300000 : userData.expiresIn;
+      userInfo.expiresIn > 86400000 ? 86300000 : userInfo.expiresIn;
     const expiry = Date.now() + expiresIn;
-    localStorage.setItem("expiry", expiry);
+    const authInfo = { expiry: expiry, userId: userInfo.userId };
+    localStorage.setItem("skillStacks", JSON.stringify(authInfo));
     setIsLoggedIn(true);
-    setUserData(userData);
+    setUserData(userInfo);
   };
 
   const handleLogout = async () => {
@@ -42,7 +39,7 @@ function AuthProvider({ children }) {
       });
 
       if (response.ok) {
-        localStorage.removeItem("expiry");
+        localStorage.removeItem("skillStacks");
         setIsLoggedIn(false);
         setUserData({});
       } else {
@@ -88,10 +85,34 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     const now = Date.now();
-    const loginExpiry = localStorage.getItem("expiry");
-    loginExpiry && now < loginExpiry
-      ? setIsLoggedIn(true)
-      : setIsLoggedIn(false);
+    const authInfo = JSON.parse(localStorage.getItem("skillStacks"));
+    if (authInfo && now < authInfo.expiry) {
+      const getUserData = async () => {
+        try {
+          const response = await fetch(`http://localhost:8000/api/v1/user/${authInfo.userId}`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: "include",
+          });
+    
+          const userInfo = await response.json();
+          if (userInfo) {
+            setIsLoggedIn(true)
+            setUserData({user: userInfo, userId: authInfo.userId})
+          } else {
+            throw new Error("error fetching user by id")
+          }
+        } catch (error) {
+          console.error("Error during login:", error);
+        }
+      }
+      getUserData();
+    } else {
+      setIsLoggedIn(false);
+      localStorage.removeItem("skillStacks");
+    }
   }, []);
 
   return (
