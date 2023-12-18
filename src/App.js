@@ -9,7 +9,6 @@ import Flashcard from "./components/flashcard/Flashcard.js";
 import About from "./pages/about/About.js";
 import "./App.css";
 import Deck from "./pages/deck/Deck";
-import FlashCards from "./pages/flashcards/FlashCards.js";
 export const AuthContext = createContext();
 
 function AuthProvider({ children }) {
