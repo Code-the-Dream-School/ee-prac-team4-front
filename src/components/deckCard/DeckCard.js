@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./DeckCard.css";
 
 const DeckCard = ({ deck }) => {

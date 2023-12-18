@@ -1,34 +1,25 @@
-.content {
+.home-container {
+  height: auto;
   width: 100%;
 }
-.decks-container {
+.deck-title {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.my-decks {
   width: 80%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: 100vh;
+  justify-content: space-between;
+  align-items: end;
 }
-
-.my-decks-top {
+.button-container {
   display: flex;
-  width: 100%;
+  flex-direction: row;
+  margin: 0;
+  justify-content: flex-start;
 }
 .new-deck-button {
   color: var(--secondary-topic-text);
   text-transform: uppercase;
   border: solid;
   border-color: var(--secondary-topic-border);
-  margin-left: auto;
   margin-bottom: 1rem;
   background-color: transparent;
   text-decoration: none;
@@ -44,8 +35,27 @@
 .new-deck-button:active {
   background-color: #1f618d;
 }
-@media (max-width: 750px) {
+
+.decks-container {
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+.no-private-decks {
+  color: #a1aebf;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+@media (max-width: 630px) {
   .decks-container {
-    justify-content: center;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1000px) {
+  .deck-title {
+     width: 90%;
   }
 }

@@ -12,6 +12,7 @@
 .h3-deck-card {
   font-size: 20px;
   margin: 5px;
+  color: #ededed;
 }
 
 .terms-deck-card {
@@ -23,7 +24,7 @@
   border: 1px solid var(--primary-border-color);
   border-radius: 4px;
   padding: 2px 20px;
-  /*width: 40%; */
+  padding: 10px;
   width: 300px;
   box-sizing: border-box;
 
