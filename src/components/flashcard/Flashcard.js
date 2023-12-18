@@ -62,7 +62,7 @@ const Flashcard = () => {
       <ReactCardFlip
         isFlipped={isFlipped}
         flipDirection="vertical"
-        containerStyle={{ height: "400px", width: "fit-content" }}
+        containerStyle={{ height: "400px" }}
         flipSpeedFrontToBack={0.5}
         flipSpeedBackToFront={0.5}
       >

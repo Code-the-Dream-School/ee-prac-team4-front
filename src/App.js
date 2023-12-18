@@ -20,11 +20,17 @@ function AuthProvider({ children }) {
   console.log(isLoggedIn);
 
   const handleLogin = (userData) => {
+    // remove line 21 and adjust line 22 when userdata.expiresIn is fixed
+    const expiresIn =
+      userData.expiresIn > 86400000 ? 86300000 : userData.expiresIn;
+    const expiry = Date.now() + expiresIn;
+    localStorage.setItem("expiry", expiry);
     setIsLoggedIn(true);
     setUserData(userData);
   };
 
   const handleLogout = () => {
+    localStorage.removeItem("expiry");
     setIsLoggedIn(false);
     setUserData({});
   };
@@ -44,25 +50,28 @@ function AuthProvider({ children }) {
             (deck) => deck.isPublic === false,
           );
           setDecks([...decks, ...privateUserDecks]);
-        } else {
-          const response = await fetch(
-            "http://localhost:8000/api/v1/decksAll",
-            {
-              method: "GET",
-              headers: { "Content-Type": "application/json" },
-            },
-          );
-          const publicDecks = await response.json();
-          setDecks(publicDecks.decks);
         }
+        const response = await fetch("http://localhost:8000/api/v1/decksAll", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        });
+        const publicDecks = await response.json();
+        setDecks(publicDecks.decks);
       } catch (error) {
         console.error("Error fetching decks:", error);
       }
     };
-
     // Invoke the fetchDecks function when the component mounts or when authentication status changes
     fetchDecks();
   }, [isLoggedIn]);
+
+  useEffect(() => {
+    const now = Date.now();
+    const loginExpiry = localStorage.getItem("expiry");
+    loginExpiry && now < loginExpiry
+      ? setIsLoggedIn(true)
+      : setIsLoggedIn(false);
+  }, []);
 
   return (
     <AuthContext.Provider

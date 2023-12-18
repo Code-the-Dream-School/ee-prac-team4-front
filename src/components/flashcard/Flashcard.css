@@ -72,10 +72,3 @@
 .thinLeft {
   padding-right: 10px;
 }
-
-@media (max-width: 730px) {
-  .card, .card-front, .card-back {
-    width: 97%;
-    padding: 20px;
-  }
-}
