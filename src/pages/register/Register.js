@@ -34,7 +34,7 @@ function Register() {
           headers: {
             "Content-Type": "application/json",
           },
-          credentials: "include", // added this line
+          credentials: "include", 
           body: JSON.stringify({
             firstName: newFirstName,
             lastName: newLastName,
@@ -63,7 +63,7 @@ function Register() {
 
   return (
     <div className="registerPage">
-      <h1>Register</h1>
+      <h1 className="title-register">Register</h1>
 
       <form
         onSubmit={(e) => handleRegistration(e)}
@@ -139,7 +139,7 @@ function Register() {
 
         <p className="link-to-register">
           Already have an account?{' '}
-          <Link to="/login" className="link-to-register-page"> Sign In</Link><br/><br/>
+          <Link to="/login" className="link-to-register-page"> Sign In</Link><br/>
         </p>
       </form>
     </div>

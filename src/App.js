@@ -6,6 +6,7 @@ import Home from "./pages/home/Home";
 import Resources from "./pages/resources/Resources";
 import Navbar from "./components/navbar/Navbar.js";
 import Flashcard from "./components/flashcard/Flashcard.js";
+import About from "./pages/about/About.js";
 import "./App.css";
 import Deck from "./pages/deck/Deck";
 export const AuthContext = createContext();
@@ -29,10 +30,26 @@ function AuthProvider({ children }) {
     setUserData(userData);
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("expiry");
-    setIsLoggedIn(false);
-    setUserData({});
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/v1/user/logout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+
+      if (response.ok) {
+        localStorage.removeItem("expiry");
+        setIsLoggedIn(false);
+        setUserData({});
+      } else {
+        console.error("Logout failed");
+      }
+    } catch (error) {
+      console.error("Error during logout:", error);
+    }
   };
 
   useEffect(() => {
@@ -103,6 +120,7 @@ function AppContent({ openRightNav }) {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/about" element={<About />} />
         <Route path="/create-deck" element={<Deck />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/flashcards" element={<Flashcard />} />

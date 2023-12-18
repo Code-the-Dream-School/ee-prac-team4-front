@@ -1,24 +1,26 @@
+.registerContainer {
+  width: 320px;
+  padding: 20px;
+  padding-bottom: 0;
+  border: 1px solid var(--primary-border-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+
+.title-register {
+  margin-top: 70px; 
+  font-size: 2rem;
+  color: #ddd;
+}
+
 .registerPage {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background-color: var(--secondary-background);
-}
-
-.registerContainer {
-  width: 320px;
-  padding: 20px;
-  padding-bottom: 0px;
-  border: 1px solid var(--primary-border-color);
-  background-color: var(--primary-background); 
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
-}
-
-.registerPage h1 {
-  color: #ddd; 
+  padding: 40px 20px;
+  height: 100%; 
 }
 
 .inputField {
@@ -55,8 +57,8 @@
 
 .link-to-register {
   color: #bbb; 
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
   padding-top: 10px;
   font-size: 16px;
 }
@@ -109,12 +111,33 @@
   fill: gray;
 }
 
+@media (max-width: 376px) {
+  .registerPage {
+    padding-top: 80px;
+    padding-bottom: 120px; 
+  }
+
+  .title-register {
+    margin-top: 80px; 
+    padding-top: 20px;
+  }
+
+  .inputField { 
+    height: 30px;
+  }
+}
+
 @media (max-width: 320px) {
   .inputField {
     width: calc(100% - 12px);
+    height: 28px;
   }
 
   .registerContainer {
     width: calc(100% - 12px);
+  }
+
+  .show-pass-btn-register {
+    width: 35px;
   }
 }
