@@ -5,6 +5,7 @@ import LoginPage from "./pages/login/LoginPage";
 import Home from "./pages/home/Home";
 import Resources from "./pages/resources/Resources";
 import Navbar from "./components/navbar/Navbar.js";
+import Flashcard from "./components/flashcard/Flashcard.js";
 import "./App.css";
 import Deck from "./pages/deck/Deck";
 export const AuthContext = createContext();
@@ -15,10 +16,13 @@ function AuthProvider({ children }) {
   const [decks, setDecks] = useState([]);
   console.log("decks", decks);
   console.log(isLoggedIn);
+  console.log("decks", decks);
+  console.log(isLoggedIn);
 
   const handleLogin = (userData) => {
     // remove line 21 and adjust line 22 when userdata.expiresIn is fixed
-   const expiresIn = userData.expiresIn > 86400000 ? 86300000 : userData.expiresIn
+    const expiresIn =
+      userData.expiresIn > 86400000 ? 86300000 : userData.expiresIn;
     const expiry = Date.now() + expiresIn;
     localStorage.setItem("expiry", expiry);
     setIsLoggedIn(true);
@@ -46,17 +50,13 @@ function AuthProvider({ children }) {
             (deck) => deck.isPublic === false,
           );
           setDecks([...decks, ...privateUserDecks]);
-        } else {
-          const response = await fetch(
-            "http://localhost:8000/api/v1/decksAll",
-            {
-              method: "GET",
-              headers: { "Content-Type": "application/json" },
-            },
-          );
-          const publicDecks = await response.json();
-          setDecks(publicDecks.decks);
         }
+        const response = await fetch("http://localhost:8000/api/v1/decksAll", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        });
+        const publicDecks = await response.json();
+        setDecks(publicDecks.decks);
       } catch (error) {
         console.error("Error fetching decks:", error);
       }
@@ -105,6 +105,7 @@ function AppContent({ openRightNav }) {
         <Route path="/resources" element={<Resources />} />
         <Route path="/create-deck" element={<Deck />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/flashcards" element={<Flashcard />} />
       </Routes>
     </>
   );
