@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Deck.css";
 import { Icon } from "react-icons-kit";
 import { ic_edit_outline } from "react-icons-kit/md/ic_edit_outline";
@@ -14,36 +14,11 @@ const FLASHCARD_FIELDS = {
 };
 
 function FlashCardForm({ deckId, deck, cards, setCards }) {
-  let [flashCard, setFlashCard] = useState({
+  const [flashCard, setFlashCard] = useState({
     ...FLASHCARD_FIELDS,
     deck: deckId,
   });
-  // let [cards, setCards] = useState([]);
-  let [editIds, setEditsCardIndexes] = useState([]);
-
-  // useEffect(() => {
-  //   console.log("deck FlashCardForm", deck);
-  //   setFlashCard({ ...flashCard, deck: deckId });
-  //   const fetchData = async (deckId) => {
-  //     const response = await fetch(
-  //       `http://localhost:8000/api/v1/deck/${deckId}`,
-  //       {
-  //         method: "GET",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         credentials: "include",
-  //       },
-  //     );
-  //     const deckData = await response.json();
-  //     if (response.ok) {
-  //       setCards(deckData.deck.flashcards);
-  //     } else {
-  //       throw new Error(`HTTP error! Status: ${response.status}`);
-  //     }
-  //   };
-  //   fetchData(deckId);
-  // }, []);
+  const [editIds, setEditIds] = useState([]);
 
   async function handleSaveCard(e) {
     e.preventDefault();
@@ -117,7 +92,7 @@ function FlashCardForm({ deckId, deck, cards, setCards }) {
         let updatedCards = cards.filter((card) => card._id !== id);
         let editedUpdated = editIds.filter((editIndex) => editIndex !== id);
         setCards([...updatedCards, updated.flashcard]);
-        setEditsCardIndexes(editedUpdated);
+        setEditIds(editedUpdated);
         console.log("editIds", editIds);
       } else {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -127,13 +102,13 @@ function FlashCardForm({ deckId, deck, cards, setCards }) {
     }
   }
   const handleEditStart = (id) => {
-    setEditsCardIndexes([...editIds, id]);
+    setEditIds([...editIds, id]);
   };
 
   const handleCancelEdit = (id) => {
     console.log("id", id);
     let withoutEditIndex = editIds.filter((editIndex) => editIndex !== id);
-    setEditsCardIndexes(withoutEditIndex);
+    setEditIds(withoutEditIndex);
   };
   return (
     <div>
