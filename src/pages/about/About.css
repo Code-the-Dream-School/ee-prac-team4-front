@@ -1,0 +1,243 @@
+.about {
+    color: #ededed;
+    text-align: center;
+    background-color: var(--secondary-background);
+    padding: 10px;
+    padding-top: 60px;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    text-align: justify;
+}
+
+.members {
+    padding-left: 0px;
+}
+
+.members .students > div,
+.members .mentors > div {
+    padding-left: 0;
+}
+
+.members .students, 
+.members .mentors {
+    display: grid;
+    grid-column-gap: 4px;
+    grid-row-gap: 3px;
+    padding: 10px;
+    .participant-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    .profile-pic img {
+        max-height: 100px;
+    }
+    .card-content {
+        font-size: 1.2rem;
+        text-align: justify;
+        line-height: 1.6rem;
+        padding: 10px;
+        margin-top: 10px;
+    }
+}
+    
+.members .students {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.members .mentors {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+
+  .text {
+    display: inline;
+    width: 100%;
+    font-size: 1.1rem;
+  }
+    
+  .read-or-hide{
+    color: rgb(192,192,192);
+    cursor: pointer;
+  }
+
+.name-position-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.job-title {
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+.button-swagger {
+    background-color: var(--highlight-button-background);
+    border: none;
+    color: var(--highlight-button-text);
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 25px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    width: 380px;
+    margin-bottom: 70px;
+    border: 1px solid var(--highlight-button-border); 
+    border-radius: 4px;
+}
+
+.about-text span {
+    color: var(--highlight-button-border);
+    font-style: italic;
+}
+
+.button-swagger:hover {
+    opacity: 1;
+}
+
+.h2-about {
+    font-size: 2.5rem;
+    padding-top: 10px;
+    font-family:serif;
+    color: var(--highlight-button-border);
+    font-style: italic;
+}
+
+.profile-pic {
+    max-width: 390px;
+    min-width: 250px;
+    height: fit-content;
+    min-height: 280px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    margin: 30px auto;
+    text-align: center;
+    a {
+        cursor: pointer;
+    }
+    
+    .profile-image:hover {
+        border: 3px solid transparent;
+    }
+}
+
+@media (max-width: 1020px) {
+    .members .students, 
+    .members .mentors {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .members .students, 
+    .members .mentors {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        .participant-name {
+            font-size: 1rem;
+        }
+    }
+
+    .h2-about {
+        font-size: 1.2rem;
+    }
+
+    .about-text {
+        font-size: 0.8rem;
+    }
+
+    .text {
+        font-size: 0.8rem;
+    }
+
+    .button-swagger {
+        padding: 10px 22px;
+        font-size: 16px;
+        width: 250px;
+        margin-bottom: 10px;
+    }
+
+    .name-title {
+        margin-right: 5px;
+    }
+
+}
+
+@media (max-width: 320px) {
+    .members .students, 
+    .members .mentors {
+        display: inline;
+    }
+    .image-and-first-paragraph {
+        grid-template-columns: repeat(1, 1fr);
+        display: inline;
+    }
+
+    .image-and-first-paragraph img {
+        display: none;
+    }
+
+    .members .profile-pic img {
+        max-height: 100px;
+        text-align: left;
+    }
+
+    .members .profile-pic {
+        margin-bottom: 0px;
+    }
+
+    .about-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .about {
+        margin: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .h2-about {
+        font-size: 2rem;
+        font-weight: 600;
+        padding: 5px;
+        margin-top: 20px;
+    }
+
+    .job-title {
+        margin-top: 0px;
+        padding-left: 0rem;
+        padding-top: 10px;
+    }
+
+    .members .card-content {
+        font-size: 1rem;
+        line-height: 1.4rem;
+        padding: 5px;
+        margin-top: 5px;
+        padding-left: auto;
+        padding-right: auto;
+        padding-bottom: 5px;
+    }
+
+    .members .title {
+        font-size: 1.4rem;
+    }
+
+    .text {
+        display: inline;
+        width: 100%;
+    }
+}
