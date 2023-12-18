@@ -2,6 +2,7 @@ import React from "react";
 import "./Footer.css";
 import linkedinLogo from "./LinkedIn_logo_initials.png.webp";
 import git from "./GitHub-logo.png";
+import { Link } from "react-router-dom";
 
 const teamMembers = [
   {
@@ -44,32 +45,30 @@ const teamMembers = [
 function Footer() {
   return (
     <div className="footer">
-      <div>
+      <div className="footer-copyright">
         <p> Meet the team: </p>
         <p>SkillStacks. 2023</p>
+      </div>
+
+      <div className="mobile-link">
+        <Link to="/about">About Page</Link>
       </div>
 
       <div className="teamMembers">
         {teamMembers.map((member, index) => (
           <div key={index} className="team-member">
             <div className="member-details">
+              <a
+                href={member.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={linkedinLogo} className="member-image" />
+              </a>
+              <a href={member.gitUrl} target="_blank" rel="noopener noreferrer">
+                <img src={git} className="git-image" />
+              </a>
               <p>{member.name}</p>
-              <div>
-                <a
-                  href={member.linkedinUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={linkedinLogo} className="member-image" />
-                </a>
-                <a
-                  href={member.gitUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={git} className="git-image" />
-                </a>
-              </div>
             </div>
           </div>
         ))}
