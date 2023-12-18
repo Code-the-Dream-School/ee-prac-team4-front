@@ -3,9 +3,9 @@ a {
 }
 
 .footer {
+  position: absolute;
   width: 100%;
   background: #ef9364;
-  position: absolute;
   left: 0;
   bottom: 0;
   color: black;
@@ -58,7 +58,6 @@ a {
   color: black;
   font-weight: 550;
 }
-
 
 .repo-link {
   padding: 10px;

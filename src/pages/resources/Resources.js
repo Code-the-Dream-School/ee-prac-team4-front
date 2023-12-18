@@ -17,13 +17,16 @@ function ResourceOrganizer() {
 
   const getResources = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/unathresources`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `http://localhost:8000/api/v1/unathresources`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
         },
-        credentials: "include",
-      });
+      );
 
       const data = await response.json();
       if (data) {
@@ -85,7 +88,6 @@ function ResourceOrganizer() {
     <div className="resources-container">
       <div className="resources-title">
         <div></div>
-        <h1>Resources</h1>
         <Button
           buttonText="Add Resource"
           type="text"
