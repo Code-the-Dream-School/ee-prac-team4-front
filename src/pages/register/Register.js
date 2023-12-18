@@ -47,7 +47,6 @@ function Register() {
       );
 
       const data = await response.json();
-      console.log("Response from server:", data);
 
       if (response.ok && !response.error) {
         handleLogin(data);

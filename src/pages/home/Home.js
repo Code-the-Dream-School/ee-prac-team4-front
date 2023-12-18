@@ -11,9 +11,6 @@ function Home() {
   const publicDecks = decks.filter((deck) => deck.createdBy !== userData.userId);
   const userDecks = decks.filter((deck) => deck.createdBy === userData.userId)
 
-  console.log("private Decks", userDecks);
-  console.log("public Decks", publicDecks);
-
   return (
     <div className="home-container">
       {/* PRIVATE DECKS */}
