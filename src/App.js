@@ -5,6 +5,7 @@ import LoginPage from "./pages/login/LoginPage";
 import Home from "./pages/home/Home";
 import Resources from "./pages/resources/Resources";
 import Navbar from "./components/navbar/Navbar.js";
+import Flashcard from "./components/flashcard/Flashcard.js";
 import "./App.css";
 import Deck from "./pages/deck/Deck";
 export const AuthContext = createContext();
@@ -13,6 +14,8 @@ function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState({});
   const [decks, setDecks] = useState([]);
+  console.log("decks", decks);
+  console.log(isLoggedIn);
   console.log("decks", decks);
   console.log(isLoggedIn);
 
@@ -93,6 +96,7 @@ function AppContent({ openRightNav }) {
         <Route path="/resources" element={<Resources />} />
         <Route path="/create-deck" element={<Deck />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/flashcards" element={<Flashcard />} />
       </Routes>
     </>
   );
