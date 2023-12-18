@@ -16,9 +16,9 @@ function AuthProvider({ children }) {
   const [userData, setUserData] = useState({});
   const [decks, setDecks] = useState([]);
 
-  console.log("decks", decks);
+  console.log("decks APP", decks);
   console.log(isLoggedIn);
-  console.log("USER DATA", userData)
+  console.log("USER DATA", userData);
 
   const handleLogin = (userData) => {
     // remove line 21 and adjust line 22 when userdata.expiresIn is fixed
@@ -55,6 +55,15 @@ function AuthProvider({ children }) {
   useEffect(() => {
     const fetchDecks = async () => {
       try {
+        // get public decks
+        const response = await fetch("http://localhost:8000/api/v1/decksAll", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        });
+        const publicDecks = await response.json();
+
+        //get private decks if logged in
+        let privateUserDecks = [];
         if (isLoggedIn) {
           const response = await fetch("http://localhost:8000/api/v1/deck", {
             method: "GET",
@@ -62,18 +71,12 @@ function AuthProvider({ children }) {
             credentials: "include",
           });
           const userDecks = await response.json();
-          console.log("user decks", userDecks);
-          const privateUserDecks = userDecks.decks.filter(
+          // remove duplilcates
+          privateUserDecks = userDecks.decks.filter(
             (deck) => deck.isPublic === false,
           );
-          setDecks([...decks, ...privateUserDecks]);
         }
-        const response = await fetch("http://localhost:8000/api/v1/decksAll", {
-          method: "GET",
-          headers: { "Content-Type": "application/json" },
-        });
-        const publicDecks = await response.json();
-        setDecks(publicDecks.decks);
+        setDecks([...publicDecks.decks, ...privateUserDecks]);
       } catch (error) {
         console.error("Error fetching decks:", error);
       }
@@ -119,9 +122,8 @@ function AppContent({ openRightNav }) {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/resources" element={<Resources />} />
         <Route path="/about" element={<About />} />
-        <Route path="/create-deck" element={<Deck />} />
+        <Route path="/create-deck/:id?" element={<Deck />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/flashcards" element={<Flashcard />} />
       </Routes>

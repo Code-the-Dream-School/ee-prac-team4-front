@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DeckCard from "../../components/deckCard/DeckCard";
 import Button from "../../components/button/Button";
 import { AuthContext } from "../../App";
@@ -6,10 +6,13 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
-  const { decks, isLoggedIn } = useContext(AuthContext);
+  const { decks, userData, isLoggedIn } = useContext(AuthContext); 
+  
+  const publicDecks = decks.filter((deck) => deck.createdBy !== userData.userId);
+  const userDecks = decks.filter((deck) => deck.createdBy === userData.userId)
 
-  const publicDecks = decks.filter((deck) => deck.isPublic === true);
-  const privateDecks = decks.filter((deck) => deck.isPublic === false);
+  console.log("private Decks", userDecks);
+  console.log("public Decks", publicDecks);
 
   return (
     <div className="home-container">
@@ -25,7 +28,7 @@ function Home() {
             </div>
           </div>
           <div className="decks-container">
-            {privateDecks.map((deck, idx) => (
+            {userDecks.map((deck, idx) => (
               <Link key={idx} to={`flashcards/?id=${deck._id}`}>
                 <DeckCard deck={deck} />
               </Link>
@@ -33,7 +36,7 @@ function Home() {
           </div>
         </>
       )}
-      {isLoggedIn && !privateDecks.length && (
+      {isLoggedIn && !userDecks.length && (
         <p className="no-private-decks">You haven't created any decks.</p>
       )}
       {/* PUBLIC DECKS */}

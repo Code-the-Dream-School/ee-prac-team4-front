@@ -83,7 +83,7 @@ function DeckForm({ deck, setDeckData, onSaveDeck }) {
       ) : null}
 
       <label htmlFor="" className="checkBox">
-        Private
+        Public
         <input
           type="checkbox"
           checked={deck.isPublic}
