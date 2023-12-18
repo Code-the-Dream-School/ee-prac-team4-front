@@ -97,7 +97,7 @@ function Navbar({ openRigthNav }) {
                 <div className="loginItems">
                   <p className="username">Hello, {userData.user?.username}!</p>
                   <Link
-                    to="/login"
+                    to="/"
                     onClick={() => {
                       handleLogout();
                     }}
@@ -106,7 +106,7 @@ function Navbar({ openRigthNav }) {
                     <button
                       className="log-out-button"
                       title="Logout"
-                      onClick={() => console.log("Button 3 clicked")}
+                      onClick={() => handleLogout()}
                     >
                       Logout
                     </button>

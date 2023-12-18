@@ -21,6 +21,7 @@
 }
 
 .deck-card {
+  position: relative;
   border: 1px solid var(--primary-border-color);
   border-radius: 4px;
   padding: 2px 20px;
@@ -30,4 +31,10 @@
 
   margin-bottom: 20px;
   margin-right: 5px;
+}
+
+.deck-card-controllers {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
