@@ -1,62 +1,64 @@
-import React, { useContext, useState } from "react";
-import "./Home.css";
+import React, { useContext, useEffect, useState } from "react";
 import DeckCard from "../../components/deckCard/DeckCard";
-import { Link } from "react-router-dom";
+import Button from "../../components/button/Button";
 import { AuthContext } from "../../App";
+import { Link } from "react-router-dom";
+import "./Home.css";
 
 function Home() {
-  const { isLoggedIn } = useContext(AuthContext);
+  const { decks, userData, isLoggedIn } = useContext(AuthContext); // replace isLoggedIn
+  //const isLoggedIn = true; // delete this
+  
+  const publicDecks = decks.filter((deck) => deck.createdBy !== userData.userId);
+  const userDecks = decks.filter((deck) => deck.createdBy === userData.userId)
 
-  const data = [
-    {
-      _id: "657e3033c0547f91a09a0ede",
-      title: "HTTP Errors",
-      topic: "Intro",
-      flashcards: [],
-    },
-    {
-      _id: "657e6c305a19d32e72de9f75",
-      title: "Context",
-      topic: "React",
-      flashcards: [],
-    },
-    {
-      id: 3,
-      title: "Intro to Arrays",
-      topic: "React",
-      flashcards: [],
-    },
-    {
-      id: 4,
-      title: "Function Components",
-      topic: "React",
-      flashcards: [],
-    },
-
-    { title: "Logical Operators", topic: "React", flashcards: [] },
-    { title: "Controllers vs Routes", topic: "React", flashcards: [] },
-  ];
+  console.log("private Decks", userDecks);
+  console.log("public Decks", publicDecks);
 
   return (
-    <>
-      <div className="content">
-        <div className="my-decks">
-          <div className="my-decks-top">
-            <h2 className="h2-deck-card">My Decks</h2>
-            {isLoggedIn ? (
-              <Link className="new-deck-button" to="/create-deck">
-                New deck
+    <div className="home-container">
+      {/* PRIVATE DECKS */}
+      {isLoggedIn && (
+        <>
+          <div className="deck-title">
+            <h2>My Decks</h2>
+            <div className="button-container">
+              <Link to="/create-deck">
+                <Button buttonText="new deck" className="new-deck-button" />
               </Link>
-            ) : null}
+            </div>
           </div>
           <div className="decks-container">
-            {data.map((elem, idx) => (
-              <DeckCard deck={elem} key={idx} />
+            {userDecks.map((deck, idx) => (
+              <Link key={idx} to={`flashcards/?id=${deck._id}`}>
+                <DeckCard deck={deck} />
+              </Link>
             ))}
           </div>
-        </div>
+        </>
+      )}
+      {isLoggedIn && !userDecks.length && (
+        <p className="no-private-decks">You haven't created any decks.</p>
+      )}
+      {/* PUBLIC DECKS */}
+      <div className="deck-title">
+        <h2>Public Decks</h2>
+        {!isLoggedIn && (
+          <div className="button-container">
+            <Link to="/create-deck">
+              <Button buttonText="new deck" className="new-deck-button" />
+            </Link>
+          </div>
+        )}
       </div>
-    </>
+      <div className="decks-container">
+        {publicDecks?.map((deck, idx) => (
+          <Link key={idx} to={`flashcards/?id=${deck._id}`}>
+            <DeckCard deck={deck} />
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }
 
