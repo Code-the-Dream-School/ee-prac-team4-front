@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../App";
 
 function Home() {
+  const { isLoggedIn } = useContext(AuthContext);
+
   const data = [
     {
       _id: "657e3033c0547f91a09a0ede",
@@ -41,9 +43,11 @@ function Home() {
         <div className="my-decks">
           <div className="my-decks-top">
             <h2 className="h2-deck-card">My Decks</h2>
-            <Link className="new-deck-button" to="/create-deck">
-              New deck
-            </Link>
+            {isLoggedIn ? (
+              <Link className="new-deck-button" to="/create-deck">
+                New deck
+              </Link>
+            ) : null}
           </div>
           <div className="decks-container">
             {data.map((elem, idx) => (
