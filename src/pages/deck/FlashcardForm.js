@@ -93,7 +93,6 @@ function FlashCardForm({ deckId, deck, cards, setCards }) {
         let editedUpdated = editIds.filter((editIndex) => editIndex !== id);
         setCards([...updatedCards, updated.flashcard]);
         setEditIds(editedUpdated);
-        console.log("editIds", editIds);
       } else {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -106,7 +105,6 @@ function FlashCardForm({ deckId, deck, cards, setCards }) {
   };
 
   const handleCancelEdit = (id) => {
-    console.log("id", id);
     let withoutEditIndex = editIds.filter((editIndex) => editIndex !== id);
     setEditIds(withoutEditIndex);
   };

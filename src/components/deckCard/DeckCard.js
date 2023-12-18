@@ -6,13 +6,12 @@ import { AuthContext } from "../../App";
 const DeckCard = ({ deck }) => {
   const { isLoggedIn, userData } = useContext(AuthContext);
   const { title, topic, flashcards, createdBy } = deck;
-  console.log(createdBy)
   return (
     <div className="deck-card">
       <h3 className="h3-deck-card">{title}</h3>
       {isLoggedIn && createdBy === userData.userId ? (
         <div className="deck-card-controllers">
-          <NavLink to={`/create-deck/${deck._id}`} style={{color: "white"}}>edit</NavLink>
+          <NavLink to={`/create-deck/${deck._id}`} className="deck-card-edit-btn">edit</NavLink>
         </div>
       ) : null}
       <p className="p-deck-card"> {topic}</p>

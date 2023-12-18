@@ -14,7 +14,6 @@ function ResourceOrganizer() {
 
   const [resources, setResources] = useState([]);
   const [openModal, setOpenModal] = useState(false);
-  console.log("RESOURCES", resources);
 
   const getResources = async () => {
     try {
@@ -59,7 +58,6 @@ function ResourceOrganizer() {
           subtopic: "",
         });
         getResources();
-        console.log("Data -", data);
       } else {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
