@@ -3,58 +3,6 @@ import "./Resources.css";
 import Button from "../../components/button/Button";
 import AddResourceModal from "../../components/AddResourceModal";
 
-// const resources = [
-//   {
-//     title: "Exploring Various Types of HTML DOM Methods",
-//     topic: "HTML",
-//     subtopic: "Document Object Model (DOM)",
-//     type: "Article",
-//     link: "https://www.geeksforgeeks.org/explain-various-type-of-html-dom-methods/amp/",
-//   },
-//   {
-//     title: "Introduction to Web Development with HTML, CSS, JavaScript",
-//     topic: "Web Development",
-//     subtopic: "HTML, CSS, JavaScript",
-//     type: "Video",
-//     link: "https://www.youtube.com/watch?v=hn80mWvP-9g",
-//   },
-//   {
-//     title: "Learn JavaScript - Full Course for Beginners",
-//     topic: "JavaScript",
-//     subtopic: "Programming",
-//     type: "Video",
-//     link: "https://www.youtube.com/watch?v=ENrzD9HAZK4",
-//   },
-//   {
-//     title: "Flexbox Froggy",
-//     topic: "Web Development",
-//     subtopic: "CSS",
-//     type: "Game",
-//     link: "https://flexboxfroggy.com/",
-//   },
-//   {
-//     title: "Visual Hierarchy Principles with Examples",
-//     topic: "Design",
-//     subtopic: "Information Architecture",
-//     type: "Article",
-//     link: "https://xd.adobe.com/ideas/process/information-architecture/visual-hierarchy-principles-examples/",
-//   },
-//   {
-//     title: "Your First Week in DOM Manipulation",
-//     topic: "JavaScript",
-//     subtopic: "Document Object Model (DOM)",
-//     type: "Article",
-//     link: "https://javascript.plainenglish.io/your-first-week-in-dom-manipulation-ac4d0b2589a",
-//   },
-//   {
-//     title: "Design Handoff Checklist: A Comprehensive Guide",
-//     topic: "Design",
-//     subtopic: "Design for Developers",
-//     type: "Article",
-//     link: "https://www.uxpin.com/studio/blog/design-handoff-checklist/",
-//   },
-// ];
-
 function ResourceOrganizer() {
   const [formData, setFormData] = useState({
     link: "",
@@ -70,7 +18,7 @@ function ResourceOrganizer() {
 
   const getResources = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/resources`, {
+      const response = await fetch(`http://localhost:8000/api/v1/unathresources`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -92,7 +40,7 @@ function ResourceOrganizer() {
   async function handleSaveResource() {
     setOpenModal(false);
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/resources`, {
+      const response = await fetch(`http://localhost:8000/api/v1/unathresources`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
