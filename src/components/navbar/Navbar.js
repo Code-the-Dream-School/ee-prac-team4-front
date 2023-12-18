@@ -106,7 +106,7 @@ function Navbar({ openRigthNav }) {
                     <button
                       className="log-out-button"
                       title="Logout"
-                      onClick={() => console.log("Button 3 clicked")}
+                      onClick={() => handleLogout()}
                     >
                       Logout
                     </button>
