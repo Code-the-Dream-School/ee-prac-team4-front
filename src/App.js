@@ -117,7 +117,7 @@ function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, handleLogin, handleLogout, decks, userData }}
+      value={{ isLoggedIn, handleLogin, handleLogout, decks, setDecks, userData }}
     >
       {children}
     </AuthContext.Provider>
