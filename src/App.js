@@ -9,7 +9,6 @@ import Flashcard from "./components/flashcard/Flashcard.js";
 import About from "./pages/about/About.js";
 import "./App.css";
 import Deck from "./pages/deck/Deck";
-import Footer from "./components/footer/Footer";
 export const AuthContext = createContext();
 
 function AuthProvider({ children }) {
@@ -117,7 +116,7 @@ function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, handleLogin, handleLogout, decks, setDecks, userData }}
+      value={{ isLoggedIn, handleLogin, handleLogout, decks, userData }}
     >
       {children}
     </AuthContext.Provider>
@@ -149,7 +148,6 @@ function AppContent({ openRightNav }) {
         <Route path="/resources" element={<Resources />} />
         <Route path="/flashcards" element={<Flashcard />} />
       </Routes>
-      <Footer/>
     </>
   );
 }

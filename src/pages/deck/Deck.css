@@ -3,7 +3,7 @@
 .flashcard,
 .deck {
   width: 100%;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 20px;
   border: 1px solid var(--primary-border-color);
   color: var(--subheading-text-color);
@@ -74,7 +74,6 @@ select {
 .create-deck-button {
   background: var(--secondary-button-background);
   border: 2px solid var(--secondary-button-border);
-  cursor: pointer;
 }
 
 .button-delete {
@@ -106,7 +105,6 @@ select {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding-bottom: 500px;
 }
 
 .flashcard-option {

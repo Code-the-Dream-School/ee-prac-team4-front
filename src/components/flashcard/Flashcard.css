@@ -3,8 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 83px;
-  padding-top: 175px;
+  margin-top: 75px;
 }
 
 .card-front,
@@ -60,7 +59,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-bottom: 500px;
 }
 
 .skip-button {

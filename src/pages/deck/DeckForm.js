@@ -1,11 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import ALL_TOPICS from "./../../constant";
 import "./Deck.css";
-import { AuthContext } from "../../App";
 
 function DeckForm({ deck, setDeckData, onSaveDeck }) {
-  const { decks, setDecks } = useContext(AuthContext); 
-
   async function handleSaveDeck(e) {
     e.preventDefault();
     try {
@@ -20,8 +17,6 @@ function DeckForm({ deck, setDeckData, onSaveDeck }) {
 
       const data = await response.json();
       if (data) {
-        // save new deck to context
-        setDecks([...decks, data.deck])
         onSaveDeck(data.deck._id);
       } else {
         throw new Error(`HTTP error! Status: ${response.status}`);
