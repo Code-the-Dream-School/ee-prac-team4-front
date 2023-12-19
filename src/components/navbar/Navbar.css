@@ -1,77 +1,78 @@
 .hamburger-menu::before,
 .hamburger-menu::after,
 .hamburger-menu input {
-    content: "";
-    width: var(--bar-width);
-    height: var(--bar-height);
-    background-color: var(--foreground);
-    border-radius: 9999px;
-    transform-origin: left center;
-    transition: opacity var(--animation-timing), 
-        width var(--animation-timing), 
-        rotate var(--animation-timing), 
-        translate var(--animation-timing), 
-        background-color var(--animation-timing);
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  border-radius: 9999px;
+  transform-origin: left center;
+  transition:
+    opacity var(--animation-timing),
+    width var(--animation-timing),
+    rotate var(--animation-timing),
+    translate var(--animation-timing),
+    background-color var(--animation-timing);
 }
 
 .hamburger-menu:has(input:checked) {
-    --foreground: var(--highlight-button-border);
-    --background: var(--primary-button-background);
+  --foreground: var(--highlight-button-border);
+  --background: var(--primary-button-background);
 }
 
 .hamburger-menu:has(input:focus-visible)::before,
 .hamburger-menu:has(input:focus-visible)::after,
 .hamburger-menu input:focus-visible {
-    border: 1px solid var(--background);
-    box-shadow: 0 0 0 1px var(--foreground);
+  border: 1px solid var(--background);
+  box-shadow: 0 0 0 1px var(--foreground);
 }
 
 .hamburger-menu {
-    --x-width: calc(var(--hamburger-height) * 1.41421356237);
-    display: flex;
-    flex-direction: column;
-    gap: var(--hamburger-gap);
-    width: max-content;
-    position: absolute;
-    top: var(--hamburger-margin);
-    right: var(--hamburger-margin);
-    z-index: 25;
-    cursor: pointer;
-    display: none;
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  top: var(--hamburger-margin);
+  right: var(--hamburger-margin);
+  z-index: 25;
+  cursor: pointer;
+  display: none;
 }
 
 .hamburger-menu input {
-    appearance: none;
-    padding: 0;
-    margin: 0;
-    outline: none;
-    pointer-events: none;
-    border: none;
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+  border: none;
 }
 
 .hamburger-menu input:checked {
-    opacity: 0;
-    width: 0;
+  opacity: 0;
+  width: 0;
 }
 
 .hamburger-menu:has(input:checked) + .sidebar {
-    translate: 0;
+  translate: 0;
 }
 
 .hamburger-menu:has(input:checked)::before {
-    rotate: 45deg;
-    width: var(--x-width);
-    translate: 0 calc(var(--bar-height) / -2);
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
 }
 
 .hamburger-menu:has(input:checked)::after {
-    rotate: -45deg;
-    width: var(--x-width);
-    translate: 0 calc(var(--bar-height) / 2);
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
 }
 
 .dropdown {
-  display: none; 
+  display: none;
 }
 
 .nav {
@@ -123,8 +124,8 @@
   gap: 10px;
 }
 
-.first-group { 
-  display: flex; 
+.first-group {
+  display: flex;
   justify-content: center;
   text-decoration: none;
   align-items: center;
@@ -170,11 +171,11 @@
 }
 
 .right-nav-ul li:last-child {
-  margin-right: 0; 
+  margin-right: 0;
 }
 
 .menu {
-  display: flex; 
+  display: flex;
   align-items: center;
 }
 
@@ -190,8 +191,8 @@
 }
 
 .menu a {
-  color: #fff; 
-  text-decoration: none; 
+  color: #fff;
+  text-decoration: none;
   text-decoration: none;
   font-weight: bold;
   padding: 10px;
@@ -199,11 +200,11 @@
 }
 
 .menu a:hover {
-  background-color: #333; 
+  background-color: #333;
 }
 
 .second-group a:hover {
-  background-color: #333; 
+  background-color: #333;
 }
 
 .menu .resources:hover,
@@ -212,7 +213,7 @@
 }
 
 .logo {
-  width: 160px; 
+  width: 160px;
   margin-left: 5px;
 }
 
@@ -241,8 +242,7 @@
 }
 
 .authButtons .sign-up-button,
-.authButtons .log-out-button
-{
+.authButtons .log-out-button {
   border: 2px solid var(--highlight-button-border);
 }
 
@@ -260,24 +260,25 @@
   background: var(--primary-button-hover);
 }
 
-.sign-up-button, .log-out-button {
+.sign-up-button,
+.log-out-button {
   background: var(--highlight-button-background);
   color: var(--highlight-button-text);
   cursor: pointer;
 }
 
 .sign-up-button:hover,
-.log-out-button:hover
-{
+.log-out-button:hover {
   background: var(--highlight-button-hover);
 }
 
 .username {
-  font-size: 14px; 
+  font-size: 14px;
   color: #fff;
-  margin-right: 8px; 
+  margin-right: 8px;
   width: fit-content;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .menu .resources,
@@ -285,24 +286,21 @@
   font-size: 14px;
 }
 
-
 @media (max-width: 800px) {
-  
   .username {
     display: none;
   }
 
   .right-nav-ul {
     display: flex;
-    justify-content: right; 
+    justify-content: right;
     width: 300px;
     left: 0;
     margin-top: 50px;
   }
 
   .authButtons .sign-up-button,
-  .authButtons .log-out-button
-  {
+  .authButtons .log-out-button {
     border: none;
   }
 
@@ -317,12 +315,12 @@
     margin-top: 10px;
     margin-right: 10px;
     cursor: pointer;
-}
+  }
 
   .sidebar {
     display: flex;
     align-items: right;
-    transform: translateX(100%); 
+    transform: translateX(100%);
     padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 2rem);
     top: 0;
     right: 0;
@@ -348,7 +346,7 @@
 
   .second-group .authButtons a button {
     font-size: 30px !important;
-  }  
+  }
 
   .dropdown {
     flex-direction: column;
@@ -356,7 +354,8 @@
     height: auto;
   }
 
-  .first-group, .second-group { 
+  .first-group,
+  .second-group {
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
@@ -368,7 +367,7 @@
 
   .first-group a li,
   .second-group li a {
-    padding:0px;
+    padding: 0px;
   }
 
   .first-group {
@@ -379,8 +378,7 @@
   .second-group li,
   .authButtons button,
   .navbar-button a,
-  .log-out-button
-   {
+  .log-out-button {
     cursor: pointer;
     margin-top: 1rem;
     background-color: transparent;
@@ -389,7 +387,7 @@
     margin-left: 0px;
     color: #ededed;
     font-size: 30px !important;
-    text-transform:capitalize !important;
+    text-transform: capitalize !important;
     padding: 7px 14px !important;
     border-radius: 0px !important;
     height: 55px;
@@ -414,9 +412,9 @@
   }
 
   .navbar-button {
-    margin-top: 0; 
+    margin-top: 0;
     width: 100%;
-    min-width: auto; 
+    min-width: auto;
   }
 
   .buttons {
@@ -433,11 +431,11 @@
   .menu a {
     width: 100%;
     box-sizing: border-box;
-    border-bottom: 1px solid #ededed; 
+    border-bottom: 1px solid #ededed;
   }
 
   .menu a:last-child {
-    border-bottom: none; 
+    border-bottom: none;
   }
 
   .log-out-button a {
@@ -448,35 +446,38 @@
     display: block;
   }
 
-
   .right-nav-ul .log-in-button,
   .right-nav-ul .sign-up-button,
   .right-nav-ul .login-button,
   .right-nav-ul .log-out-button,
   .right-nav-ul .navbar-button li,
   .right-nav-ul li {
-    background: linear-gradient(to right, #7938b2 25%,rgba(255,255,255,0) 95%);
+    background: linear-gradient(
+      to right,
+      #7938b2 25%,
+      rgba(255, 255, 255, 0) 95%
+    );
     width: 100%;
     height: 80px;
     color: #ededed;
     align-items: left;
   }
-  
+
   .right-nav-ul .log-in-button,
   .right-nav-ul .sign-up-button,
   .right-nav-ul .login-button,
   .right-nav-ul .log-out-button {
-    line-height: 1; 
+    line-height: 1;
   }
-  
+
   .right-nav-ul .navbar-button li {
-    padding-top: 20px; 
+    padding-top: 20px;
   }
-  
+
   .right-nav-ul li a:hover {
     background-color: transparent;
   }
-  
+
   .second-group a:hover,
   .right-nav-ul .navbar-button li:hover {
     background-color: transparent;
@@ -487,9 +488,12 @@
   .right-nav-ul .sign-up-button:hover,
   .right-nav-ul .log-in-button:hover,
   .right-nav-ul .sign-up-button:hover,
-  .right-nav-ul .log-out-button:hover
-  {
-    background: linear-gradient(to right, rgb(64, 11, 52) 0%,rgba(255,255,255,0) 69%);
+  .right-nav-ul .log-out-button:hover {
+    background: linear-gradient(
+      to right,
+      rgb(64, 11, 52) 0%,
+      rgba(255, 255, 255, 0) 69%
+    );
     color: var(--highlight-button-hover);
   }
 
@@ -506,45 +510,39 @@
     margin-top: 10px;
   }
 
-  .loginItems button.log-out-button {    
+  .loginItems button.log-out-button {
     margin-top: 0px;
   }
 
   .loginItems a .log-out-button,
   .loginItems button.log-out-button,
   .log-in-button button.log-out-button,
-  .second-group button.log-out-button
-
-  {
+  .second-group button.log-out-button {
     text-decoration: none;
   }
 
   .right-nav-ul .buttons .first-group li {
     padding-top: 20px;
-    height: 80px; 
+    height: 80px;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     text-align: center;
     list-style: none !important;
   }
 
   .right-nav-ul .buttons .first-group a,
-  .right-nav-ul .buttons .first-group li a
-  {
+  .right-nav-ul .buttons .first-group li a {
     text-decoration: none;
   }
 
-
-.right-nav-ul .buttons .first-group li a {
-  text-decoration: none !important;
-  color: inherit;
-}
-
+  .right-nav-ul .buttons .first-group li a {
+    text-decoration: none !important;
+    color: inherit;
+  }
 }
 
 @media (max-width: 315px) {
-
   .sidebar {
     padding-right: 100px;
   }
@@ -572,5 +570,4 @@
     justify-content: center;
     align-items: center;
   }
-
 }

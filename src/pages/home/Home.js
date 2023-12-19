@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import DeckCard from "../../components/deckCard/DeckCard";
 import Button from "../../components/button/Button";
 import { AuthContext } from "../../App";
@@ -39,13 +39,6 @@ function Home() {
       {/* PUBLIC DECKS */}
       <div className="deck-title">
         <h2>Public Decks</h2>
-        {!isLoggedIn && (
-          <div className="button-container">
-            <Link to="/create-deck">
-              <Button buttonText="new deck" className="new-deck-button" />
-            </Link>
-          </div>
-        )}
       </div>
       <div className="decks-container">
         {publicDecks?.map((deck, idx) => (
