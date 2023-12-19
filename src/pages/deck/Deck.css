@@ -105,6 +105,7 @@ select {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-bottom: 500px;
 }
 
 .flashcard-option {

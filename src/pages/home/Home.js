@@ -39,13 +39,6 @@ function Home() {
       {/* PUBLIC DECKS */}
       <div className="deck-title">
         <h2>Public Decks</h2>
-        {!isLoggedIn && (
-          <div className="button-container">
-            <Link to="/create-deck">
-              <Button buttonText="new deck" className="new-deck-button" />
-            </Link>
-          </div>
-        )}
       </div>
       <div className="decks-container">
         {publicDecks?.map((deck, idx) => (
