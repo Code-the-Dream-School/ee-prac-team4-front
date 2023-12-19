@@ -1,16 +1,16 @@
 .resourcePage {
   margin-top: 83px;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
+
 .resources-container {
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: scroll;
-  margin-bottom: 500px;
 }
+
 .resources-title {
   display: flex;
   width: 100%;
@@ -19,52 +19,6 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-}
-.add-resource-btn {
-  padding: 0;
-  height: 50px;
-  background: var(--secondary-button-background);
-  border: 1px solid var(--secondary-button-border);
-  color: var(--secondary-button-text);
-  cursor: pointer;
-}
-.add-resource-btn:hover {
-  background: var(--secondary-button-hover);
-}
-
-.resourceInput {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-label {
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-input,
-select {
-  font-size: 14px;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid var(--primary-border-color);
-  background: var(--primary-input-background);
-  border-radius: var(--primary-input-radius);
-  color: var(--subheading-text-color);
-}
-.button-add-resource {
-  color: var(--secondary-button-text);
-  background: var(--secondary-button-background);
-  border: 2px solid var(--secondary-button-border);
-  padding: 10px 15px;
-  cursor: pointer;
-  transition:
-    background 0.3s,
-    color 0.3s;
-}
-.button-add-resource:hover {
-  background: var(--secondary-button-hover);
-  color: var(--secondary-button-text-hover);
 }
 
 .resources-list {
@@ -76,6 +30,59 @@ select {
   color: var(--subheading-text-color);
   border-radius: var(--primary-input-radius);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 500px;
+}
+
+.add-resource-btn {
+  padding: 0;
+  height: 50px;
+  background: var(--secondary-button-background);
+  border: 1px solid var(--secondary-button-border);
+  color: var(--secondary-button-text);
+  cursor: pointer;
+}
+
+.add-resource-btn:hover {
+  background: var(--secondary-button-hover);
+}
+
+.resourceInput {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--primary-border-color);
+  background: var(--primary-input-background);
+  border-radius: var(--primary-input-radius);
+  color: var(--subheading-text-color);
+}
+
+.button-add-resource {
+  color: var(--secondary-button-text);
+  background: var(--secondary-button-background);
+  border: 2px solid var(--secondary-button-border);
+  padding: 10px 15px;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.button-add-resource:hover {
+  background: var(--secondary-button-hover);
+  color: var(--secondary-button-text-hover);
 }
 
 .resources-list-topic {
@@ -84,6 +91,7 @@ select {
   flex-direction: column;
   border-radius: var(--primary-input-radius);
 }
+
 .resources-list-topic2 {
   display: flex;
   width: 100%;
@@ -96,6 +104,7 @@ select {
   background-color: var(--secondary-background);
   color: var(--secondary-topic-border);
 }
+
 .resources-list h2 {
   margin-bottom: 15px;
   margin-left: 15px;
@@ -103,6 +112,7 @@ select {
   font-size: 1.5em;
   color: #ededed;
 }
+
 .resources-list h3 {
   margin-bottom: 0px;
   margin-left: 30px;
@@ -110,20 +120,24 @@ select {
   font-size: 1.2em;
   color: #ededed;
 }
+
 .resources-list ul {
   list-style: none;
   padding: 10px 0;
   margin: 0;
 }
+
 .resources-list li {
   margin-left: 50px;
   margin-bottom: 15px;
 }
+
 .resources-list li a {
-  color: var(--link-text-color);
+  color: #ededed;
   text-decoration: none;
   transition: color 0.3s;
 }
+
 .resources-list li a:hover {
   color: var(--link-text-hover-color);
 }
@@ -155,6 +169,7 @@ select {
   top: 20px;
   background: var(--primary-background);
 }
+
 .add-resource h2 {
   margin-bottom: 15px;
 }
@@ -183,7 +198,9 @@ select {
   .resources-title {
     flex-direction: column;
   }
+
   .resources-title h1 {
     margin-bottom: 0px;
   }
 }
+

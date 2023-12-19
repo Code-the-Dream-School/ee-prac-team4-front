@@ -14,6 +14,7 @@ a {
   justify-content: space-around;
   align-items: baseline;
   flex-wrap: wrap;
+  height: 125px;
 }
 
 .footer-copyright {

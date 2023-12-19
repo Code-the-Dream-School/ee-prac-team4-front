@@ -278,6 +278,7 @@
   margin-right: 8px;
   width: fit-content;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .menu .resources,

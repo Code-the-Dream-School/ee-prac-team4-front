@@ -1,6 +1,13 @@
 .content {
   width: 100%;
 }
+.home-container {
+  margin-top: 85px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 400px;
+}
+
 .decks-container {
   display: flex;
   flex-wrap: wrap;

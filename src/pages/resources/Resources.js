@@ -3,7 +3,7 @@ import "./Resources.css";
 import Button from "../../components/button/Button";
 import AddResourceModal from "../../components/AddResourceModal";
 
-function ResourceOrganizer() {
+export default function ResourceOrganizer() {
   const [formData, setFormData] = useState({
     link: "",
     title: "",
@@ -85,63 +85,54 @@ function ResourceOrganizer() {
     resourcesByTopic[topic][subtopic].push(resource);
   });
   return (
-    <div className="resources-container">
-      <div className="resources-title">
-        <div></div>
-        <Button
-          buttonText="Add Resource"
-          type="text"
-          className="add-resource-btn"
-          clickHandler={() => setOpenModal(true)}
-        />
-      </div>
-
-      <div className="resources-list">
-        {Object.keys(resourcesByTopic).map((topic, idx) => (
-          <div className="resources-list-topic" key={idx}>
-            <h2>{topic}</h2>
-            {Object.keys(resourcesByTopic[topic]).map((subtopic, idx2) => (
-              <div className="resources-list-topic2" key={idx2}>
-                <h3>{subtopic}</h3>
-                <ul>
-                  {resourcesByTopic[topic][subtopic].map((resource, idx3) => (
-                    <li className="resources-subtopic" key={idx3}>
-                      {resource.type}:{" "}
-                      <a
-                        href={resource.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <strong>{resource.title}</strong>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
-      <div className={openModal ? "modal" : ""}>
-        {openModal && (
-          <AddResourceModal
-            setOpenModal={setOpenModal}
-            formData={formData}
-            setFormData={setFormData}
-            handleSaveResource={handleSaveResource}
-          />
-        )}
-      </div>
-    </div>
-  );
-}
-
-function Resources() {
-  return (
     <div className="resourcePage">
-      <ResourceOrganizer />
+      <div className="resources-container">
+        <div className="resources-title">
+          <Button
+            buttonText="Add Resource"
+            type="text"
+            className="add-resource-btn"
+            clickHandler={() => setOpenModal(true)}
+          />
+        </div>
+
+        <div className="resources-list">
+          {Object.keys(resourcesByTopic).map((topic, idx) => (
+            <div className="resources-list-topic" key={idx}>
+              <h2>{topic}</h2>
+              {Object.keys(resourcesByTopic[topic]).map((subtopic, idx2) => (
+                <div className="resources-list-topic2" key={idx2}>
+                  <h3>{subtopic}</h3>
+                  <ul>
+                    {resourcesByTopic[topic][subtopic].map((resource, idx3) => (
+                      <li className="resources-subtopic" key={idx3}>
+                        {resource.type}:{" "}
+                        <a
+                          href={resource.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <strong>{resource.title}</strong>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div className={openModal ? "modal" : ""}>
+          {openModal && (
+            <AddResourceModal
+              setOpenModal={setOpenModal}
+              formData={formData}
+              setFormData={setFormData}
+              handleSaveResource={handleSaveResource}
+            />
+          )}
+        </div>
+      </div>
     </div>
   );
 }
-
-export default Resources;
